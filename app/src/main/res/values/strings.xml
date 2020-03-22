@@ -1,11 +1,38 @@
 <resources>
-    <string name="app_name">COVID-19 CHECKER</string>
+    <string name="app_name">Pusat Informasi COVID-19 SulTeng</string>
     <string name="logo_desc">Logo</string>
     <string name="positive">Positif</string>
     <string name="person">orang</string>
     <string name="dead">Meninggal</string>
-    <string name="current_info">INFORMASI TERKINI</string>
+    <string name="current_info">Informasi Terkini COVID-19 di Sulawesi Tengah</string>
     <string name="negative">Negatif</string>
     <string name="placeholder_desc">Tekan disini untuk melihat daftar rumah sakit di daerah anda yang ditunjuk sebagai rumah sakit rujukan pasien corona.</string>
+    <string name="placeholder_stats">Tekan disini untuk melihat data statistik penyebaran COVID-19 di Indonesia.</string>
+    <string name="placeholder_maps">Tekan disini untuk melihat peta penyebaran COVID-19 di Indonesia.</string>
     <string name="last_update">Update Terakhir :</string>
+    <string name="creator">Made with ❤BanuaCoders.com</string>
+    <string name="pdp_label">Pasien Dalam Pengawasan (PDP)</string>
+    <string name="odp_label">Orang Dalam Pemantauan (ODP)</string>
+
+    <string name="hospital_covid">RUMAH SAKIT RUJUKAN COVID-19</string>
+    <string name="statistics_covid">STATISTIK COVID-19</string>
+    <string name="maps_covid">PETA PENYEBARAN COVID-19</string>
+
+    <array name="array_icon_menu">
+        <item>hospital</item>
+        <item>statistics</item>
+        <item>maps</item>
+    </array>
+
+    <array name="array_title_menu">
+        <item>@string/hospital_covid</item>
+        <item>@string/statistics_covid</item>
+        <item>@string/maps_covid</item>
+    </array>
+
+    <array name="array_desc_menu">
+        <item>@string/placeholder_desc</item>
+        <item>@string/placeholder_stats</item>
+        <item>@string/placeholder_maps</item>
+    </array>
 </resources>
