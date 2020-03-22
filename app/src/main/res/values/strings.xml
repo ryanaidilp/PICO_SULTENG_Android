@@ -3,8 +3,9 @@
     <string name="logo_desc">Logo</string>
     <string name="positive">Positif</string>
     <string name="person">orang</string>
-    <string name="processed">Diproses</string>
+    <string name="dead">Meninggal</string>
     <string name="current_info">INFORMASI TERKINI</string>
     <string name="negative">Negatif</string>
     <string name="placeholder_desc">Tekan disini untuk melihat daftar rumah sakit di daerah anda yang ditunjuk sebagai rumah sakit rujukan pasien corona.</string>
+    <string name="last_update">Update Terakhir :</string>
 </resources>
