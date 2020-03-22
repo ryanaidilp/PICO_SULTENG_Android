@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">COVID-19 CHECKER</string>
+    <string name="logo_desc">Logo</string>
+    <string name="positive">Positif</string>
+    <string name="person">orang</string>
+    <string name="processed">Diproses</string>
+    <string name="current_info">INFORMASI TERKINI</string>
+    <string name="negative">Negatif</string>
+    <string name="placeholder_desc">Tekan disini untuk melihat daftar rumah sakit di daerah anda yang ditunjuk sebagai rumah sakit rujukan pasien corona.</string>
+</resources>
