@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Pusat Informasi COVID-19 SulTeng</string>
+    <string name="logo_desc">Logo</string>
+    <string name="positive">Positif</string>
+    <string name="person">orang</string>
+    <string name="dead">Meninggal</string>
+    <string name="current_info">Informasi Terkini COVID-19 di Sulawesi Tengah</string>
+    <string name="negative">Negatif</string>
+
+    <string name="placeholder_desc">Tekan disini untuk melihat rumah sakit disekitar anda yang ditunjuk oleh pemerintah untuk menangani pasien COVID-19.</string>
+    <string name="placeholder_stats">Tekan disini untuk melihat data statistik penyebaran COVID-19 di Indonesia.</string>
+    <string name="placeholder_maps">Tekan disini untuk melihat peta penyebaran COVID-19 di Indonesia.</string>
+    <string name="placeholder_qna">Tekan disini untuk memberikan kritik dan saran kepada pengembang aplikasi.</string>
+
+    <string name="last_update">Update Terakhir :</string>
+    <string name="creator">Made with ❤ BanuaCoders.com</string>
+    <string name="pdp_label">Pasien Dalam Pengawasan (PDP)</string>
+    <string name="odp_label">Orang Dalam Pemantauan (ODP)</string>
+
+    <string name="placeholder_data_source">*) Data diambil dari Dinas Kesehatan Provinsi Sulawesi Tengah</string>
+
+    <string name="hospital_covid">RUMAH SAKIT RUJUKAN COVID-19</string>
+    <string name="statistics_covid">STATISTIK COVID-19</string>
+    <string name="maps_covid">PETA PENYEBARAN COVID-19</string>
+    <string name="qna">Kritik dan Saran</string>
+
+    <string name="finished_monitoring">Selesai Pemantauan</string>
+    <string name="total_odp">Total ODP</string>
+    <string name="zero_percent">(0%)</string>
+    <string name="zero_value">0</string>
+    <string name="in_monitoring">Dalam Pemantauan</string>
+    <string name="total_pdp">Total PDP</string>
+    <string name="finished_control">Selesai Pengawasan</string>
+    <string name="in_control">Dalam Pengawasan</string>
+</resources>

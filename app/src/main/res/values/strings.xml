@@ -1,38 +1,56 @@
 <resources>
-    <string name="app_name">Pusat Informasi COVID-19 SulTeng</string>
+    <string name="app_name">Information Center COVID-19 Central Sulawesi</string>
     <string name="logo_desc">Logo</string>
-    <string name="positive">Positif</string>
-    <string name="person">orang</string>
-    <string name="dead">Meninggal</string>
-    <string name="current_info">Informasi Terkini COVID-19 di Sulawesi Tengah</string>
-    <string name="negative">Negatif</string>
-    <string name="placeholder_desc">Tekan disini untuk melihat daftar rumah sakit di daerah anda yang ditunjuk sebagai rumah sakit rujukan pasien corona.</string>
-    <string name="placeholder_stats">Tekan disini untuk melihat data statistik penyebaran COVID-19 di Indonesia.</string>
-    <string name="placeholder_maps">Tekan disini untuk melihat peta penyebaran COVID-19 di Indonesia.</string>
-    <string name="last_update">Update Terakhir :</string>
-    <string name="creator">Made with ❤BanuaCoders.com</string>
-    <string name="pdp_label">Pasien Dalam Pengawasan (PDP)</string>
-    <string name="odp_label">Orang Dalam Pemantauan (ODP)</string>
+    <string name="positive">Positive</string>
+    <string name="person">person</string>
+    <string name="dead">Death</string>
+    <string name="current_info">Current Information about COVID-19 in Central Sulawesi</string>
+    <string name="negative">Negative</string>
 
-    <string name="hospital_covid">RUMAH SAKIT RUJUKAN COVID-19</string>
-    <string name="statistics_covid">STATISTIK COVID-19</string>
-    <string name="maps_covid">PETA PENYEBARAN COVID-19</string>
+    <string name="placeholder_desc">Click here to see the hospitals around you appointed by the government to handle COVID-19 patients.</string>
+    <string name="placeholder_stats">Click here to see the statistical data dissemination COVID-19 in Indonesia.</string>
+    <string name="placeholder_maps">Click here to view a map of the spread of COVID-19 in Indonesia.</string>
+    <string name="placeholder_qna">Click here to provide criticism and suggestions for the developers.</string>
+
+    <string name="placeholder_data_source">*) Data provided by Dinas Kesehatan Province Sulawesi Tengah</string>
+
+    <string name="last_update">Latest Update :</string>
+    <string name="creator">Made with ❤ BanuaCoders.com</string>
+    <string name="pdp_label">Patients in Supervision (PDP)</string>
+    <string name="odp_label">Person in Monitoring (ODP)</string>
+
+    <string name="hospital_covid">COVID-19 REFERRAL HOSPITAL</string>
+    <string name="statistics_covid">COVID-19 STATISTICS </string>
+    <string name="maps_covid">COVID-19 SPREAD MAP</string>
+    <string name="qna">Criticism and Suggestions</string>
+
+    <string name="finished_monitoring">Finished Monitoring</string>
+    <string name="total_odp">Total ODP</string>
+    <string name="zero_percent">(0%)</string>
+    <string name="zero_value">0</string>
+    <string name="in_monitoring">In Monitoring</string>
+    <string name="total_pdp">Total PDP</string>
+    <string name="finished_control">Finished Control</string>
+    <string name="in_control">In Control</string>
 
     <array name="array_icon_menu">
         <item>hospital</item>
         <item>statistics</item>
         <item>maps</item>
+        <item>qna</item>
     </array>
 
     <array name="array_title_menu">
         <item>@string/hospital_covid</item>
         <item>@string/statistics_covid</item>
         <item>@string/maps_covid</item>
+        <item>@string/qna</item>
     </array>
 
     <array name="array_desc_menu">
         <item>@string/placeholder_desc</item>
         <item>@string/placeholder_stats</item>
         <item>@string/placeholder_maps</item>
+        <item>@string/placeholder_qna</item>
     </array>
 </resources>

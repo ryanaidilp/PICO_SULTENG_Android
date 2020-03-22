@@ -33,6 +33,7 @@
         android:layout_marginTop="4dp"
         android:contentDescription="@string/logo_desc"
         android:src="@drawable/logo_sulteng"
+        app:layout_constraintBottom_toTopOf="@id/rv_menu"
         app:layout_constraintEnd_toStartOf="@id/app_name_title"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -46,7 +47,7 @@
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/app_creator"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_sync"
         app:layout_constraintStart_toEndOf="@id/logo_province"
         app:layout_constraintTop_toTopOf="@id/logo_province" />
 
@@ -56,20 +57,33 @@
         android:layout_height="wrap_content"
         android:text="@string/creator"
         android:textColor="@android:color/white"
-        android:textSize="10sp"
+        android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@id/logo_province"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@id/app_name_title"
         app:layout_constraintTop_toBottomOf="@id/app_name_title" />
 
+    <ImageView
+        android:id="@+id/btn_sync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/logo_desc"
+        android:focusable="true"
+        android:src="@drawable/ic_sync_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/app_creator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/app_name_title"
+        app:layout_constraintTop_toTopOf="@id/app_name_title" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_menu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:elevation="8dp"
         android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        app:layout_constraintBottom_toTopOf="@id/container_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo_province"
@@ -79,7 +93,7 @@
         android:id="@+id/container_content"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -87,14 +101,15 @@
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="wrap_content">
 
             <TextView
                 android:id="@+id/information_label"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
                 android:text="@string/current_info"
                 android:textSize="16sp"
                 android:textStyle="bold"
@@ -114,6 +129,7 @@
                 app:layout_constraintStart_toStartOf="@id/information_label"
                 app:layout_constraintTop_toBottomOf="@id/information_label" />
 
+
             <TextView
                 android:id="@+id/information_date_value"
                 android:layout_width="0dp"
@@ -121,11 +137,11 @@
                 android:layout_marginStart="4dp"
                 android:textSize="14sp"
                 app:layout_constraintBottom_toBottomOf="@id/information_date"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/information_label"
                 app:layout_constraintStart_toEndOf="@id/information_date"
                 app:layout_constraintTop_toTopOf="@id/information_date"
+                app:layout_constraintVertical_bias="0.0"
                 tools:text="Sabtu, 21 Mar 2020 21.15" />
-
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/card_info_container"
@@ -140,7 +156,7 @@
                     android:layout_width="100dp"
                     android:layout_height="130dp"
                     android:layout_margin="16dp"
-                    app:cardBackgroundColor="#F4D5D5"
+                    app:cardBackgroundColor="#eeb9da"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="4dp"
                     app:contentPadding="14dp"
@@ -157,7 +173,7 @@
                             android:id="@+id/positive_icon"
                             android:layout_width="14dp"
                             android:layout_height="14dp"
-                            app:cardBackgroundColor="#E24747"
+                            app:cardBackgroundColor="#b40072"
                             app:cardCornerRadius="50dp"
                             app:layout_constraintBottom_toTopOf="@id/positive_count"
                             app:layout_constraintEnd_toStartOf="@id/positive_title"
@@ -166,8 +182,8 @@
 
                         <TextView
                             android:id="@+id/positive_title"
-                            android:layout_width="51dp"
-                            android:layout_height="19dp"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_marginStart="6dp"
                             android:text="@string/positive"
                             android:textSize="12sp"
@@ -180,26 +196,18 @@
 
                         <TextView
                             android:id="@+id/positive_count"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:textSize="32sp"
-                            android:textStyle="bold"
+                            style="@style/TextAppearanceStyle.Value"
+                            android:text="@string/zero_value"
                             app:layout_constraintBottom_toTopOf="@id/positive_person_label"
                             app:layout_constraintEnd_toEndOf="@id/positive_title"
                             app:layout_constraintStart_toStartOf="@id/positive_icon"
-                            app:layout_constraintTop_toBottomOf="@id/positive_title"
-                            tools:text="32" />
+                            app:layout_constraintTop_toBottomOf="@id/positive_title" />
 
                         <TextView
                             android:id="@+id/positive_person_label"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
+                            style="@style/TextAppearanceStyle.Label"
                             android:layout_marginStart="6dp"
-                            android:gravity="center"
                             android:text="@string/person"
-                            android:textSize="12sp"
-                            android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="@id/positive_count"
                             app:layout_constraintStart_toStartOf="@id/positive_count"
@@ -214,8 +222,7 @@
                     android:id="@+id/dead_card"
                     android:layout_width="100dp"
                     android:layout_height="130dp"
-                    android:layout_margin="16dp"
-                    app:cardBackgroundColor="#FAE4B8"
+                    app:cardBackgroundColor="#f9efa4"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="4dp"
                     app:contentPadding="12dp"
@@ -232,7 +239,7 @@
                             android:id="@+id/dead_icon"
                             android:layout_width="14dp"
                             android:layout_height="14dp"
-                            app:cardBackgroundColor="#E2CD47"
+                            app:cardBackgroundColor="#f0ce51"
                             app:cardCornerRadius="50dp"
                             app:layout_constraintBottom_toTopOf="@id/dead_count"
                             app:layout_constraintEnd_toStartOf="@id/dead_title"
@@ -255,26 +262,18 @@
 
                         <TextView
                             android:id="@+id/dead_count"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:textSize="32sp"
-                            android:textStyle="bold"
+                            style="@style/TextAppearanceStyle.Value"
+                            android:text="@string/zero_value"
                             app:layout_constraintBottom_toTopOf="@id/dead_person_label"
                             app:layout_constraintEnd_toEndOf="@id/dead_title"
                             app:layout_constraintStart_toStartOf="@id/dead_icon"
-                            app:layout_constraintTop_toBottomOf="@id/dead_title"
-                            tools:text="16" />
+                            app:layout_constraintTop_toBottomOf="@id/dead_title" />
 
                         <TextView
                             android:id="@+id/dead_person_label"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
                             android:layout_marginStart="6dp"
-                            android:gravity="center"
                             android:text="@string/person"
-                            android:textSize="12sp"
-                            android:textStyle="bold"
+                            style="@style/TextAppearanceStyle.Label"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="@id/dead_count"
                             app:layout_constraintStart_toStartOf="@id/dead_count"
@@ -290,7 +289,7 @@
                     android:layout_width="100dp"
                     android:layout_height="130dp"
                     android:layout_margin="16dp"
-                    app:cardBackgroundColor="#E6F3C2"
+                    app:cardBackgroundColor="#9aeae4"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="4dp"
                     app:contentPadding="16dp"
@@ -307,7 +306,7 @@
                             android:id="@+id/negative_icon"
                             android:layout_width="14dp"
                             android:layout_height="14dp"
-                            app:cardBackgroundColor="#47E25B"
+                            app:cardBackgroundColor="#00af99"
                             app:cardCornerRadius="50dp"
                             app:layout_constraintBottom_toTopOf="@id/negative_count"
                             app:layout_constraintEnd_toStartOf="@id/negative_title"
@@ -330,26 +329,18 @@
 
                         <TextView
                             android:id="@+id/negative_count"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:textSize="32sp"
-                            android:textStyle="bold"
+                            style="@style/TextAppearanceStyle.Value"
+                            android:text="@string/zero_value"
                             app:layout_constraintBottom_toTopOf="@id/negative_person_label"
                             app:layout_constraintEnd_toEndOf="@id/negative_title"
                             app:layout_constraintStart_toStartOf="@id/negative_icon"
-                            app:layout_constraintTop_toBottomOf="@id/negative_title"
-                            tools:text="16" />
+                            app:layout_constraintTop_toBottomOf="@id/negative_title" />
 
                         <TextView
                             android:id="@+id/negative_person_label"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
                             android:layout_marginStart="6dp"
-                            android:gravity="center"
                             android:text="@string/person"
-                            android:textSize="12sp"
-                            android:textStyle="bold"
+                            style="@style/TextAppearanceStyle.Label"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="@id/negative_count"
                             app:layout_constraintStart_toStartOf="@id/negative_count"
@@ -364,7 +355,8 @@
                     android:id="@+id/card_info_pdp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="8dp"
                     app:cardUseCompatPadding="true"
@@ -379,8 +371,9 @@
 
                         <TextView
                             android:id="@+id/card_pdp_title"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@string/pdp_label"
                             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                             app:layout_constraintBottom_toTopOf="@id/pdp_processed_title"
@@ -402,12 +395,8 @@
 
                         <TextView
                             android:id="@+id/pdp_processed_title"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Dalam Pengawasan"
-                            android:textSize="12sp"
-                            android:textStyle="bold"
+                            style="@style/TextAppearanceStyle.Label"
+                            android:text="@string/in_control"
                             app:layout_constraintBottom_toTopOf="@id/pdp_processed_value"
                             app:layout_constraintEnd_toStartOf="@id/pdp_finished_title"
                             app:layout_constraintStart_toStartOf="parent"
@@ -415,36 +404,28 @@
 
                         <TextView
                             android:id="@+id/pdp_processed_value"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:textSize="32sp"
-                            android:textStyle="bold"
+                            style="@style/TextAppearanceStyle.Value"
+                            android:text="@string/zero_value"
                             app:layout_constraintBottom_toTopOf="@id/pdp_processed_percentage"
                             app:layout_constraintEnd_toEndOf="@id/pdp_processed_title"
                             app:layout_constraintStart_toStartOf="@id/pdp_processed_title"
-                            app:layout_constraintTop_toBottomOf="@id/pdp_processed_title"
-                            tools:text="961" />
+                            app:layout_constraintTop_toBottomOf="@id/pdp_processed_title" />
 
                         <TextView
                             android:id="@+id/pdp_processed_percentage"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
+                            android:text="@string/zero_percent"
                             app:layout_constraintBottom_toTopOf="@id/pdp_total_case_title"
                             app:layout_constraintEnd_toEndOf="@id/pdp_processed_value"
                             app:layout_constraintStart_toStartOf="@id/pdp_processed_value"
-                            app:layout_constraintTop_toBottomOf="@id/pdp_processed_value"
-                            tools:text="(54.17%)" />
+                            app:layout_constraintTop_toBottomOf="@id/pdp_processed_value" />
 
                         <TextView
                             android:id="@+id/pdp_finished_title"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Selesai Pengawasan"
-                            android:textSize="12sp"
-                            android:textStyle="bold"
+                            style="@style/TextAppearanceStyle.Label"
+                            android:text="@string/finished_control"
                             app:layout_constraintBottom_toBottomOf="@id/pdp_processed_title"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@id/pdp_processed_title"
@@ -452,36 +433,28 @@
 
                         <TextView
                             android:id="@+id/pdp_finished_value"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:textSize="32sp"
-                            android:textStyle="bold"
+                            style="@style/TextAppearanceStyle.Value"
+                            android:text="@string/zero_value"
                             app:layout_constraintBottom_toTopOf="@id/pdp_finished_percentage"
                             app:layout_constraintEnd_toEndOf="@id/pdp_finished_title"
                             app:layout_constraintStart_toStartOf="@id/pdp_finished_title"
-                            app:layout_constraintTop_toBottomOf="@id/pdp_finished_title"
-                            tools:text="813" />
+                            app:layout_constraintTop_toBottomOf="@id/pdp_finished_title" />
 
                         <TextView
                             android:id="@+id/pdp_finished_percentage"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
+                            android:text="@string/zero_percent"
                             app:layout_constraintBottom_toTopOf="@id/pdp_total_case_title"
                             app:layout_constraintEnd_toEndOf="@id/pdp_finished_value"
                             app:layout_constraintStart_toStartOf="@id/pdp_finished_value"
-                            app:layout_constraintTop_toBottomOf="@id/pdp_finished_value"
-                            tools:text="(45.83%)" />
+                            app:layout_constraintTop_toBottomOf="@id/pdp_finished_value" />
 
                         <TextView
                             android:id="@+id/pdp_total_case_title"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Total PDP"
-                            android:textSize="12sp"
-                            android:textStyle="bold"
+                            style="@style/TextAppearanceStyle.Label"
+                            android:text="@string/total_pdp"
                             app:layout_constraintBottom_toTopOf="@id/pdp_total_case_value"
                             app:layout_constraintEnd_toEndOf="@id/pdp_finished_title"
                             app:layout_constraintStart_toStartOf="@id/pdp_processed_title"
@@ -489,16 +462,25 @@
 
                         <TextView
                             android:id="@+id/pdp_total_case_value"
+                            style="@style/TextAppearanceStyle.Value"
+                            android:text="@string/zero_value"
+                            app:layout_constraintBottom_toTopOf="@id/helper_pdp"
+                            app:layout_constraintEnd_toEndOf="@id/pdp_total_case_title"
+                            app:layout_constraintHorizontal_bias="0.0"
+                            app:layout_constraintStart_toStartOf="@id/pdp_total_case_title"
+                            app:layout_constraintTop_toBottomOf="@id/pdp_total_case_title" />
+
+                        <TextView
+                            android:id="@+id/helper_pdp"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:textSize="32sp"
-                            android:textStyle="bold"
+                            android:layout_margin="8dp"
+                            android:text="@string/placeholder_data_source"
+                            android:textSize="8sp"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="@id/pdp_total_case_title"
-                            app:layout_constraintStart_toStartOf="@id/pdp_total_case_title"
-                            app:layout_constraintTop_toBottomOf="@id/pdp_total_case_title"
-                            tools:text="1774" />
+                            app:layout_constraintEnd_toEndOf="@id/pdp_total_case_value"
+                            app:layout_constraintStart_toStartOf="@id/pdp_total_case_value"
+                            app:layout_constraintTop_toBottomOf="@id/pdp_total_case_value" />
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -509,7 +491,8 @@
                     android:id="@+id/card_info_odp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="16dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="8dp"
                     app:cardUseCompatPadding="true"
@@ -524,8 +507,9 @@
 
                         <TextView
                             android:id="@+id/card_odp_title"
-                            android:layout_width="wrap_content"
+                            android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:gravity="center"
                             android:text="@string/odp_label"
                             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
                             app:layout_constraintBottom_toTopOf="@id/odp_processed_title"
@@ -547,12 +531,8 @@
 
                         <TextView
                             android:id="@+id/odp_processed_title"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Dalam Pemantauan"
-                            android:textSize="12sp"
-                            android:textStyle="bold"
+                            style="@style/TextAppearanceStyle.Label"
+                            android:text="@string/in_monitoring"
                             app:layout_constraintBottom_toTopOf="@id/odp_processed_value"
                             app:layout_constraintEnd_toStartOf="@id/odp_finished_title"
                             app:layout_constraintStart_toStartOf="parent"
@@ -560,36 +540,28 @@
 
                         <TextView
                             android:id="@+id/odp_processed_value"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:textSize="32sp"
-                            android:textStyle="bold"
+                            style="@style/TextAppearanceStyle.Value"
+                            android:text="@string/zero_value"
                             app:layout_constraintBottom_toTopOf="@id/odp_processed_percentage"
                             app:layout_constraintEnd_toEndOf="@id/odp_processed_title"
                             app:layout_constraintStart_toStartOf="@id/odp_processed_title"
-                            app:layout_constraintTop_toBottomOf="@id/odp_processed_title"
-                            tools:text="112" />
+                            app:layout_constraintTop_toBottomOf="@id/odp_processed_title" />
 
                         <TextView
                             android:id="@+id/odp_processed_percentage"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
+                            android:text="@string/zero_percent"
                             app:layout_constraintBottom_toTopOf="@id/odp_total_case_title"
                             app:layout_constraintEnd_toEndOf="@id/odp_processed_value"
                             app:layout_constraintStart_toStartOf="@id/odp_processed_value"
-                            app:layout_constraintTop_toBottomOf="@id/odp_processed_value"
-                            tools:text="(71.34%)" />
+                            app:layout_constraintTop_toBottomOf="@id/odp_processed_value" />
 
                         <TextView
                             android:id="@+id/odp_finished_title"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Selesai Pemantauan"
-                            android:textSize="12sp"
-                            android:textStyle="bold"
+                            style="@style/TextAppearanceStyle.Label"
+                            android:text="@string/finished_monitoring"
                             app:layout_constraintBottom_toBottomOf="@id/odp_processed_title"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@id/odp_processed_title"
@@ -597,36 +569,28 @@
 
                         <TextView
                             android:id="@+id/odp_finished_value"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:textSize="32sp"
-                            android:textStyle="bold"
+                            style="@style/TextAppearanceStyle.Value"
+                            android:text="@string/zero_value"
                             app:layout_constraintBottom_toTopOf="@id/odp_finished_percentage"
                             app:layout_constraintEnd_toEndOf="@id/odp_finished_title"
                             app:layout_constraintStart_toStartOf="@id/odp_finished_title"
-                            app:layout_constraintTop_toBottomOf="@id/odp_finished_title"
-                            tools:text="45" />
+                            app:layout_constraintTop_toBottomOf="@id/odp_finished_title" />
 
                         <TextView
                             android:id="@+id/odp_finished_percentage"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:gravity="center"
+                            android:text="@string/zero_percent"
                             app:layout_constraintBottom_toTopOf="@id/odp_total_case_title"
                             app:layout_constraintEnd_toEndOf="@id/odp_finished_value"
                             app:layout_constraintStart_toStartOf="@id/odp_finished_value"
-                            app:layout_constraintTop_toBottomOf="@id/odp_finished_value"
-                            tools:text="(28.66%)" />
+                            app:layout_constraintTop_toBottomOf="@id/odp_finished_value" />
 
                         <TextView
                             android:id="@+id/odp_total_case_title"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Total ODP"
-                            android:textSize="12sp"
-                            android:textStyle="bold"
+                            style="@style/TextAppearanceStyle.Label"
+                            android:text="@string/total_odp"
                             app:layout_constraintBottom_toTopOf="@id/odp_total_case_value"
                             app:layout_constraintEnd_toEndOf="@id/odp_finished_title"
                             app:layout_constraintStart_toStartOf="@id/odp_processed_title"
@@ -634,17 +598,24 @@
 
                         <TextView
                             android:id="@+id/odp_total_case_value"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:textSize="32sp"
-                            android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="parent"
+                            style="@style/TextAppearanceStyle.Value"
+                            android:text="@string/zero_value"
+                            app:layout_constraintBottom_toTopOf="@id/helper_odp"
                             app:layout_constraintEnd_toEndOf="@id/odp_total_case_title"
                             app:layout_constraintStart_toStartOf="@id/odp_total_case_title"
-                            app:layout_constraintTop_toBottomOf="@id/odp_total_case_title"
-                            tools:text="157" />
+                            app:layout_constraintTop_toBottomOf="@id/odp_total_case_title" />
 
+                        <TextView
+                            android:id="@+id/helper_odp"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="8dp"
+                            android:text="@string/placeholder_data_source"
+                            android:textSize="8sp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@id/odp_total_case_value"
+                            app:layout_constraintStart_toStartOf="@id/odp_total_case_value"
+                            app:layout_constraintTop_toBottomOf="@id/odp_total_case_value" />
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
 

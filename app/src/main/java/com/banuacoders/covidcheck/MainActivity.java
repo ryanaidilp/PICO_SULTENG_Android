@@ -1,20 +1,31 @@
 package com.banuacoders.covidcheck;
 
 import android.os.Bundle;
+import android.os.Handler;
+import android.view.Gravity;
+import android.view.View;
+import android.view.animation.RotateAnimation;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.SnapHelper;
 
 import com.banuacoders.covidcheck.adapter.ListMenuAdapter;
 import com.banuacoders.covidcheck.object.MenuItem;
+import com.github.rubensousa.gravitysnaphelper.GravitySnapHelper;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView rvMenu;
     private ArrayList<MenuItem> menus = new ArrayList<>();
+    private TextView tvDate;
+    private ImageView btnSync;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,8 +35,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void getComponents() {
+        tvDate = findViewById(R.id.information_date_value);
+        btnSync = findViewById(R.id.btn_sync);
         rvMenu = findViewById(R.id.rv_menu);
         rvMenu.setHasFixedSize(true);
+        SnapHelper snapHelper = new GravitySnapHelper(Gravity.CENTER);
+        snapHelper.attachToRecyclerView(rvMenu);
         menus.addAll(getAllMenu());
         bind();
     }
@@ -49,11 +64,43 @@ public class MainActivity extends AppCompatActivity {
         rvMenu.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         ListMenuAdapter adapter = new ListMenuAdapter(menus);
         rvMenu.setAdapter(adapter);
+        setDateTime();
+        btnSync.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                rotateSync();
+            }
+        });
     }
+
+    void setDateTime() {
+        final Handler dateHandler = new Handler();
+        dateHandler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                String currentDate = java.text.DateFormat.getDateTimeInstance().format(new Date());
+                tvDate.setText(currentDate);
+                dateHandler.postDelayed(this, 1000);
+            }
+        }, 10);
+    }
+
+    void rotateSync() {
+        int mCurrRotation = 0;
+        float fromRotation = mCurrRotation;
+        float toRotation = mCurrRotation -= 180;
+
+        final RotateAnimation rotateAnim = new RotateAnimation(
+                fromRotation, toRotation, btnSync.getWidth() / 2, btnSync.getHeight() / 2);
+
+        rotateAnim.setDuration(1000); // Use 0 ms to rotate instantly
+        rotateAnim.setFillAfter(true); // Must be true or the animation will reset
+
+        btnSync.startAnimation(rotateAnim);
+    }
+
     public int getImage(String imageName) {
 
-        int drawableResourceId = this.getResources().getIdentifier(imageName, "drawable", this.getPackageName());
-
-        return drawableResourceId;
+        return this.getResources().getIdentifier(imageName, "drawable", this.getPackageName());
     }
 }
