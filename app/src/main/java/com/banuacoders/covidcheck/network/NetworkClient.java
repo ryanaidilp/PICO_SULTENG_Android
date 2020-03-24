@@ -12,7 +12,7 @@ public class NetworkClient {
     private static final String BASE_URL_STATS = "https://services5.arcgis.com/VS6HdKS0VfIhv8Ct/arcgis/rest/services/Statistik_Perkembangan_COVID19_Indonesia/FeatureServer/0/";
     private static final String BASE_URL_PROVINCE = "https://services5.arcgis.com/VS6HdKS0VfIhv8Ct/arcgis/rest/services/COVID19_Indonesia_per_Provinsi/FeatureServer/0/";
     private static final String BASE_URL_KABUPATEN = "https://de7fbb85-640c-4eb8-8d73-7d6a41582896.mock.pstmn.io/";
-    private static final String API_KEY = "THIS_IS_API_KEY";
+    private static final String API_KEY = "API_KEY_HERE";
     private static NetworkClient mInstance;
     private Retrofit retrofitStats, retrofitProvince, retrofitCity;
     Map<String, Object> queryMap = new HashMap<>();
