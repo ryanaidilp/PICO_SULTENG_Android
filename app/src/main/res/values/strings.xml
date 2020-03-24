@@ -8,7 +8,6 @@
     <string name="negative">Negative</string>
 
     <string name="placeholder_desc">Click here to see the hospitals around you appointed by the government to handle COVID-19 patients.</string>
-    <string name="placeholder_self_screening">Click here to do a self screening.</string>
     <string name="placeholder_stats">Click here to see the statistical data dissemination COVID-19 in Indonesia.</string>
     <string name="placeholder_maps">Click here to view a map of the spread of COVID-19 in Indonesia.</string>
     <string name="placeholder_qna">Click here to provide criticism and suggestions for the developers.</string>
@@ -21,7 +20,6 @@
     <string name="odp_label">Person in Monitoring (ODP)</string>
 
     <string name="hospital_covid">COVID-19 REFERRAL HOSPITAL</string>
-    <string name="self_screening_covid">SELF SCREENING COVID-19</string>
     <string name="statistics_covid">COVID-19 STATISTICS </string>
     <string name="maps_covid">COVID-19 SPREAD MAP</string>
     <string name="qna">Criticism and Suggestions</string>
@@ -37,7 +35,6 @@
 
     <array name="array_icon_menu">
         <item>hospital</item>
-        <item>detexi</item>
         <item>statistics</item>
         <item>maps</item>
         <item>qna</item>
@@ -45,7 +42,6 @@
 
     <array name="array_title_menu">
         <item>@string/hospital_covid</item>
-        <item>@string/self_screening_covid</item>
         <item>@string/statistics_covid</item>
         <item>@string/maps_covid</item>
         <item>@string/qna</item>
@@ -53,7 +49,6 @@
 
     <array name="array_desc_menu">
         <item>@string/placeholder_desc</item>
-        <item>@string/placeholder_self_screening</item>
         <item>@string/placeholder_stats</item>
         <item>@string/placeholder_maps</item>
         <item>@string/placeholder_qna</item>

@@ -9,7 +9,6 @@
     <string name="negative">Negatif</string>
 
     <string name="placeholder_desc">Tekan disini untuk melihat rumah sakit disekitar anda yang ditunjuk oleh pemerintah untuk menangani pasien COVID-19.</string>
-    <string name="placeholder_self_screening">Tekan disini untuk melakukan self-screening COVID-19.</string>
     <string name="placeholder_stats">Tekan disini untuk melihat data statistik penyebaran COVID-19 di Indonesia.</string>
     <string name="placeholder_maps">Tekan disini untuk melihat peta penyebaran COVID-19 di Indonesia.</string>
     <string name="placeholder_qna">Tekan disini untuk memberikan kritik dan saran kepada pengembang aplikasi.</string>
@@ -22,7 +21,6 @@
     <string name="placeholder_data_source">*) Data diambil dari Dinas Kesehatan Provinsi Sulawesi Tengah</string>
 
     <string name="hospital_covid">RUMAH SAKIT RUJUKAN COVID-19</string>
-    <string name="self_screening_covid">SELF SCREENING COVID-19</string>
     <string name="statistics_covid">STATISTIK COVID-19</string>
     <string name="maps_covid">PETA PENYEBARAN COVID-19</string>
     <string name="qna">Kritik dan Saran</string>
