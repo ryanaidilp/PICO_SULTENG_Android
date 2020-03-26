@@ -23,4 +23,36 @@
     <style name="TextAppearanceStyle.Label" parent="TextAppearanceStyle">
         <item name="android:textSize">12sp</item>
     </style>
+
+    <style name="TextLabelAxis">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:rotation">-90</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+    <style name="ChartStyle">
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:layout_height">400dp</item>
+        <item name="android:layout_width">0dp</item>
+    </style>
+
+    <style name="TextHelper">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">8sp</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="MainLabel">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginStart">16dp</item>
+        <item name="android:layout_marginTop">4dp</item>
+        <item name="android:layout_marginEnd">16dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
 </resources>

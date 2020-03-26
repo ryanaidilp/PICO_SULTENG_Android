@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="placeholder_data_source">*) Data diambil dari Dinas Kesehatan Provinsi Sulawesi Tengah</string>
+    <string name="important_number">Important Number:</string>
+    <string name="emergency_number">Emergency Number</string>
 </resources>

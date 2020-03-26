@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
+    tools:context=".ActivityHospital">
+
+    <LinearLayout
+        android:id="@+id/container_header_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/login_shape_bk"
+
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_login_bk"
+            android:contentDescription="@string/logo_desc" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/logo_app"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/logo_desc"
+        android:src="@drawable/logo_sulteng"
+        app:layout_constraintEnd_toStartOf="@id/app_name_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/app_name_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/header_title"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/app_creator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/logo_app"
+        app:layout_constraintTop_toTopOf="@id/logo_app" />
+
+    <TextView
+        android:id="@+id/app_creator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/creator"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/logo_app"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/app_name_title"
+        app:layout_constraintTop_toBottomOf="@id/app_name_title" />
+    <!--  Header  -->
+
+    <!--  Title  -->
+    <ImageView
+        android:id="@+id/logo_hospital"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/logo_desc"
+        android:src="@drawable/hospital_2"
+
+        app:layout_constraintEnd_toStartOf="@id/description_hospital"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo_app" />
+
+    <TextView
+        android:id="@+id/description_hospital"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:ellipsize="end"
+        android:maxLines="6"
+        android:text="@string/hospital_desc"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/logo_hospital"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/logo_hospital"
+        app:layout_constraintTop_toTopOf="@id/logo_hospital" />
+
+    <!--  Content  -->
+    <TextView
+        android:id="@+id/list_hospital_label"
+        style="@style/MainLabel"
+        android:text="@string/list_hospital_label"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toTopOf="@id/logo_hospital"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/logo_app" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_hospital"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_header_main"
+        tools:listitem="@layout/hospital_item" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

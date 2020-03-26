@@ -14,12 +14,12 @@ public interface Api {
             @QueryMap Map<String, Object> queryMap
     );
 
-
-    @GET("query")
-    Call<ResponseBody> getCovidProvince(
-            @QueryMap Map<String, Object> queryMap
-    );
-
     @GET("kabupaten")
-    Call<ResponseBody> getAllKabupaten();
+    Call<ResponseBody> getAllCity();
+
+    @GET("rumahsakit")
+    Call<ResponseBody> getAllHospital();
+
+    @GET("provinsi")
+    Call<ResponseBody> getAllProvince();
 }

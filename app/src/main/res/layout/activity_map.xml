@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MapActivity">
+
+
+    <LinearLayout
+        android:id="@+id/container_header_main"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@drawable/login_shape_bk"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/ic_login_bk"
+            android:contentDescription="@string/logo_desc" />
+
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/logo_app"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="4dp"
+        android:contentDescription="@string/logo_desc"
+        android:src="@drawable/logo_sulteng"
+        app:layout_constraintEnd_toStartOf="@id/app_name_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/app_name_title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/header_title"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@id/app_creator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/logo_app"
+        app:layout_constraintTop_toTopOf="@id/logo_app" />
+
+    <TextView
+        android:id="@+id/app_creator"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/creator"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/logo_app"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@id/app_name_title"
+        app:layout_constraintTop_toBottomOf="@id/app_name_title" />
+
+
+    <ImageButton
+        android:id="@+id/zoom_reset_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:backgroundTint="@color/shadow_background_color"
+        android:contentDescription="@string/logo_desc"
+        android:elevation="10dp"
+        android:src="@drawable/ic_zoom_out_map_black_24dp"
+        app:layout_constraintBottom_toTopOf="@id/zoom_in_map"
+        app:layout_constraintEnd_toEndOf="@id/zoom_in_map"
+        app:layout_constraintStart_toStartOf="@id/zoom_in_map" />
+
+    <ImageButton
+        android:id="@+id/zoom_in_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:backgroundTint="@color/colorCured"
+        android:contentDescription="@string/logo_desc"
+        android:elevation="10dp"
+        android:src="@drawable/ic_zoom_in_black_24dp"
+        app:layout_constraintBottom_toTopOf="@id/zoom_out_map"
+        app:layout_constraintEnd_toEndOf="@id/zoom_out_map"
+        app:layout_constraintStart_toStartOf="@id/zoom_out_map" />
+
+    <ImageButton
+        android:id="@+id/zoom_out_map"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="4dp"
+        android:backgroundTint="@color/colorDeath"
+        android:contentDescription="@string/logo_desc"
+        android:elevation="10dp"
+        android:src="@drawable/ic_zoom_out_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.anychart.AnyChartView
+        android:id="@+id/map_province_positive"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_header_main" />
+
+    <ProgressBar
+        android:id="@+id/progress_map_province_positive"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

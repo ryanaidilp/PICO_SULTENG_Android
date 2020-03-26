@@ -6,12 +6,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.banuacoders.covidcheck.ActivityHospital;
 import com.banuacoders.covidcheck.DetexiActivity;
+import com.banuacoders.covidcheck.DeveloperActivity;
+import com.banuacoders.covidcheck.MapActivity;
 import com.banuacoders.covidcheck.R;
 import com.banuacoders.covidcheck.StatsActivity;
 import com.banuacoders.covidcheck.object.MenuItem;
@@ -40,19 +42,20 @@ public class ListMenuAdapter extends RecyclerView.Adapter<ListMenuAdapter.MenuVi
     public void onBindViewHolder(@NonNull MenuViewHolder holder, final int position) {
         holder.tvDescMenu.setText(listMenu.get(position).getDesc());
         holder.tvTitleMenu.setText(listMenu.get(position).getTitle());
-        holder.cardMenu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (titleCheck(position, "STATISTIK") || titleCheck(position, "STATISTICS")) {
-                    Intent intent = new Intent(view.getContext(), StatsActivity.class);
-                    view.getContext().startActivity(intent);
-                } else if (titleCheck(position, "RUMAH") || titleCheck(position, "HOSPITAL")) {
-                    Toast.makeText(view.getContext(), listMenu.get(position).getTitle(), Toast.LENGTH_SHORT).show();
-                } else if (titleCheck(position, "SCREENING")) {
-                    Intent intent = new Intent(view.getContext(), DetexiActivity.class);
-                    view.getContext().startActivity(intent);
-                }
+        holder.cardMenu.setOnClickListener(view -> {
+            Intent intent;
+            if (titleCheck(position, "STATISTIK") || titleCheck(position, "STATISTICS")) {
+                intent = new Intent(view.getContext(), StatsActivity.class);
+            } else if (titleCheck(position, "RUMAH") || titleCheck(position, "HOSPITAL")) {
+                intent = new Intent(view.getContext(), ActivityHospital.class);
+            } else if (titleCheck(position, "SCREENING")) {
+                intent = new Intent(view.getContext(), DetexiActivity.class);
+            } else if (titleCheck(position, "PETA") || titleCheck(position, "MAP")) {
+                intent = new Intent(view.getContext(), MapActivity.class);
+            } else {
+                intent = new Intent(view.getContext(), DeveloperActivity.class);
             }
+            view.getContext().startActivity(intent);
         });
         Glide.with(holder.itemView)
                 .load(listMenu.get(position).getIcon())

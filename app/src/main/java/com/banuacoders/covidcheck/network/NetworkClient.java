@@ -10,14 +10,12 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class NetworkClient {
     private static final String BASE_URL_STATS = "https://services5.arcgis.com/VS6HdKS0VfIhv8Ct/arcgis/rest/services/Statistik_Perkembangan_COVID19_Indonesia/FeatureServer/0/";
-    private static final String BASE_URL_PROVINCE = "https://services5.arcgis.com/VS6HdKS0VfIhv8Ct/arcgis/rest/services/COVID19_Indonesia_per_Provinsi/FeatureServer/0/";
-    private static final String BASE_URL_KABUPATEN = "https://de7fbb85-640c-4eb8-8d73-7d6a41582896.mock.pstmn.io/";
-    private static final String API_KEY = "API_KEY_HERE";
+    private static final String BASE_URL_API = "https://banuacoders.com/api/pico/";
     private static NetworkClient mInstance;
-    private Retrofit retrofitStats, retrofitProvince, retrofitCity;
-    Map<String, Object> queryMap = new HashMap<>();
+    private Retrofit retrofitStats, retrofitCoder;
 
     private NetworkClient() {
+        Map<String, Object> queryMap = new HashMap<>();
         queryMap.put("where", "1%3D1");
         queryMap.put("outFields", "*");
         queryMap.put("outSR", 4326);
@@ -26,22 +24,15 @@ public class NetworkClient {
                 .baseUrl(BASE_URL_STATS)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        retrofitProvince = new Retrofit.Builder()
-                .baseUrl(BASE_URL_PROVINCE)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build();
-
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
         httpClient.addInterceptor(chain -> {
             Request original = chain.request();
             Request request = original.newBuilder()
-                    .header("X-API-Key", API_KEY)
                     .build();
             return chain.proceed(request);
         });
-        retrofitCity = new Retrofit.Builder()
-                .baseUrl(BASE_URL_KABUPATEN)
-                .client(httpClient.build())
+        retrofitCoder = new Retrofit.Builder()
+                .baseUrl(BASE_URL_API)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
     }
@@ -57,11 +48,7 @@ public class NetworkClient {
         return retrofitStats.create(Api.class);
     }
 
-    public Api getApiProvince() {
-        return retrofitProvince.create(Api.class);
-    }
-
-    public Api getApiKabupaten() {
-        return retrofitCity.create(Api.class);
+    public Api getApiCoder() {
+        return retrofitCoder.create(Api.class);
     }
 }

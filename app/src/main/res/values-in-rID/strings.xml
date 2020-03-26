@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Pusat Informasi COVID-19 SulTeng</string>
+    <string name="header_title">Pusat Informasi COVID-19 SulTeng</string>
     <string name="logo_desc">Logo</string>
     <string name="positive">Positif</string>
     <string name="person">orang</string>
@@ -19,12 +19,12 @@
     <string name="pdp_label">Pasien Dalam Pengawasan (PDP)</string>
     <string name="odp_label">Orang Dalam Pemantauan (ODP)</string>
 
-    <string name="placeholder_data_source">*) Data diambil dari Dinas Kesehatan Provinsi Sulawesi Tengah</string>
+    <string name="placeholder_data_source">*) Sumber Data: DINKES dan PUSDATINA COVID-19 Provinsi Sulawesi Tengah</string>
 
-    <string name="hospital_covid">RUMAH SAKIT RUJUKAN COVID-19</string>
-    <string name="self_screening_covid">SELF SCREENING COVID-19</string>
-    <string name="statistics_covid">STATISTIK COVID-19</string>
-    <string name="maps_covid">PETA PENYEBARAN COVID-19</string>
+    <string name="hospital_corona">RUMAH SAKIT RUJUKAN COVID-19</string>
+    <string name="self_screening_corona">SELF SCREENING COVID-19</string>
+    <string name="statistics_corona">STATISTIK COVID-19</string>
+    <string name="maps_corona">PETA PENYEBARAN COVID-19</string>
     <string name="qna">Kritik dan Saran</string>
 
     <string name="finished_monitoring">Selesai Pemantauan</string>
@@ -35,4 +35,24 @@
     <string name="total_pdp">Total PDP</string>
     <string name="finished_control">Selesai Pengawasan</string>
     <string name="in_control">Dalam Pengawasan</string>
+    <string name="national_data_recap">Rekapitulasi Data Nasional</string>
+    <string name="total_death_national">Total Kematian :</string>
+    <string name="total_positive_national">Total Positif :</string>
+    <string name="total_cured_national">Total Sembuh :</string>
+    <string name="table_title">Tabel Kasus COVID19 per Kabupaten/Kota</string>
+    <string name="important_number">Daftar Nomor Penting </string>
+    <string name="pho_central_sulawesi">Dinkes Sulteng</string>
+    <string name="general_question">Pertanyaan Umum</string>
+    <string name="pho_number">0811 404 119</string>
+    <string name="helper_phone">*) Tekan kartu untuk menelpon</string>
+    <string name="hospital_desc">Berikut ini adalah daftar rumah sakit rujukan COVID-19 di Provinsi Sulawesi Tengah. Silahkan tekan pada no telpon untuk menelpon atau tekan pada email untuk mengirim email.</string>
+    <string name="comparison_death_and_cured_label">Perbandingan Pasien Sembuh dan Meninggal COVID-19</string>
+    <string name="total_cured">Jumlah Sembuh</string>
+    <string name="graph_cured_label">Grafik Pasien Sembuh COVID19 Nasional</string>
+    <string name="total_positive">Jumlah Positif</string>
+    <string name="graph_positive_label">Grafik Pasien Positif COVID19 Nasional.</string>
+    <string name="total_death">Jumlah Kematian</string>
+    <string name="graph_death_label">Grafik Pasien Meninggal COVID19 Nasional</string>
+    <string name="list_hospital_label">Daftar Rumah Sakit</string>
+    <string name="direction">Petunjuk Arah</string>
 </resources>
