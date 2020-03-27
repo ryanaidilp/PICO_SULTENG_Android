@@ -1,3 +1,4 @@
+apply plugin: 'com.onesignal.androidsdk.onesignal-gradle-plugin'
 apply plugin: 'com.android.application'
 
 android {
@@ -10,7 +11,11 @@ android {
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-
+        manifestPlaceholders = [
+                onesignal_app_id: 'app_key',
+                // Project number pulled from dashboard, local value is ignored.
+                onesignal_google_project_number: 'REMOTE'
+        ]
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -39,6 +44,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
     implementation 'com.evrencoskun.library:tableview:0.8.9'
     implementation "ru.tinkoff.scrollingpagerindicator:scrollingpagerindicator:1.0.6"
+    implementation 'com.onesignal:OneSignal:3.4.3'
 
     //Lifecycle
     implementation 'android.arch.lifecycle:extensions:1.1.1'

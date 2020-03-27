@@ -27,6 +27,7 @@ import com.banuacoders.covidcheck.data.viewmodel.DistrictViewModel;
 import com.evrencoskun.tableview.TableView;
 import com.github.rubensousa.gravitysnaphelper.GravitySnapHelper;
 import com.google.android.material.card.MaterialCardView;
+import com.onesignal.OneSignal;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -65,6 +66,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         districtViewModel = ViewModelProviders.of(this)
                 .get(DistrictViewModel.class);
+        OneSignal.startInit(this)
+                .inFocusDisplaying(OneSignal.OSInFocusDisplayOption.Notification)
+                .unsubscribeWhenNotificationsAreDisabled(true)
+                .init();
         getComponents();
         bind();
         if (districtViewModel.getAllDistricts() == null) {

@@ -17,7 +17,7 @@ import com.banuacoders.covidcheck.data.object.Province;
 
 @Database(
         entities = {District.class, Province.class, Hospital.class, DataStatisticsCovid.class},
-        version = 3)
+        version = 3, exportSchema = false)
 public abstract class CovidDatabase extends RoomDatabase {
 
     private static CovidDatabase instance;
