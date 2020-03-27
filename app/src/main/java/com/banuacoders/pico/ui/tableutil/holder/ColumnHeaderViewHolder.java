@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.banuacoders.covidcheck.R;
+import com.banuacoders.pico.R;
 import com.banuacoders.pico.ui.tableutil.model.ColumnHeaderModel;
 import com.evrencoskun.tableview.ITableView;
 import com.evrencoskun.tableview.adapter.recyclerview.holder.AbstractViewHolder;

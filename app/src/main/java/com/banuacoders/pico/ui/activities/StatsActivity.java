@@ -13,7 +13,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
-import com.banuacoders.covidcheck.R;
+import com.banuacoders.pico.R;
 import com.banuacoders.pico.data.object.DataStatisticsCovid;
 import com.banuacoders.pico.data.viewmodel.DataStatisticViewModel;
 import com.banuacoders.pico.network.NetworkClient;
@@ -162,7 +162,7 @@ public class StatsActivity extends AppCompatActivity {
         Date currDate = new Date();
         Calendar c = Calendar.getInstance();
         c.setTime(currDate);
-//        c.add(Calendar.DATE, 1);
+        c.add(Calendar.DATE, 1);
         currDate = c.getTime();
         String currentDate = sdf.format(currDate);
         return currentDate.equalsIgnoreCase(dataDate);

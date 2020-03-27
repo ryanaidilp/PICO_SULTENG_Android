@@ -10,7 +10,7 @@ import android.webkit.WebViewClient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.banuacoders.covidcheck.R;
+import com.banuacoders.pico.R;
 
 public class DetexiActivity extends AppCompatActivity {
     WebView webView;

@@ -20,7 +20,7 @@ import com.anychart.enums.SidePosition;
 import com.anychart.graphics.vector.text.FontStyle;
 import com.anychart.graphics.vector.text.HAlign;
 import com.anychart.scales.LinearColor;
-import com.banuacoders.covidcheck.R;
+import com.banuacoders.pico.R;
 import com.banuacoders.pico.data.object.Province;
 import com.banuacoders.pico.data.viewmodel.ProvinceViewModel;
 import com.banuacoders.pico.network.NetworkClient;

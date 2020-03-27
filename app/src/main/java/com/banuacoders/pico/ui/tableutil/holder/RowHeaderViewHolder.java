@@ -5,7 +5,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
-import com.banuacoders.covidcheck.R;
+import com.banuacoders.pico.R;
 import com.evrencoskun.tableview.adapter.recyclerview.holder.AbstractViewHolder;
 
 public class RowHeaderViewHolder extends AbstractViewHolder {

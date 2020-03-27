@@ -13,7 +13,7 @@ import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.banuacoders.covidcheck.R;
+import com.banuacoders.pico.R;
 import com.banuacoders.pico.adapter.HospitalAdapter;
 import com.banuacoders.pico.data.object.Hospital;
 import com.banuacoders.pico.data.viewmodel.HospitalViewModel;

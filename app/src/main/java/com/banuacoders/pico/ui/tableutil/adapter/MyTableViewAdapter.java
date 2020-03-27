@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.banuacoders.covidcheck.R;
+import com.banuacoders.pico.R;
 import com.banuacoders.pico.data.object.District;
 import com.banuacoders.pico.ui.tableutil.MyTableViewModel;
 import com.banuacoders.pico.ui.tableutil.holder.CellViewHolder;

@@ -12,7 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.banuacoders.covidcheck.R;
+import com.banuacoders.pico.R;
 import com.banuacoders.pico.data.object.MenuItem;
 import com.banuacoders.pico.ui.activities.ActivityHospital;
 import com.banuacoders.pico.ui.activities.DetexiActivity;

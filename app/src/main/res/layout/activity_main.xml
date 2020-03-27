@@ -42,6 +42,7 @@
         android:id="@+id/app_name_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
         android:text="@string/header_title"
         android:textColor="@android:color/white"
         android:textSize="12sp"

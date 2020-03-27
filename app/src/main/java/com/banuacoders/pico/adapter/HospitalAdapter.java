@@ -11,7 +11,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.banuacoders.covidcheck.R;
+import com.banuacoders.pico.R;
 import com.banuacoders.pico.data.object.Hospital;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
