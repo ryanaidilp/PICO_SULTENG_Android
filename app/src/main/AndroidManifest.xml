@@ -12,11 +12,11 @@
         android:supportsRtl="true"
         android:fullBackupContent="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activities.MapActivity" />
-        <activity android:name=".ui.activities.ActivityHospital" />
-        <activity android:name=".ui.activities.DetexiActivity" />
-        <activity android:name=".ui.activities.StatsActivity" />
-        <activity android:name=".ui.activities.MainActivity">
+        <activity android:name="com.banuacoders.pico.ui.activities.MapActivity" />
+        <activity android:name="com.banuacoders.pico.ui.activities.ActivityHospital" />
+        <activity android:name="com.banuacoders.pico.ui.activities.DetexiActivity" />
+        <activity android:name="com.banuacoders.pico.ui.activities.StatsActivity" />
+        <activity android:name="com.banuacoders.pico.ui.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

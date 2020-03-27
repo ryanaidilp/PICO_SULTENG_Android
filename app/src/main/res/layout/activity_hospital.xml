@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
-    tools:context=".ui.activities.ActivityHospital">
+    tools:context="com.banuacoders.pico.ui.activities.ActivityHospital">
 
     <LinearLayout
         android:id="@+id/container_header_main"
