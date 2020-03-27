@@ -1,22 +1,23 @@
 package com.banuacoders.covidcheck.adapter;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.banuacoders.covidcheck.ActivityHospital;
-import com.banuacoders.covidcheck.DetexiActivity;
-import com.banuacoders.covidcheck.DeveloperActivity;
-import com.banuacoders.covidcheck.MapActivity;
 import com.banuacoders.covidcheck.R;
-import com.banuacoders.covidcheck.StatsActivity;
-import com.banuacoders.covidcheck.object.MenuItem;
+import com.banuacoders.covidcheck.data.object.MenuItem;
+import com.banuacoders.covidcheck.ui.activities.ActivityHospital;
+import com.banuacoders.covidcheck.ui.activities.DetexiActivity;
+import com.banuacoders.covidcheck.ui.activities.MapActivity;
+import com.banuacoders.covidcheck.ui.activities.StatsActivity;
 import com.bumptech.glide.Glide;
 import com.google.android.material.card.MaterialCardView;
 
@@ -43,19 +44,25 @@ public class ListMenuAdapter extends RecyclerView.Adapter<ListMenuAdapter.MenuVi
         holder.tvDescMenu.setText(listMenu.get(position).getDesc());
         holder.tvTitleMenu.setText(listMenu.get(position).getTitle());
         holder.cardMenu.setOnClickListener(view -> {
-            Intent intent;
-            if (titleCheck(position, "STATISTIK") || titleCheck(position, "STATISTICS")) {
-                intent = new Intent(view.getContext(), StatsActivity.class);
-            } else if (titleCheck(position, "RUMAH") || titleCheck(position, "HOSPITAL")) {
-                intent = new Intent(view.getContext(), ActivityHospital.class);
-            } else if (titleCheck(position, "SCREENING")) {
-                intent = new Intent(view.getContext(), DetexiActivity.class);
-            } else if (titleCheck(position, "PETA") || titleCheck(position, "MAP")) {
-                intent = new Intent(view.getContext(), MapActivity.class);
-            } else {
-                intent = new Intent(view.getContext(), DeveloperActivity.class);
+            try {
+                Intent intent;
+                if (titleCheck(position, "STATISTIK") || titleCheck(position, "STATISTICS")) {
+                    intent = new Intent(view.getContext(), StatsActivity.class);
+                } else if (titleCheck(position, "RUMAH") || titleCheck(position, "HOSPITAL")) {
+                    intent = new Intent(view.getContext(), ActivityHospital.class);
+                } else if (titleCheck(position, "SCREENING")) {
+                    intent = new Intent(view.getContext(), DetexiActivity.class);
+                } else if (titleCheck(position, "PETA") || titleCheck(position, "MAP")) {
+                    intent = new Intent(view.getContext(), MapActivity.class);
+                } else {
+                    Uri webpage = Uri.parse("https://instagram.com/ryanaidilp_");
+                    intent = new Intent(Intent.ACTION_VIEW, webpage);
+                }
+                view.getContext().startActivity(intent);
+            } catch (Exception e) {
+                Toast.makeText(holder.itemView.getContext(), "No application can handle this request. Please install a web browser or check your URL.", Toast.LENGTH_LONG).show();
+                e.printStackTrace();
             }
-            view.getContext().startActivity(intent);
         });
         Glide.with(holder.itemView)
                 .load(listMenu.get(position).getIcon())
@@ -71,12 +78,12 @@ public class ListMenuAdapter extends RecyclerView.Adapter<ListMenuAdapter.MenuVi
         return listMenu.size();
     }
 
-    public class MenuViewHolder extends RecyclerView.ViewHolder {
+    class MenuViewHolder extends RecyclerView.ViewHolder {
         ImageView iconMenu;
         TextView tvDescMenu, tvTitleMenu;
         MaterialCardView cardMenu;
 
-        public MenuViewHolder(@NonNull View itemView) {
+        MenuViewHolder(@NonNull View itemView) {
             super(itemView);
             iconMenu = itemView.findViewById(R.id.logo_menu_item);
             tvDescMenu = itemView.findViewById(R.id.desc_menu_item);

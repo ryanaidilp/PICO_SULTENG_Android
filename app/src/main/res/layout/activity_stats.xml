@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StatsActivity">
+    tools:context=".ui.activities.StatsActivity">
 
     <LinearLayout
         android:id="@+id/container_header_stats"
@@ -138,8 +138,19 @@
         android:textColor="@android:color/white"
         android:textSize="12sp"
         android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@id/helper_data_source"
         app:layout_constraintStart_toStartOf="@id/label_total_positive"
         app:layout_constraintTop_toBottomOf="@id/label_total_positive" />
+
+    <TextView
+        android:id="@+id/helper_data_source"
+        style="@style/TextHelper"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/data_source_placeholder"
+        android:textColor="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@id/container_header_stats"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
         android:id="@+id/value_total_cured"

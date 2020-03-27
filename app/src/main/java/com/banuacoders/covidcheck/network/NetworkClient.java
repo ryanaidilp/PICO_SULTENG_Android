@@ -1,10 +1,5 @@
 package com.banuacoders.covidcheck.network;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import okhttp3.OkHttpClient;
-import okhttp3.Request;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -15,22 +10,10 @@ public class NetworkClient {
     private Retrofit retrofitStats, retrofitCoder;
 
     private NetworkClient() {
-        Map<String, Object> queryMap = new HashMap<>();
-        queryMap.put("where", "1%3D1");
-        queryMap.put("outFields", "*");
-        queryMap.put("outSR", 4326);
-        queryMap.put("f", "json");
         retrofitStats = new Retrofit.Builder()
                 .baseUrl(BASE_URL_STATS)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-        OkHttpClient.Builder httpClient = new OkHttpClient.Builder();
-        httpClient.addInterceptor(chain -> {
-            Request original = chain.request();
-            Request request = original.newBuilder()
-                    .build();
-            return chain.proceed(request);
-        });
         retrofitCoder = new Retrofit.Builder()
                 .baseUrl(BASE_URL_API)
                 .addConverterFactory(GsonConverterFactory.create())

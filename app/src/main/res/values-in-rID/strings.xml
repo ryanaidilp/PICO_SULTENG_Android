@@ -41,7 +41,7 @@
     <string name="total_cured_national">Total Sembuh :</string>
     <string name="table_title">Tabel Kasus COVID19 per Kabupaten/Kota</string>
     <string name="important_number">Daftar Nomor Penting </string>
-    <string name="pho_central_sulawesi">Dinkes Sulteng</string>
+    <string name="pho_central_sulawesi">PSC</string>
     <string name="general_question">Pertanyaan Umum</string>
     <string name="pho_number">0811 404 119</string>
     <string name="helper_phone">*) Tekan kartu untuk menelpon</string>
@@ -55,4 +55,5 @@
     <string name="graph_death_label">Grafik Pasien Meninggal COVID19 Nasional</string>
     <string name="list_hospital_label">Daftar Rumah Sakit</string>
     <string name="direction">Petunjuk Arah</string>
+    <string name="data_source_placeholder">*) Sumber data : https://bnpb-inacovid19.hub.arcgis.com/</string>
 </resources>

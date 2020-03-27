@@ -44,7 +44,7 @@
     <string name="call_center" translatable="false">Call Center</string>
     <string name="emergency_number" translatable="false">Emergency Number</string>
     <string name="emergency_number_value" translatable="false">119</string>
-    <string name="pho_central_sulawesi">Public Health Office of Central sulawesi</string>
+    <string name="pho_central_sulawesi">PSC</string>
     <string name="general_question">General Questions</string>
     <string name="pho_number">0811 404 119</string>
     <string name="helper_phone">*) Press card to call</string>
@@ -58,6 +58,7 @@
     <string name="graph_death_label">National COVID-19 Death Patient Chart</string>
     <string name="list_hospital_label">List of Hospitals</string>
     <string name="direction">Directions</string>
+    <string name="data_source_placeholder">*) Data source : https://bnpb-inacovid19.hub.arcgis.com/</string>
 
     <array name="array_icon_menu">
         <item>hospital</item>

@@ -12,19 +12,23 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.banuacoders.covidcheck.R;
-import com.banuacoders.covidcheck.object.Hospital;
+import com.banuacoders.covidcheck.data.object.Hospital;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
 
 public class HospitalAdapter extends RecyclerView.Adapter<HospitalAdapter.HospitalViewHolder> {
-    private ArrayList<Hospital> listHospital;
+    private ArrayList<Hospital> listHospital = new ArrayList<>();
     private Context mContext;
 
-    public HospitalAdapter(ArrayList<Hospital> listHospital, Context mContext) {
+    public HospitalAdapter(Context mContext) {
         this.mContext = mContext;
+    }
+
+    public void setListHospital(ArrayList<Hospital> listHospital) {
         this.listHospital = listHospital;
+        notifyDataSetChanged();
     }
 
     @NonNull

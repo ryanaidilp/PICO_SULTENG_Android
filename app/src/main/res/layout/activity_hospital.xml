@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
-    tools:context=".ActivityHospital">
+    tools:context=".ui.activities.ActivityHospital">
 
     <LinearLayout
         android:id="@+id/container_header_main"
@@ -47,7 +47,7 @@
         android:textSize="12sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@id/app_creator"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_sync"
         app:layout_constraintStart_toEndOf="@id/logo_app"
         app:layout_constraintTop_toTopOf="@id/logo_app" />
 
@@ -59,7 +59,7 @@
         android:textColor="@android:color/white"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@id/logo_app"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/btn_sync"
         app:layout_constraintStart_toStartOf="@id/app_name_title"
         app:layout_constraintTop_toBottomOf="@id/app_name_title" />
     <!--  Header  -->
@@ -92,6 +92,20 @@
         app:layout_constraintStart_toEndOf="@id/logo_hospital"
         app:layout_constraintTop_toTopOf="@id/logo_hospital" />
 
+    <ImageView
+        android:id="@+id/btn_sync"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:clickable="true"
+        android:contentDescription="@string/logo_desc"
+        android:focusable="true"
+        android:src="@drawable/ic_sync_black_24dp"
+        app:layout_constraintBottom_toBottomOf="@id/app_creator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/app_name_title"
+        app:layout_constraintTop_toTopOf="@id/app_name_title" />
+
     <!--  Content  -->
     <TextView
         android:id="@+id/list_hospital_label"
@@ -102,6 +116,15 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/logo_app" />
+
+    <ProgressBar
+        android:id="@+id/progress_hospital"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/container_header_main" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_hospital"
