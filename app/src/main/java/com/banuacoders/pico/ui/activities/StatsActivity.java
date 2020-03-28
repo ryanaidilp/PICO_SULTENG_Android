@@ -162,6 +162,18 @@ public class StatsActivity extends AppCompatActivity {
         Date currDate = new Date();
         Calendar c = Calendar.getInstance();
         c.setTime(currDate);
+        currDate = c.getTime();
+        String currentDate = sdf.format(currDate);
+        return currentDate.equalsIgnoreCase(dataDate);
+    }
+
+    private boolean checkTomorrow(long curr) {
+        Date date = new Date(curr);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        String dataDate = sdf.format(date);
+        Date currDate = new Date();
+        Calendar c = Calendar.getInstance();
+        c.setTime(currDate);
         c.add(Calendar.DATE, 1);
         currDate = c.getTime();
         String currentDate = sdf.format(currDate);
@@ -223,13 +235,17 @@ public class StatsActivity extends AppCompatActivity {
                         totalCured
                 );
                 dataStatisticViewModel.insert(dataStatisticsCovid);
-                int idx = i + 1;
                 if (checkDate(features.getJSONObject(i).getJSONObject("attributes").getLong("Tanggal"))) {
-                    break;
-                }
-                if (idx < features.length()) {
-                    if (checkDate(features.getJSONObject(idx).getJSONObject("attributes").getLong("Tanggal")) && totalDeath == 0) {
+                    if (totalDeath == 0) {
                         break;
+                    } else {
+                        int death = checkNullFields(features.getJSONObject(i+1).getJSONObject("attributes").getString("Jumlah_Pasien_Meninggal"))
+                                ? features.getJSONObject(i+1).getJSONObject("attributes").getInt("Jumlah_Pasien_Meninggal")
+                                : 0;
+                        if (checkTomorrow(features.getJSONObject(i + 1).getJSONObject("attributes").getLong("Tanggal"))
+                                && death == 0) {
+                            break;
+                        }
                     }
                 }
             } catch (JSONException e) {
@@ -249,15 +265,6 @@ public class StatsActivity extends AppCompatActivity {
             int totalDeath = dataStatisticsCovid.getTotalDeadPatient();
             int cumulativeCase = dataStatisticsCovid.getCumulativeCase();
             int totalCured = dataStatisticsCovid.getTotalCured();
-            int idx = i + 1;
-            if (checkDate(dataStatisticsCovid.getDate())) {
-                break;
-            }
-            if (idx < covidList.size()) {
-                if (checkDate(covidList.get(idx).getDate()) && covidList.get(i).getTotalDeadPatient() == 0) {
-                    break;
-                }
-            }
             delta = cumulativeCase - (totalCured + totalDeath);
             cured = totalCured;
             death = totalDeath;
