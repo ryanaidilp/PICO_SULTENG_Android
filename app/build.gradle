@@ -44,17 +44,13 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.7.1'
     implementation 'com.evrencoskun.library:tableview:0.8.9'
     implementation "ru.tinkoff.scrollingpagerindicator:scrollingpagerindicator:1.0.6"
-    implementation 'com.onesignal:OneSignal:3.4.3'
+    implementation 'com.onesignal:OneSignal:3.6.3'
 
     //Lifecycle
     implementation 'android.arch.lifecycle:extensions:1.1.1'
     annotationProcessor 'android.arch.lifecycle:common-java8:1.1.1'
 
-    //Room
-//    implementation 'android.arch.persistence.room:runtime:1.1.1'
-//    annotationProcessor 'android.arch.persistence.room:compiler:1.1.1'
-
-    //Androidx
+    //AndroidxRoom
     implementation 'androidx.room:room-runtime:2.2.5'
     annotationProcessor 'androidx.room:room-compiler:2.2.5'
 
