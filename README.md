@@ -1,6 +1,6 @@
 # PICO SulTeng Android
 
-![PICO SulTeng](https://i.ibb.co/jRtxp9Y/picobar.png)
+![PICO SulTeng](http://i.ibb.co/jRtxp9Y/picobar.png)
 
 PICO SulTeng (Pusat Informasi COVID19 Sulawesi Tengah) merupakan aplikasi tracking dan pelaporan kasus COVID-19 khusus wilayah Provinsi Sulawesi Tengah.
 
@@ -15,8 +15,8 @@ Android Lolipop (5.0)
 
 
 ## **Repository**
-![project_screen](https://i.ibb.co/6WszgDp/screely-1585480662870.jpg)
-Aplikasi ini dibangun menggunakan desain MVVM. Beberapa dependensi yang diperlukan antara lain :
+![project_screen](http://i.ibb.co/6WszgDp/screely-1585480662870.jpg)
+Aplikasi ini dibangun menggunakan ***design pattern*** MVVM. Beberapa dependensi yang diperlukan antara lain :
 
 - Tambahkan ini di file **build.gradle** di module (**app**) :
 
