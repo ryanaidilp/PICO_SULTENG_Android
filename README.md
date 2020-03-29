@@ -2,7 +2,7 @@
 
 ![PICO SulTeng](http://i.ibb.co/jRtxp9Y/picobar.png)
 
-PICO SulTeng (Pusat Informasi COVID19 Sulawesi Tengah) merupakan aplikasi tracking dan pelaporan kasus COVID-19 khusus wilayah Provinsi Sulawesi Tengah.
+Pusat Informasi COVID-19 Sulawesi Tengah (PICO SulTeng) merupakan aplikasi berbasis android yang dikembangkan untuk mempermudah masyarakat Sulawesi Tengah dalam memperoleh informasi seputar perkembangan COVID-19 di Sulawesi Tengah. 
 
 #### Instalasi
 
