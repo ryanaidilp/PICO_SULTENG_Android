@@ -1,40 +1,40 @@
 <resources>
     <string name="app_name" translatable="false">PICO COVID-19 SulTeng</string>
-    <string name="header_title">COVID-19 Information Center of Central Sulawesi v.1.0.1</string>
+    <string name="header_title">COVID-19 Information Center v.1.0.3</string>
     <string name="logo_desc">Logo</string>
     <string name="positive">Positive</string>
-    <string name="person">person</string>
+    <string name="cases">cases</string>
     <string name="dead">Death</string>
     <string name="current_info">Current Information about COVID-19 in Central Sulawesi</string>
     <string name="negative">Negative</string>
 
     <string name="placeholder_desc">Click here to see the hospitals around you appointed by the government to handle COVID-19 patients.</string>
     <string name="placeholder_self_screening">Click here to do a self screening.</string>
-    <string name="placeholder_stats">Click here to see the statistical data dissemination COVID-19 in Indonesia.</string>
-    <string name="placeholder_maps">Click here to view a map of the spread of COVID-19 in Indonesia.</string>
-    <string name="placeholder_qna">Click here to provide criticism and suggestions for the developers.</string>
+    <string name="placeholder_stats">Click here to see the statistical data dissemination about COVID-19 in Indonesia.</string>
+    <string name="placeholder_maps">Click here to see a map of the spread of COVID-19 in Indonesia.</string>
+    <string name="placeholder_qna">Click here to give feedback to the developers.</string>
 
-    <string name="placeholder_data_source">*) Data source : DINKES and PUSDATINA COVID-19 Province Sulawesi Tengah</string>
+    <string name="placeholder_data_source">*) Data source : DINKES and PUSDATINA COVID-19 of Central Sulawesi</string>
 
     <string name="last_update">Latest Update :</string>
     <string name="creator">Made with ❤ BanuaCoders.com</string>
-    <string name="pdp_label">Patients in Supervision (PDP)</string>
-    <string name="odp_label">Person in Monitoring (ODP)</string>
+    <string name="pdp_label">Patient in Supervision (PDP)</string>
+    <string name="odp_label">Person in Observation (ODP)</string>
 
     <string name="hospital_corona">COVID-19 REFERRAL HOSPITAL</string>
     <string name="self_screening_corona">SELF SCREENING COVID-19</string>
     <string name="statistics_corona">COVID-19 STATISTICS </string>
     <string name="maps_corona">COVID-19 SPREAD MAP</string>
-    <string name="qna">Criticism and Suggestions</string>
+    <string name="qna">Give us Feedback</string>
 
-    <string name="finished_monitoring">Finished Monitoring</string>
+    <string name="finished_odp_label">Completed Observation</string>
     <string name="total_odp">Total ODP</string>
     <string name="zero_percent">(0%)</string>
     <string name="zero_value">0</string>
-    <string name="in_monitoring">In Monitoring</string>
+    <string name="under_observation">Under Observation</string>
     <string name="total_pdp">Total PDP</string>
-    <string name="finished_control">Finished Control</string>
-    <string name="in_control">In Control</string>
+    <string name="finished_supervision">Completed Supervision</string>
+    <string name="under_supervision">Under Supervision</string>
     <string name="national_data_recap">National Data Recapitulation</string>
     <string name="total_death_national">Total Death :</string>
     <string name="total_positive_national">Total Positive :</string>
@@ -42,14 +42,14 @@
     <string name="table_title">Cases of COVID-19 based on City</string>
     <string name="important_number">Important Number:</string>
     <string name="call_center" translatable="false">Call Center</string>
-    <string name="emergency_number" translatable="false">Emergency Number</string>
+    <string name="emergency_number">Emergency Number</string>
     <string name="emergency_number_value" translatable="false">119</string>
     <string name="pho_central_sulawesi">PSC</string>
     <string name="general_question">General Questions</string>
     <string name="pho_number">0811 404 119</string>
     <string name="helper_phone">*) Press card to call</string>
-    <string name="hospital_desc">Here is a list of COVID-19 referral hospitals in Central Sulawesi Province. Please tap on the telephone number to call or tap on the email to send an email.</string>
-    <string name="comparison_death_and_cured_label">Comparison of Patients Cured and Death by COVID-19</string>
+    <string name="hospital_desc">Here is a list of COVID-19 referral hospitals in Central Sulawesi. Please tap on the telephone number to call or tap on the email to send an email.</string>
+    <string name="comparison_death_and_cured_label">Comparison of Cured and Death Patient caused by COVID-19</string>
     <string name="total_cured">Total Cured</string>
     <string name="graph_cured_label">National COVID-19 Cured Patient Chart</string>
     <string name="total_positive">Total Positive</string>

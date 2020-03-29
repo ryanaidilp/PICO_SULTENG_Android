@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="header_title">Pusat Informasi COVID-19 SulTeng v1.0.1</string>
+    <string name="header_title">Pusat Informasi COVID-19 SulTeng v1.0.3</string>
     <string name="logo_desc">Logo</string>
     <string name="positive">Positif</string>
-    <string name="person">orang</string>
+    <string name="cases">orang</string>
     <string name="dead">Meninggal</string>
     <string name="current_info">Informasi Terkini COVID-19 di Sulawesi Tengah</string>
     <string name="negative">Negatif</string>
 
     <string name="placeholder_desc">Tekan disini untuk melihat rumah sakit disekitar anda yang ditunjuk oleh pemerintah untuk menangani pasien COVID-19.</string>
-    <string name="placeholder_self_screening">Tekan disini untuk melakukan self-screening COVID-19.</string>
+    <string name="placeholder_self_screening">Tekan disini untuk melakukan pemeriksaan mandiri COVID-19.</string>
     <string name="placeholder_stats">Tekan disini untuk melihat data statistik penyebaran COVID-19 di Indonesia.</string>
     <string name="placeholder_maps">Tekan disini untuk melihat peta penyebaran COVID-19 di Indonesia.</string>
     <string name="placeholder_qna">Tekan disini untuk memberikan kritik dan saran kepada pengembang aplikasi.</string>
@@ -22,25 +22,26 @@
     <string name="placeholder_data_source">*) Sumber Data: DINKES dan PUSDATINA COVID-19 Provinsi Sulawesi Tengah</string>
 
     <string name="hospital_corona">RUMAH SAKIT RUJUKAN COVID-19</string>
-    <string name="self_screening_corona">SELF SCREENING COVID-19</string>
+    <string name="self_screening_corona">PEMERIKSAAN MANDIRI COVID-19</string>
     <string name="statistics_corona">STATISTIK COVID-19</string>
     <string name="maps_corona">PETA PENYEBARAN COVID-19</string>
     <string name="qna">Kritik dan Saran</string>
 
-    <string name="finished_monitoring">Selesai Pemantauan</string>
+    <string name="finished_odp_label">Selesai Pemantauan</string>
     <string name="total_odp">Total ODP</string>
     <string name="zero_percent">(0%)</string>
     <string name="zero_value">0</string>
-    <string name="in_monitoring">Dalam Pemantauan</string>
+    <string name="under_observation">Dalam Pemantauan</string>
     <string name="total_pdp">Total PDP</string>
-    <string name="finished_control">Selesai Pengawasan</string>
-    <string name="in_control">Dalam Pengawasan</string>
+    <string name="finished_supervision">Selesai Pengawasan</string>
+    <string name="under_supervision">Dalam Pengawasan</string>
     <string name="national_data_recap">Rekapitulasi Data Nasional</string>
     <string name="total_death_national">Total Kematian :</string>
     <string name="total_positive_national">Total Positif :</string>
     <string name="total_cured_national">Total Sembuh :</string>
     <string name="table_title">Tabel Kasus COVID19 per Kabupaten/Kota</string>
     <string name="important_number">Daftar Nomor Penting </string>
+    <string name="emergency_number">Nomor Darurat</string>
     <string name="pho_central_sulawesi">PSC</string>
     <string name="general_question">Pertanyaan Umum</string>
     <string name="pho_number">0811 404 119</string>

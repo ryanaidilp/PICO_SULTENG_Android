@@ -234,19 +234,18 @@ public class StatsActivity extends AppCompatActivity {
                         features.getJSONObject(i).getJSONObject("attributes").getLong("Tanggal"),
                         totalCured
                 );
-                dataStatisticViewModel.insert(dataStatisticsCovid);
-                if (checkDate(features.getJSONObject(i).getJSONObject("attributes").getLong("Tanggal"))) {
-                    if (totalDeath == 0) {
-                        break;
-                    } else {
-                        int death = checkNullFields(features.getJSONObject(i+1).getJSONObject("attributes").getString("Jumlah_Pasien_Meninggal"))
-                                ? features.getJSONObject(i+1).getJSONObject("attributes").getInt("Jumlah_Pasien_Meninggal")
-                                : 0;
-                        if (checkTomorrow(features.getJSONObject(i + 1).getJSONObject("attributes").getLong("Tanggal"))
-                                && death == 0) {
-                            break;
-                        }
+
+                int death = checkNullFields(features.getJSONObject(i+1).getJSONObject("attributes").getString("Jumlah_Pasien_Meninggal"))
+                        ? features.getJSONObject(i+1).getJSONObject("attributes").getInt("Jumlah_Pasien_Meninggal")
+                        : 0;
+                if (checkDate(features.getJSONObject(i).getJSONObject("attributes").getLong("Tanggal"))
+                        && death == 0) {
+                    if (totalDeath != 0) {
+                        dataStatisticViewModel.insert(dataStatisticsCovid);
                     }
+                    break;
+                } else {
+                   dataStatisticViewModel.insert(dataStatisticsCovid);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -268,7 +267,7 @@ public class StatsActivity extends AppCompatActivity {
             delta = cumulativeCase - (totalCured + totalDeath);
             cured = totalCured;
             death = totalDeath;
-            String person = " " + getResources().getString(R.string.person);
+            String person = " " + getResources().getString(R.string.cases);
             tvTotalPositive.setText(cumulativeCase + person);
             tvTotalDeath.setText(totalDeath + person);
             tvTotalCured.setText(totalCured + person);
