@@ -167,19 +167,6 @@ public class StatsActivity extends AppCompatActivity {
         return currentDate.equalsIgnoreCase(dataDate);
     }
 
-    private boolean checkTomorrow(long curr) {
-        Date date = new Date(curr);
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        String dataDate = sdf.format(date);
-        Date currDate = new Date();
-        Calendar c = Calendar.getInstance();
-        c.setTime(currDate);
-        c.add(Calendar.DATE, 1);
-        currDate = c.getTime();
-        String currentDate = sdf.format(currDate);
-        return currentDate.equalsIgnoreCase(dataDate);
-    }
-
     void rotateSync() {
         int mCurrRotation = 0;
         float fromRotation = mCurrRotation;
