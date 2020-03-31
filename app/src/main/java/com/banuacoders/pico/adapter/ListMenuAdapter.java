@@ -50,7 +50,7 @@ public class ListMenuAdapter extends RecyclerView.Adapter<ListMenuAdapter.MenuVi
                     intent = new Intent(view.getContext(), StatsActivity.class);
                 } else if (titleCheck(position, "RUMAH") || titleCheck(position, "HOSPITAL")) {
                     intent = new Intent(view.getContext(), ActivityHospital.class);
-                } else if (titleCheck(position, "SCREENING")) {
+                } else if (titleCheck(position, "SCREENING") || titleCheck(position, "MANDIRI")) {
                     intent = new Intent(view.getContext(), DetexiActivity.class);
                 } else if (titleCheck(position, "PETA") || titleCheck(position, "MAP")) {
                     intent = new Intent(view.getContext(), MapActivity.class);

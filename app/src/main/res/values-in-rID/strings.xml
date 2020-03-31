@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="header_title">Pusat Informasi COVID-19 SulTeng v1.0.3</string>
+    <string name="header_title">Pusat Informasi COVID-19 SulTeng v1.1.0</string>
     <string name="logo_desc">Logo</string>
     <string name="positive">Positif</string>
     <string name="cases">orang</string>

@@ -16,7 +16,7 @@ Android Lolipop (5.0)
 
 ## **Repository**
 ![project_screen](http://i.ibb.co/6WszgDp/screely-1585480662870.jpg)
-Aplikasi ini dibangun menggunakan ***design pattern*** MVVM. Beberapa dependensi yang diperlukan antara lain :
+Aplikasi ini dibangun menggunakan ***design pattern*** MVVM. Beberapa library yang diperlukan antara lain :
 
 - Tambahkan ini di file **build.gradle** di module (**app**) :
 
