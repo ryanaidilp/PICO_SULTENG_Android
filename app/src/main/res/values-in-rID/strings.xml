@@ -9,7 +9,7 @@
     <string name="negative">Negatif</string>
 
     <string name="placeholder_desc">Tekan disini untuk melihat rumah sakit disekitar anda yang ditunjuk oleh pemerintah untuk menangani pasien COVID-19.</string>
-    <string name="placeholder_self_screening">Tekan disini untuk melakukan pemeriksaan mandiri COVID-19.</string>
+    <string name="placeholder_self_screening">Tekan disini untuk melakukan pemeriksaan mandiri COVID-19 dan mencari tahu apa itu COVID-19.</string>
     <string name="placeholder_stats">Tekan disini untuk melihat data statistik penyebaran COVID-19 di Indonesia.</string>
     <string name="placeholder_maps">Tekan disini untuk melihat peta penyebaran COVID-19 di Indonesia.</string>
     <string name="placeholder_qna">Tekan disini untuk memberikan kritik dan saran kepada pengembang aplikasi.</string>
