@@ -829,7 +829,7 @@
                 <TextView
                     android:id="@+id/label_maps"
                     style="@style/MainLabel"
-                    android:text="Peta Penyebaran"
+                    android:text="@string/spread_maps"
                     app:layout_constraintBottom_toTopOf="@id/card_container_maps"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"

@@ -44,7 +44,7 @@
     <string name="call_center" translatable="false">Call Center</string>
     <string name="emergency_number">Emergency Number</string>
     <string name="emergency_number_value" translatable="false">119</string>
-    <string name="pho_central_sulawesi">PSC</string>
+    <string name="pho_central_sulawesi">Dinkes Sulteng</string>
     <string name="general_question">General Questions</string>
     <string name="pho_number">0811 404 119</string>
     <string name="helper_phone">*) Press card to call</string>
@@ -61,6 +61,7 @@
     <string name="data_source_placeholder">*) Data source : https://bnpb-inacovid19.hub.arcgis.com/</string>
     <string name="odp">ODP</string>
     <string name="pdp">PDP</string>
+    <string name="spread_maps">Spread Map</string>
 
     <array name="array_icon_menu">
         <item>hospital</item>
