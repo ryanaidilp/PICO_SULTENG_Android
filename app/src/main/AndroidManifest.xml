@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:fullBackupContent="true"
         android:theme="@style/AppTheme">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="Your Api Key" />
         <activity android:name="com.banuacoders.pico.ui.activities.MapActivity" />
         <activity android:name="com.banuacoders.pico.ui.activities.ActivityHospital" />
         <activity android:name="com.banuacoders.pico.ui.activities.DetexiActivity" />

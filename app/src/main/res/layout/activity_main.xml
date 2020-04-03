@@ -821,11 +821,42 @@
                     android:layout_marginEnd="8dp"
                     android:layout_marginBottom="8dp"
                     android:text="@string/placeholder_data_source"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/label_maps"
                     app:layout_constraintEnd_toEndOf="@id/data_table"
                     app:layout_constraintStart_toStartOf="@id/data_table"
                     app:layout_constraintTop_toBottomOf="@id/data_table" />
 
+                <TextView
+                    android:id="@+id/label_maps"
+                    style="@style/MainLabel"
+                    android:text="Peta Penyebaran"
+                    app:layout_constraintBottom_toTopOf="@id/card_container_maps"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/helper_data_table" />
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_container_maps"
+                    android:layout_width="match_parent"
+                    android:layout_height="440dp"
+                    android:layout_margin="16dp"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp"
+                    app:contentPadding="6dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_maps">
+
+                    <fragment
+                        android:id="@+id/detail_google_maps"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="parent" />
+
+                </com.google.android.material.card.MaterialCardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>

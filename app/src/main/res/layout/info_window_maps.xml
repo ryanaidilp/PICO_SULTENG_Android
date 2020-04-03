@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/district_name"
+        style="@style/MainLabel"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@id/label_positive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@tools:sample/cities" />
+
+    <TextView
+        android:id="@+id/label_positive"
+        style="@style/TextAppearanceStyle"
+        android:layout_width="wrap_content"
+        android:layout_margin="4dp"
+        android:text="@string/positive"
+        android:textColor="#EF5350"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@id/label_negative"
+        app:layout_constraintEnd_toStartOf="@id/value_postive"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/district_name" />
+
+    <TextView
+        android:id="@+id/value_postive"
+        style="@style/TextAppearanceStyle"
+        android:layout_width="wrap_content"
+        android:text="164 orang"
+        android:textColor="#EF5350"
+        app:layout_constraintBottom_toBottomOf="@id/label_positive"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_positive"
+        app:layout_constraintTop_toTopOf="@id/label_positive" />
+
+    <TextView
+        android:id="@+id/label_negative"
+        style="@style/TextAppearanceStyle"
+        android:layout_width="wrap_content"
+        android:layout_margin="4dp"
+        android:text="@string/negative"
+        android:textColor="#00897B"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@id/label_death"
+        app:layout_constraintEnd_toStartOf="@id/value_negative"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_positive" />
+
+    <TextView
+        android:id="@+id/value_negative"
+        style="@style/TextAppearanceStyle"
+        android:layout_width="wrap_content"
+        android:text="123 orang"
+        android:textColor="#00897B"
+        app:layout_constraintBottom_toBottomOf="@id/label_negative"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_negative"
+        app:layout_constraintTop_toTopOf="@id/label_negative" />
+
+    <TextView
+        android:id="@+id/label_death"
+        style="@style/TextAppearanceStyle"
+        android:layout_width="wrap_content"
+        android:layout_margin="4dp"
+        android:text="@string/dead"
+        android:textColor="#FBC02D"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@id/label_ODP"
+        app:layout_constraintEnd_toStartOf="@id/value_death"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_negative" />
+
+    <TextView
+        android:id="@+id/value_death"
+        style="@style/TextAppearanceStyle"
+        android:layout_width="wrap_content"
+        android:text="10 orang"
+        android:textColor="#FBC02D"
+        app:layout_constraintBottom_toBottomOf="@id/label_death"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_death"
+        app:layout_constraintTop_toTopOf="@id/label_death" />
+
+    <TextView
+        android:id="@+id/label_ODP"
+        style="@style/TextAppearanceStyle"
+        android:text="@string/odp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toTopOf="@id/value_ODP"
+        app:layout_constraintEnd_toStartOf="@id/label_PDP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_death" />
+
+    <TextView
+        android:id="@+id/label_PDP"
+        style="@style/TextAppearanceStyle"
+        android:text="@string/pdp"
+        android:textStyle="normal"
+        app:layout_constraintBottom_toBottomOf="@id/label_ODP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/label_ODP"
+        app:layout_constraintTop_toTopOf="@id/label_ODP" />
+
+    <TextView
+        android:id="@+id/value_ODP"
+        style="@style/TextAppearanceStyle"
+        android:text="21"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/value_PDP"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/label_ODP" />
+
+    <TextView
+        android:id="@+id/value_PDP"
+        style="@style/TextAppearanceStyle"
+        android:text="12"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/value_ODP"
+        app:layout_constraintTop_toBottomOf="@id/label_PDP" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,4 +3,6 @@
     <string name="placeholder_data_source">*) Data diambil dari Dinas Kesehatan Provinsi Sulawesi Tengah</string>
     <string name="important_number">Important Number:</string>
     <string name="emergency_number">Emergency Number</string>
+    <string name="odp">ODP</string>
+    <string name="pdp">PDP</string>
 </resources>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="header_title">Pusat Informasi COVID-19 SulTeng v1.1.0</string>
+    <string name="header_title">Pusat Informasi COVID-19 SulTeng v2.0.0</string>
     <string name="logo_desc">Logo</string>
     <string name="positive">Positif</string>
     <string name="cases">orang</string>
@@ -57,4 +57,6 @@
     <string name="list_hospital_label">Daftar Rumah Sakit</string>
     <string name="direction">Petunjuk Arah</string>
     <string name="data_source_placeholder">*) Sumber data : https://bnpb-inacovid19.hub.arcgis.com/</string>
+    <string name="odp">ODP</string>
+    <string name="pdp">PDP</string>
 </resources>
