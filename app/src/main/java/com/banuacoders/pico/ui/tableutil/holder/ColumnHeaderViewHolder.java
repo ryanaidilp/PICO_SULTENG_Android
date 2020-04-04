@@ -31,19 +31,27 @@ public class ColumnHeaderViewHolder extends AbstractViewHolder {
         columnHeaderTextView.requestLayout();
     }
 
-    public static final int[] COLUMN_TEXT_ALIGNS = {
+    static final int[] COLUMN_TEXT_ALIGNS = {
             //city name
             Gravity.START,
             //pdp
             Gravity.CENTER,
+            //Finish PDP
+            Gravity.CENTER,
+            //In PDP
+            Gravity.CENTER,
             //odp
+            Gravity.CENTER,
+            //Finish ODP
+            Gravity.CENTER,
+            //In ODP
             Gravity.CENTER,
             //positive
             Gravity.CENTER,
             //negative
             Gravity.CENTER,
             //death
-            Gravity.CENTER
+            Gravity.CENTER,
     };
 
 }

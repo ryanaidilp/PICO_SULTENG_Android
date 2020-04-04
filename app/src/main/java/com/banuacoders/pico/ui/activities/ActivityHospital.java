@@ -7,6 +7,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.ViewModelProviders;
@@ -34,9 +35,9 @@ import retrofit2.Response;
 public class ActivityHospital extends AppCompatActivity implements LifecycleOwner {
 
     private HospitalAdapter hospitalAdapter;
-    HospitalViewModel hospitalViewModel;
-    ImageView btnSync;
-    ProgressBar progressBar;
+    private HospitalViewModel hospitalViewModel;
+    private ImageView btnSync;
+    private ProgressBar progressBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -75,7 +76,7 @@ public class ActivityHospital extends AppCompatActivity implements LifecycleOwne
         progressBar.setVisibility(View.VISIBLE);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            public void onResponse(@NonNull Call<ResponseBody> call,@NonNull Response<ResponseBody> response) {
                 try {
                     String responseBody = response.body().string();
                     JSONObject objectResponse = new JSONObject(responseBody);
@@ -107,7 +108,7 @@ public class ActivityHospital extends AppCompatActivity implements LifecycleOwne
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
+            public void onFailure(@NonNull Call<ResponseBody> call,@NonNull Throwable t) {
                 progressBar.setVisibility(View.GONE);
                 Toast.makeText(ActivityHospital.this, "Gagal mendapatkan data! : "
                         + t.getMessage(), Toast.LENGTH_SHORT).show();

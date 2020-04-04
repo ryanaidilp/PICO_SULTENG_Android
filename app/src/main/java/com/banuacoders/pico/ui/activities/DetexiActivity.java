@@ -13,8 +13,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.banuacoders.pico.R;
 
 public class DetexiActivity extends AppCompatActivity {
-    WebView webView;
-    String curUrl = "https://corona.detexi.id/";
+    private WebView webView;
+    private String curUrl = "https://corona.detexi.id/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

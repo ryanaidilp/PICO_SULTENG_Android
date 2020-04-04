@@ -29,7 +29,7 @@ public class MyTableViewAdapter extends AbstractTableAdapter<ColumnHeaderModel, 
 
     public MyTableViewAdapter(Context context) {
         this.mContext = context;
-        this.myTableViewModel = new MyTableViewModel();
+        this.myTableViewModel = new MyTableViewModel(context);
     }
 
     @Override

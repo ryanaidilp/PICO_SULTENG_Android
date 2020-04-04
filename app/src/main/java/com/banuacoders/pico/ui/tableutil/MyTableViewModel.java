@@ -1,7 +1,10 @@
 package com.banuacoders.pico.ui.tableutil;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.view.Gravity;
 
+import com.banuacoders.pico.R;
 import com.banuacoders.pico.data.object.District;
 import com.banuacoders.pico.ui.tableutil.model.CellModel;
 import com.banuacoders.pico.ui.tableutil.model.ColumnHeaderModel;
@@ -14,6 +17,10 @@ public class MyTableViewModel {
     private List<ColumnHeaderModel> mColumnHeaderModelList;
     private List<RowHeaderModel> mRowHeaderModelList;
     private List<List<CellModel>> cellModelList;
+    private Resources res;
+    public MyTableViewModel(Context context) {
+        res = context.getResources();
+    }
 
     public int getColumnTextAlign(int column) {
         if (column == 1) {
@@ -26,12 +33,16 @@ public class MyTableViewModel {
         List<ColumnHeaderModel> list = new ArrayList<>();
 
         // Create Column Headers
-        list.add(new ColumnHeaderModel("Kabupaten/Kota"));
-        list.add(new ColumnHeaderModel("ODP"));
-        list.add(new ColumnHeaderModel("PDP"));
-        list.add(new ColumnHeaderModel("Positif"));
-        list.add(new ColumnHeaderModel("Negatif"));
-        list.add(new ColumnHeaderModel("Meninggal"));
+        list.add(new ColumnHeaderModel(res.getString(R.string.district)));
+        list.add(new ColumnHeaderModel(res.getString(R.string.odp)));
+        list.add(new ColumnHeaderModel(res.getString(R.string.completed_odp)));
+        list.add(new ColumnHeaderModel(res.getString(R.string.in_odp)));
+        list.add(new ColumnHeaderModel(res.getString(R.string.pdp)));
+        list.add(new ColumnHeaderModel(res.getString(R.string.completed_pdp)));
+        list.add(new ColumnHeaderModel(res.getString(R.string.in_pdp)));
+        list.add(new ColumnHeaderModel(res.getString(R.string.positive)));
+        list.add(new ColumnHeaderModel(res.getString(R.string.negative)));
+        list.add(new ColumnHeaderModel(res.getString(R.string.dead)));
 
         return list;
     }
@@ -43,10 +54,14 @@ public class MyTableViewModel {
             List<CellModel> list = new ArrayList<>();
             list.add(new CellModel("1-" + i, district.getName()));
             list.add(new CellModel("2-" + i, district.getODP()));
-            list.add(new CellModel("3-" + i, district.getPDP()));
-            list.add(new CellModel("4-" + i, district.getPositive()));
-            list.add(new CellModel("5-" + i, district.getNegative()));
-            list.add(new CellModel("6-" + i, district.getDeath()));
+            list.add(new CellModel("3-" + i, district.getFinishedODP()));
+            list.add(new CellModel("4-" + i, district.getInODP()));
+            list.add(new CellModel("5-" + i, district.getPDP()));
+            list.add(new CellModel("6-" + i, district.getFinishedPDP()));
+            list.add(new CellModel("7-" + i, district.getInPDP()));
+            list.add(new CellModel("8-" + i, district.getPositive()));
+            list.add(new CellModel("9-" + i, district.getNegative()));
+            list.add(new CellModel("10-" + i, district.getDeath()));
             lists.add(list);
         }
         return lists;

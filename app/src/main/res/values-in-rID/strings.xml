@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="header_title">Pusat Informasi COVID-19 SulTeng v2.0.0</string>
+    <string name="header_title">Pusat Informasi COVID-19 SulTeng v2.0.1</string>
     <string name="logo_desc">Logo</string>
     <string name="positive">Positif</string>
     <string name="cases">orang</string>
     <string name="dead">Meninggal</string>
     <string name="current_info">Informasi Terkini COVID-19 di Sulawesi Tengah</string>
     <string name="negative">Negatif</string>
+    <string name="cured">Sembuh</string>
+    <string name="under_treatment">Dirawat</string>
+    <string name="comparison_death_helper">*) Perbandingan Pasien Sembuh dan Meninggal</string>
+    <string name="data_unavailable">Data tidak tersedia!</string>
+    <string name="day">Hari ke-</string>
+    <string name="data_stats_helper">*) Trend pasien %1$s COVID19 per hari. Data dari BNPB Indonesia.</string>
+    <string name="failed_to_get_data">Gagal mendapatkan data!</string>
 
     <string name="placeholder_desc">Tekan disini untuk melihat rumah sakit disekitar anda yang ditunjuk oleh pemerintah untuk menangani pasien COVID-19.</string>
     <string name="placeholder_self_screening">Tekan disini untuk melakukan pemeriksaan mandiri COVID-19 dan mencari tahu apa itu COVID-19.</string>
@@ -60,4 +67,9 @@
     <string name="odp">ODP</string>
     <string name="pdp">PDP</string>
     <string name="spread_maps">Peta Penyebaran</string>
+    <string name="district">Kabupaten/Kota</string>
+    <string name="completed_odp">Selesai ODP</string>
+    <string name="in_odp">Sisa ODP</string>
+    <string name="completed_pdp">Selesai PDP</string>
+    <string name="in_pdp">Sisa PDP</string>
 </resources>

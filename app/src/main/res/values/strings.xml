@@ -1,15 +1,22 @@
 <resources>
     <string name="app_name" translatable="false">PICO COVID-19 SulTeng</string>
-    <string name="header_title">COVID-19 Information Center v.2.0.0</string>
+    <string name="header_title">COVID-19 Information Center v.2.0.1</string>
     <string name="logo_desc">Logo</string>
     <string name="positive">Positive</string>
     <string name="cases">cases</string>
     <string name="dead">Death</string>
     <string name="current_info">Current Information about COVID-19 in Central Sulawesi</string>
     <string name="negative">Negative</string>
+    <string name="cured">Cured</string>
+    <string name="under_treatment">Under Treatment</string>
+    <string name="comparison_death_helper">*) Comparison of Death and Cured patient.</string>
+    <string name="data_unavailable">Data unavailable!</string>
+    <string name="day">Day-</string>
+    <string name="data_stats_helper">*) Trend COVID19 %1$s patient daily. Data from BNPB Indonesia.</string>
+    <string name="failed_to_get_data">Failed to fetch data!</string>
 
     <string name="placeholder_desc">Click here to see the hospitals around you appointed by the government to handle COVID-19 patients.</string>
-    <string name="placeholder_self_screening">Click here to do a self screening.</string>
+    <string name="placeholder_self_screening">Click here to do a self screening and getting more information about COVID-19.</string>
     <string name="placeholder_stats">Click here to see the statistical data dissemination about COVID-19 in Indonesia.</string>
     <string name="placeholder_maps">Click here to see a map of the spread of COVID-19 in Indonesia.</string>
     <string name="placeholder_qna">Click here to give feedback to the developers.</string>
@@ -62,6 +69,13 @@
     <string name="odp">ODP</string>
     <string name="pdp">PDP</string>
     <string name="spread_maps">Spread Map</string>
+    <string name="district">District/City</string>
+    <string name="completed_odp">Completed ODP</string>
+    <string name="in_odp">In ODP</string>
+    <string name="completed_pdp">Completed PDP</string>
+    <string name="in_pdp">In PDP</string>
+    <string name="API_KEY" translatable="false">Put Your Google API Key Here</string>
+
 
     <array name="array_icon_menu">
         <item>hospital</item>

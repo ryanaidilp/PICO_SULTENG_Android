@@ -1,5 +1,6 @@
 package com.banuacoders.pico.ui.activities;
 
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,6 +11,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -42,6 +44,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 
 import okhttp3.ResponseBody;
@@ -51,18 +54,20 @@ import retrofit2.Response;
 
 public class StatsActivity extends AppCompatActivity {
 
-    DataStatisticViewModel dataStatisticViewModel;
-    Map<String, Object> queryMap = new HashMap<>();
+    private DataStatisticViewModel dataStatisticViewModel;
+    private Map<String, Object> queryMap = new HashMap<>();
     private LineChart lineChartDeath, lineChartPositive, lineChartCured;
     private PieChart pieChartCorona;
     private ProgressBar progressBar;
     private ImageView btnSync;
-    private TextView tvTotalDeath, tvTotalPositive, tvTotalCured;
+    private TextView tvTotalDeath, tvTotalPositive, tvTotalCured, tvDate;
+    private Resources res;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stats);
+        res = getApplicationContext().getResources();
         dataStatisticViewModel = ViewModelProviders.of(this)
                 .get(DataStatisticViewModel.class);
         checkComponent();
@@ -94,6 +99,7 @@ public class StatsActivity extends AppCompatActivity {
         tvTotalCured = findViewById(R.id.value_total_cured);
         tvTotalDeath = findViewById(R.id.value_total_death);
         tvTotalPositive = findViewById(R.id.value_total_positive);
+        tvDate = findViewById(R.id.date);
     }
 
     private void fetchDataStatistics() {
@@ -108,7 +114,7 @@ public class StatsActivity extends AppCompatActivity {
         progressBar.setVisibility(View.VISIBLE);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            public void onResponse(@NonNull Call<ResponseBody> call,@NonNull Response<ResponseBody> response) {
                 try {
                     String responseBody = response.body().string();
                     JSONObject objectResponse = new JSONObject(responseBody);
@@ -122,15 +128,18 @@ public class StatsActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
+            public void onFailure(@NonNull Call<ResponseBody> call,@NonNull Throwable t) {
                 progressBar.setVisibility(View.GONE);
-                Toast.makeText(StatsActivity.this, "Gagal Mendapatkan Data!", Toast.LENGTH_LONG).show();
+                Toast.makeText(StatsActivity.this, "", Toast.LENGTH_LONG).show();
             }
         });
     }
 
     private void setLineDataDecoration(LineChart lineChart, String text, int colorCode, LineData lineData) {
-        lineChart.setNoDataText("Data tidak tersedia!");
+        String dataLabel = res.getString(R.string.data_unavailable);
+        String dayLabel = res.getString(R.string.day);
+        String description = res.getString(R.string.data_stats_helper, text);
+        lineChart.setNoDataText(dataLabel);
         lineChart.setNoDataTextColor(getResources().getColor(colorCode));
         lineChart.setData(lineData);
         lineChart.getAxisRight().setEnabled(false);
@@ -139,11 +148,11 @@ public class StatsActivity extends AppCompatActivity {
         lineChart.getXAxis().setValueFormatter(new ValueFormatter() {
             @Override
             public String getFormattedValue(float value) {
-                return "Hari ke-" + (int) value;
+                return dayLabel + (int) value;
             }
 
         });
-        lineChart.getDescription().setText("*) Trend pasien " + text + " COVID19 per hari. Data dari BNPB Indonesia.");
+        lineChart.getDescription().setText(description);
         lineChart.invalidate();
     }
 
@@ -157,7 +166,7 @@ public class StatsActivity extends AppCompatActivity {
 
     private boolean checkDate(long curr) {
         Date date = new Date(curr);
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
         String dataDate = sdf.format(date);
         Date currDate = new Date();
         Calendar c = Calendar.getInstance();
@@ -222,8 +231,8 @@ public class StatsActivity extends AppCompatActivity {
                         totalCured
                 );
 
-                int death = checkNullFields(features.getJSONObject(i+1).getJSONObject("attributes").getString("Jumlah_Pasien_Meninggal"))
-                        ? features.getJSONObject(i+1).getJSONObject("attributes").getInt("Jumlah_Pasien_Meninggal")
+                int death = checkNullFields(features.getJSONObject(i + 1).getJSONObject("attributes").getString("Jumlah_Pasien_Meninggal"))
+                        ? features.getJSONObject(i + 1).getJSONObject("attributes").getInt("Jumlah_Pasien_Meninggal")
                         : 0;
                 if (checkDate(features.getJSONObject(i).getJSONObject("attributes").getLong("Tanggal"))
                         && death == 0) {
@@ -232,7 +241,7 @@ public class StatsActivity extends AppCompatActivity {
                     }
                     break;
                 } else {
-                   dataStatisticViewModel.insert(dataStatisticsCovid);
+                    dataStatisticViewModel.insert(dataStatisticsCovid);
                 }
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -251,24 +260,33 @@ public class StatsActivity extends AppCompatActivity {
             int totalDeath = dataStatisticsCovid.getTotalDeadPatient();
             int cumulativeCase = dataStatisticsCovid.getCumulativeCase();
             int totalCured = dataStatisticsCovid.getTotalCured();
+            Date date = new Date(dataStatisticsCovid.getDate());
+            SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
+            String dataDate = sdf.format(date);
             delta = cumulativeCase - (totalCured + totalDeath);
             cured = totalCured;
             death = totalDeath;
-            String person = " " + getResources().getString(R.string.cases);
+            String person = " " + res.getString(R.string.cases);
             tvTotalPositive.setText(cumulativeCase + person);
             tvTotalDeath.setText(totalDeath + person);
             tvTotalCured.setText(totalCured + person);
+            tvDate.setText(dataDate);
             dataDeath.add(new Entry((i + 1), totalDeath));
             dataPositive.add(new Entry((i + 1), cumulativeCase));
             dataCured.add(new Entry((i + 1), totalCured));
         }
-        pieDeltaPos.add(new PieEntry(cured, "Sembuh"));
-        pieDeltaPos.add(new PieEntry(delta, "Dirawat"));
-        pieDeltaPos.add(new PieEntry(death, "Meninggal"));
+        String deathLabel = res.getString(R.string.dead);
+        String curedLabel = res.getString(R.string.cured);
+        String treatmentLabel = res.getString(R.string.under_treatment);
+        String positiveLabel = res.getString(R.string.positive);
 
-        LineDataSet dataSetDeath = new LineDataSet(dataDeath, "Meninggal");
-        LineDataSet dataSetPositive = new LineDataSet(dataPositive, "Positif");
-        LineDataSet dataSetCured = new LineDataSet(dataCured, "Sembuh");
+        pieDeltaPos.add(new PieEntry(cured, curedLabel));
+        pieDeltaPos.add(new PieEntry(delta, treatmentLabel));
+        pieDeltaPos.add(new PieEntry(death, deathLabel));
+
+        LineDataSet dataSetDeath = new LineDataSet(dataDeath, deathLabel);
+        LineDataSet dataSetPositive = new LineDataSet(dataPositive, positiveLabel);
+        LineDataSet dataSetCured = new LineDataSet(dataCured, curedLabel);
         dataSetDeath.setColor(getResources().getColor(R.color.colorDeath));
         dataSetDeath.setCircleColor(Color.parseColor("#b40072"));
         dataSetDeath.setAxisDependency(YAxis.AxisDependency.LEFT);
@@ -281,9 +299,9 @@ public class StatsActivity extends AppCompatActivity {
         LineData lineDataDeath = new LineData(dataSetDeath);
         LineData lineDataPositive = new LineData(dataSetPositive);
         LineData lineDataCured = new LineData(dataSetCured);
-        setLineDataDecoration(lineChartCured, "sembuh", R.color.colorCured, lineDataCured);
-        setLineDataDecoration(lineChartDeath, "meninggal", R.color.colorDeath, lineDataDeath);
-        setLineDataDecoration(lineChartPositive, "positif", R.color.colorPositive, lineDataPositive);
+        setLineDataDecoration(lineChartCured, curedLabel, R.color.colorCured, lineDataCured);
+        setLineDataDecoration(lineChartDeath, deathLabel, R.color.colorDeath, lineDataDeath);
+        setLineDataDecoration(lineChartPositive, positiveLabel, R.color.colorPositive, lineDataPositive);
 
         PieDataSet pieDataSet = new PieDataSet(pieDeltaPos, "");
         pieDataSet.setColors(ColorTemplate.MATERIAL_COLORS);
@@ -295,7 +313,8 @@ public class StatsActivity extends AppCompatActivity {
         pieData.setValueFormatter(new PercentFormatter(pieChartCorona));
         pieChartCorona.setUsePercentValues(true);
         pieChartCorona.setData(pieData);
-        pieChartCorona.getDescription().setText("*) Perbandingan Pasien Sembuh dan Meninggal");
+        String deathAndCured = res.getString(R.string.comparison_death_helper);
+        pieChartCorona.getDescription().setText(deathAndCured);
         pieChartCorona.setDrawHoleEnabled(false);
         pieChartCorona.highlightValue(null);
         pieChartCorona.setDrawEntryLabels(false);

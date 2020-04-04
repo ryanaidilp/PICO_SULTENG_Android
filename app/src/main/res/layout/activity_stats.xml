@@ -11,8 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/login_shape_bk"
-        android:orientation="vertical"
         android:elevation="10dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -27,12 +27,12 @@
 
     <ImageView
         android:id="@+id/logo_app"
-        android:elevation="12dp"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginStart="6dp"
         android:layout_marginTop="4dp"
         android:contentDescription="@string/logo_desc"
+        android:elevation="12dp"
         android:src="@drawable/logo_sulteng"
         app:layout_constraintBottom_toTopOf="@id/label_header"
         app:layout_constraintEnd_toStartOf="@id/app_name_title"
@@ -40,11 +40,11 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:elevation="12dp"
         android:id="@+id/app_name_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
+        android:elevation="12dp"
         android:text="@string/header_title"
         android:textColor="@android:color/white"
         android:textSize="12sp"
@@ -55,10 +55,37 @@
         app:layout_constraintTop_toTopOf="@id/logo_app" />
 
     <TextView
+        android:id="@+id/date"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
         android:elevation="12dp"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/date_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/date_label"
+        tools:text="@tools:sample/date/ddmmyy" />
+
+    <TextView
+        android:id="@+id/date_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="4dp"
+        android:elevation="12dp"
+        android:text="@string/last_update"
+        android:textColor="@android:color/white"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@id/label_total_death"
+        app:layout_constraintEnd_toStartOf="@id/date"
+        app:layout_constraintTop_toTopOf="@id/label_total_death" />
+
+    <TextView
         android:id="@+id/app_creator"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:elevation="12dp"
         android:text="@string/creator"
         android:textColor="@android:color/white"
         android:textSize="12sp"
@@ -68,13 +95,13 @@
         app:layout_constraintTop_toBottomOf="@id/app_name_title" />
 
     <ImageView
-        android:elevation="12dp"
         android:id="@+id/btn_sync"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:clickable="true"
         android:contentDescription="@string/logo_desc"
+        android:elevation="12dp"
         android:focusable="true"
         android:src="@drawable/ic_sync_black_24dp"
         app:layout_constraintBottom_toBottomOf="@id/app_creator"
@@ -86,8 +113,8 @@
         android:id="@+id/label_header"
         style="@style/TextAppearanceStyle.Label"
         android:layout_marginStart="8dp"
-        android:gravity="start"
         android:elevation="12dp"
+        android:gravity="start"
         android:text="@string/national_data_recap"
         android:textColor="@android:color/white"
         app:layout_constraintEnd_toEndOf="parent"
@@ -95,9 +122,9 @@
         app:layout_constraintTop_toBottomOf="@id/logo_app" />
 
     <TextView
-        android:elevation="12dp"
         android:id="@+id/label_total_death"
         style="@style/TextAppearanceStyle"
+        android:elevation="12dp"
         android:text="@string/total_death_national"
         android:textColor="@android:color/white"
         android:textSize="12sp"
@@ -110,8 +137,8 @@
         android:id="@+id/value_total_death"
         style="@style/TextAppearanceStyle"
         android:layout_marginStart="4dp"
-        android:text="@string/zero_value"
         android:elevation="12dp"
+        android:text="@string/zero_value"
         android:textColor="@color/colorDeath"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@id/label_total_death"
@@ -121,10 +148,10 @@
     <TextView
         android:id="@+id/label_total_positive"
         style="@style/TextAppearanceStyle"
+        android:elevation="12dp"
         android:text="@string/total_positive_national"
         android:textColor="@android:color/white"
         android:textSize="12sp"
-        android:elevation="12dp"
         android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@id/label_total_cured"
         app:layout_constraintStart_toStartOf="@id/label_total_death"
@@ -134,10 +161,10 @@
         android:id="@+id/value_total_positive"
         style="@style/TextAppearanceStyle"
         android:layout_marginStart="4dp"
+        android:elevation="12dp"
         android:text="@string/zero_value"
         android:textColor="@color/colorPositive"
         android:textSize="12sp"
-        android:elevation="12dp"
         app:layout_constraintBottom_toBottomOf="@id/label_total_positive"
         app:layout_constraintStart_toEndOf="@id/label_total_positive"
         app:layout_constraintTop_toTopOf="@id/label_total_positive" />
@@ -145,10 +172,10 @@
     <TextView
         android:id="@+id/label_total_cured"
         style="@style/TextAppearanceStyle"
+        android:elevation="12dp"
         android:text="@string/total_cured_national"
         android:textColor="@android:color/white"
         android:textSize="12sp"
-        android:elevation="12dp"
         android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@id/helper_data_source"
         app:layout_constraintStart_toStartOf="@id/label_total_positive"
@@ -156,10 +183,10 @@
 
     <TextView
         android:id="@+id/helper_data_source"
-        android:elevation="12dp"
         style="@style/TextHelper"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:elevation="12dp"
         android:text="@string/data_source_placeholder"
         android:textColor="@android:color/white"
         app:layout_constraintBottom_toBottomOf="@id/container_header_stats"
@@ -169,6 +196,7 @@
         android:id="@+id/value_total_cured"
         style="@style/TextAppearanceStyle"
         android:layout_marginStart="4dp"
+        android:elevation="12dp"
         android:text="@string/zero_value"
         android:textColor="@color/colorCured"
         android:textSize="12sp"

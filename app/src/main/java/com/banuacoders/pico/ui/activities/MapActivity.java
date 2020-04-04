@@ -1,11 +1,13 @@
 package com.banuacoders.pico.ui.activities;
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
@@ -42,19 +44,20 @@ import retrofit2.Response;
 public class MapActivity extends AppCompatActivity {
 
     private ProvinceViewModel provinceViewModel;
-    AnyChartView anyChartView;
-    ImageButton btnZoomIn, btnZoomOut, btnZoomReset;
-    ImageView btnSync;
+    private AnyChartView anyChartView;
+    private ImageView btnSync;
+    private Resources res;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+        res = getApplicationContext().getResources();
         provinceViewModel = ViewModelProviders.of(this)
                 .get(ProvinceViewModel.class);
-        btnZoomIn = findViewById(R.id.zoom_in_map);
-        btnZoomOut = findViewById(R.id.zoom_out_map);
-        btnZoomReset = findViewById(R.id.zoom_reset_map);
+        ImageButton btnZoomIn = findViewById(R.id.zoom_in_map);
+        ImageButton btnZoomOut = findViewById(R.id.zoom_out_map);
+        ImageButton btnZoomReset = findViewById(R.id.zoom_reset_map);
         anyChartView = findViewById(R.id.map_province_positive);
         anyChartView.setProgressBar(findViewById(R.id.progress_map_province_positive));
         Map map = AnyChart.map();
@@ -106,7 +109,7 @@ public class MapActivity extends AppCompatActivity {
         Call<ResponseBody> call = NetworkClient.getInstance().getApiCoder().getAllProvince();
         call.enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+            public void onResponse(@NonNull Call<ResponseBody> call,@NonNull Response<ResponseBody> response) {
                 try {
                     String responseBody = response.body().string();
                     JSONObject objectResponse = new JSONObject(responseBody);
@@ -124,8 +127,8 @@ public class MapActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(MapActivity.this, "Gagal mendapatkan data! :"
+            public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
+                Toast.makeText(MapActivity.this, res.getString(R.string.failed_to_get_data)
                         + t.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

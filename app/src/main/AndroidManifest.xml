@@ -6,15 +6,16 @@
 
     <application
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:fullBackupContent="true"
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="Your Api Key" />
+            android:value="@string/API_KEY" />
+
         <activity android:name="com.banuacoders.pico.ui.activities.MapActivity" />
         <activity android:name="com.banuacoders.pico.ui.activities.ActivityHospital" />
         <activity android:name="com.banuacoders.pico.ui.activities.DetexiActivity" />

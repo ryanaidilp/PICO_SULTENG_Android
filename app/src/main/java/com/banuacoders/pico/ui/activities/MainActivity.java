@@ -2,17 +2,18 @@ package com.banuacoders.pico.ui.activities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
-import android.util.Log;
 import android.view.Gravity;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -232,7 +233,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
             call.enqueue(new Callback<ResponseBody>() {
                 @Override
-                public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
                     try {
                         String responseBody = response.body().string();
                         JSONObject objectResponse = new JSONObject(responseBody);
@@ -250,8 +251,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
 
                 @Override
-                public void onFailure(Call<ResponseBody> call, Throwable t) {
-                    Toast.makeText(MainActivity.this, "Gagal mendapatkan data!", Toast.LENGTH_SHORT).show();
+                public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
+                    Resources res = getApplicationContext().getResources();
+                    Toast.makeText(MainActivity.this, res.getString(R.string.failed_to_get_data), Toast.LENGTH_SHORT).show();
                 }
             });
 
@@ -397,29 +399,36 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         geoJsonPolygonStyle.setClickable(true);
         geoJsonPolygonStyle.setStrokeColor(Color.BLUE);
         geoJsonPolygonStyle.setStrokeWidth(2);
-        layer.setOnFeatureClickListener((GeoJsonLayer.GeoJsonOnFeatureClickListener) feature -> {
-            districtViewModel.getAllDistricts().observe(this, districts -> {
-                for (int i = 0; i < districts.size(); i++) {
-                    Log.d("Name", feature.getProperty("name"));
-                    if (districts.get(i).getName().contains(feature.getProperty("name"))) {
-                        District district = districts.get(i);
-                        CustomInfoWindowMaps customInfoWindowMaps = new CustomInfoWindowMaps(MainActivity.this);
-                        gMap.setInfoWindowAdapter(customInfoWindowMaps);
-                        LatLngBounds latLngBounds = getLatLngBoundingBox(feature);
-                        double lat = latLngBounds.northeast.latitude + latLngBounds.southwest.latitude;
-                        double lng = latLngBounds.northeast.longitude + latLngBounds.southwest.longitude;
-                        LatLng latLng = new LatLng(lat / 2, lng / 2);
-                        if (marker == null) {
-                            MarkerOptions markerOptions = new MarkerOptions()
-                                    .position(latLng);
-                            marker = gMap.addMarker(markerOptions);
-                            marker.setTag(district);
-                            marker.showInfoWindow();
-                            gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 8), 2000, null);
+        layer.setOnFeatureClickListener((GeoJsonLayer.GeoJsonOnFeatureClickListener) feature -> districtViewModel.getAllDistricts().observe(this, districts -> {
+            for (int i = 0; i < districts.size(); i++) {
+                if (districts.get(i).getName().contains(feature.getProperty("name"))) {
+                    District district = districts.get(i);
+                    CustomInfoWindowMaps customInfoWindowMaps = new CustomInfoWindowMaps(MainActivity.this);
+                    gMap.setInfoWindowAdapter(customInfoWindowMaps);
+                    LatLngBounds latLngBounds = getLatLngBoundingBox(feature);
+                    double lat = latLngBounds.northeast.latitude + latLngBounds.southwest.latitude;
+                    double lng = latLngBounds.northeast.longitude + latLngBounds.southwest.longitude;
+                    LatLng latLng = new LatLng(lat / 2, lng / 2);
+                    if (marker == null) {
+                        MarkerOptions markerOptions = new MarkerOptions()
+                                .position(latLng);
+                        marker = gMap.addMarker(markerOptions);
+                        marker.setTag(district);
+                        marker.showInfoWindow();
+                        gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 8), 2000, null);
+                    } else {
+                        if (marker.isInfoWindowShown()) {
+                            marker.hideInfoWindow();
+                        }
+                        if (marker.getTag() == district) {
+                            marker.remove();
+                            marker = null;
+                            LatLngBounds bounds = getLatLngBoundingBox(layer);
+                            lat = (bounds.northeast.latitude + bounds.southwest.latitude) / 2;
+                            lng = (bounds.southwest.longitude + bounds.northeast.longitude) / 2;
+                            gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(lat, lng),
+                                    6), 2000, null);
                         } else {
-                            if (marker.isInfoWindowShown()) {
-                                marker.hideInfoWindow();
-                            }
                             marker.remove();
                             marker = null;
                             MarkerOptions markerOptions = new MarkerOptions()
@@ -429,11 +438,11 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                             marker.showInfoWindow();
                             gMap.animateCamera(CameraUpdateFactory.newLatLngZoom(latLng, 8), 2000, null);
                         }
-                        break;
                     }
+                    break;
                 }
-            });
-        });
+            }
+        }));
         layer.addLayerToMap();
         LatLngBounds bounds = getLatLngBoundingBox(layer);
         double lat = (bounds.northeast.latitude + bounds.southwest.latitude) / 2;
@@ -503,10 +512,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             builder.include(latLng);
         }
 
-        LatLngBounds boundingBoxFromBuilder = builder.build();
-
         //return boundingBox;
-        return boundingBoxFromBuilder;
+        return builder.build();
     }
 
     private List<LatLng> getCoordinatesFromGeometry(Geometry geometry) {

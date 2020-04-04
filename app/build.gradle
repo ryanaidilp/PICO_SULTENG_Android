@@ -10,7 +10,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 29
         versionCode 2
-        versionName "2.0.0"
+        versionName "2.0.1"
         manifestPlaceholders = [
                 onesignal_app_id: 'app_key',
                 // Project number pulled from dashboard, local value is ignored.
