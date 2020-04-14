@@ -9,15 +9,17 @@ import androidx.room.RoomDatabase;
 import com.banuacoders.pico.data.dao.DataStatisticsDao;
 import com.banuacoders.pico.data.dao.DistrictDao;
 import com.banuacoders.pico.data.dao.HospitalDao;
+import com.banuacoders.pico.data.dao.PostsDao;
 import com.banuacoders.pico.data.dao.ProvinceDao;
-import com.banuacoders.pico.data.object.DataStatisticsCovid;
-import com.banuacoders.pico.data.object.District;
-import com.banuacoders.pico.data.object.Hospital;
-import com.banuacoders.pico.data.object.Province;
+import com.banuacoders.pico.data.model.DataStatisticsCovid;
+import com.banuacoders.pico.data.model.District;
+import com.banuacoders.pico.data.model.DistrictPost;
+import com.banuacoders.pico.data.model.Hospital;
+import com.banuacoders.pico.data.model.Province;
 
 @Database(
-        entities = {District.class, Province.class, Hospital.class, DataStatisticsCovid.class},
-        version = 3, exportSchema = false)
+        entities = {District.class, Province.class, Hospital.class, DataStatisticsCovid.class, DistrictPost.class},
+        version = 4, exportSchema = false)
 public abstract class CovidDatabase extends RoomDatabase {
 
     private static CovidDatabase instance;
@@ -27,6 +29,8 @@ public abstract class CovidDatabase extends RoomDatabase {
     public abstract ProvinceDao provinceDao();
 
     public abstract HospitalDao hospitalDao();
+
+    public abstract PostsDao postsDao();
 
     public abstract DataStatisticsDao dataStatisticsDao();
 

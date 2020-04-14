@@ -1,20 +1,34 @@
 package com.banuacoders.pico.ui.activities;
 
 import android.os.Bundle;
+import android.view.View;
 import android.webkit.CookieManager;
 import android.webkit.WebResourceError;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.ProgressBar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.banuacoders.pico.R;
+import com.github.ybq.android.spinkit.sprite.Sprite;
+import com.github.ybq.android.spinkit.style.Wave;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 public class DetexiActivity extends AppCompatActivity {
-    private WebView webView;
-    private String curUrl = "https://corona.detexi.id/";
+
+    @BindView(R.id.webview_detexi)
+    WebView webView;
+
+    @BindView(R.id.progress_detexi)
+    ProgressBar progressBar;
+
+    Unbinder unbinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,7 +36,7 @@ public class DetexiActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detexi);
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.setAcceptCookie(true);
-
+        unbinder = ButterKnife.bind(this);
         WebView webView = new WebView(this);
         WebSettings ws = webView.getSettings();
         ws.setSaveFormData(true);
@@ -30,9 +44,11 @@ public class DetexiActivity extends AppCompatActivity {
     }
 
     private void LoadWeb(String Url) {
+        Sprite sprite = new Wave();
+        sprite.setColor(getResources().getColor(R.color.colorPrimary));
+        progressBar.setIndeterminateDrawable(sprite);
         CookieManager cookieManager = CookieManager.getInstance();
         cookieManager.setAcceptCookie(true);
-        webView = findViewById(R.id.webview_detexi);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.getSettings().setAllowFileAccess(true);
         webView.getSettings().setAppCacheEnabled(true);
@@ -44,6 +60,7 @@ public class DetexiActivity extends AppCompatActivity {
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public void onReceivedError(WebView view, WebResourceRequest request, WebResourceError error) {
+                progressBar.setVisibility(View.GONE);
                 String svgIcon = "<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" width=\"64pt\" height=\"64pt\" viewBox=\"0 0 64 64\" version=\"1.1\">\n" +
                         "<g id=\"surface1\">\n" +
                         "<path style=\" stroke:none;fill-rule:nonzero;fill:rgb(92.941176%,91.372549%,84.705882%);fill-opacity:1;\" d=\"M 62.125 48.761719 L 1.875 48.761719 C 0.839844 48.761719 0 47.921875 0 46.886719 L 0 1.875 C 0 0.839844 0.839844 0 1.875 0 L 62.125 0 C 63.160156 0 64 0.839844 64 1.875 L 64 46.886719 C 64 47.921875 63.160156 48.761719 62.125 48.761719 Z M 62.125 48.761719 \"/>\n" +
@@ -89,11 +106,12 @@ public class DetexiActivity extends AppCompatActivity {
 
             @Override
             public void onPageFinished(WebView view, String url) {
+                if (webView.getProgress() > 40)
+                    progressBar.setVisibility(View.GONE);
             }
 
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                curUrl = url;
                 return super.shouldOverrideUrlLoading(view, url);
             }
         });

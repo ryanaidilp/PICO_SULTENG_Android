@@ -12,15 +12,17 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.activities.PostsActivity"></activity>
+
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/API_KEY" />
 
-        <activity android:name="com.banuacoders.pico.ui.activities.MapActivity" />
-        <activity android:name="com.banuacoders.pico.ui.activities.ActivityHospital" />
-        <activity android:name="com.banuacoders.pico.ui.activities.DetexiActivity" />
-        <activity android:name="com.banuacoders.pico.ui.activities.StatsActivity" />
-        <activity android:name="com.banuacoders.pico.ui.activities.MainActivity">
+        <activity android:name=".ui.activities.MapActivity" />
+        <activity android:name=".ui.activities.ActivityHospital" />
+        <activity android:name=".ui.activities.DetexiActivity" />
+        <activity android:name=".ui.activities.StatsActivity" />
+        <activity android:name=".ui.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

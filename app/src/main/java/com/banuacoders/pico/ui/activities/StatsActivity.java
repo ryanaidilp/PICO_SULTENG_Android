@@ -16,8 +16,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProviders;
 
 import com.banuacoders.pico.R;
-import com.banuacoders.pico.data.object.DataStatisticsCovid;
-import com.banuacoders.pico.data.viewmodel.DataStatisticViewModel;
+import com.banuacoders.pico.data.model.DataStatisticsCovid;
+import com.banuacoders.pico.ui.viewmodel.DataStatisticViewModel;
 import com.banuacoders.pico.network.NetworkClient;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;

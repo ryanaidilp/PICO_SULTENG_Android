@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.banuacoders.pico.R;
-import com.banuacoders.pico.data.object.District;
+import com.banuacoders.pico.data.model.District;
 import com.banuacoders.pico.ui.tableutil.MyTableViewModel;
 import com.banuacoders.pico.ui.tableutil.holder.CellViewHolder;
 import com.banuacoders.pico.ui.tableutil.holder.ColumnHeaderViewHolder;

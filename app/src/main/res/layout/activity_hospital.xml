@@ -141,6 +141,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/container_header_main"
-        tools:listitem="@layout/hospital_item" />
+        tools:listitem="@layout/item_hospital" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

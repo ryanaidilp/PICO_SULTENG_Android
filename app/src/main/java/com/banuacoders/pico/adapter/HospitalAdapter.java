@@ -12,21 +12,26 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.banuacoders.pico.R;
-import com.banuacoders.pico.data.object.Hospital;
+import com.banuacoders.pico.data.model.Hospital;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.card.MaterialCardView;
 
 import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 
 public class HospitalAdapter extends RecyclerView.Adapter<HospitalAdapter.HospitalViewHolder> {
-    private ArrayList<Hospital> listHospital = new ArrayList<>();
+    private List<Hospital> listHospital = new ArrayList<>();
     private Context mContext;
 
     public HospitalAdapter(Context mContext) {
         this.mContext = mContext;
     }
 
-    public void setListHospital(ArrayList<Hospital> listHospital) {
+    public void setListHospital(List<Hospital> listHospital) {
         this.listHospital = listHospital;
         notifyDataSetChanged();
     }
@@ -34,7 +39,7 @@ public class HospitalAdapter extends RecyclerView.Adapter<HospitalAdapter.Hospit
     @NonNull
     @Override
     public HospitalViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(mContext).inflate(R.layout.hospital_item, parent, false);
+        View view = LayoutInflater.from(mContext).inflate(R.layout.item_hospital, parent, false);
         return new HospitalViewHolder(view);
     }
 
@@ -81,19 +86,27 @@ public class HospitalAdapter extends RecyclerView.Adapter<HospitalAdapter.Hospit
     }
 
     static class HospitalViewHolder extends RecyclerView.ViewHolder {
-        TextView tvName, tvAddress, tvEmail, tvPhone;
+
+        @BindView(R.id.hospital_name)
+        TextView tvName;
+        @BindView(R.id.hospital_address)
+        TextView tvAddress;
+        @BindView(R.id.hospital_email)
+        TextView tvEmail;
+        @BindView(R.id.hospital_phone)
+        TextView tvPhone;
+        @BindView(R.id.hospital_direction_btn)
         MaterialButton btnDirection;
-        MaterialCardView cardPhone, cardEmail;
+        @BindView(R.id.hospital_phone_container)
+        MaterialCardView cardPhone;
+        @BindView(R.id.hospital_email_container)
+        MaterialCardView cardEmail;
+
+        Unbinder unbinder;
 
         HospitalViewHolder(@NonNull View itemView) {
             super(itemView);
-            tvName = itemView.findViewById(R.id.hospital_name);
-            tvAddress = itemView.findViewById(R.id.hospital_address);
-            tvPhone = itemView.findViewById(R.id.hospital_phone);
-            tvEmail = itemView.findViewById(R.id.hospital_email);
-            cardPhone = itemView.findViewById(R.id.hospital_phone_container);
-            cardEmail = itemView.findViewById(R.id.hospital_email_container);
-            btnDirection = itemView.findViewById(R.id.hospital_direction_btn);
+            unbinder = ButterKnife.bind(this, itemView);
         }
     }
 }

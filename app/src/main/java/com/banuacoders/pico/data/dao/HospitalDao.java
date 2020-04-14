@@ -6,7 +6,7 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.banuacoders.pico.data.object.Hospital;
+import com.banuacoders.pico.data.model.Hospital;
 
 import java.util.List;
 

@@ -7,7 +7,7 @@ import androidx.lifecycle.LiveData;
 
 import com.banuacoders.pico.data.dao.HospitalDao;
 import com.banuacoders.pico.data.database.CovidDatabase;
-import com.banuacoders.pico.data.object.Hospital;
+import com.banuacoders.pico.data.model.Hospital;
 
 import java.util.List;
 

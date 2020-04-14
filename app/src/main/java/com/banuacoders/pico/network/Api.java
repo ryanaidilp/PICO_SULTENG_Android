@@ -22,4 +22,7 @@ public interface Api {
 
     @GET("provinsi")
     Call<ResponseBody> getAllProvince();
+
+    @GET("posko")
+    Call<ResponseBody> getAllPosts();
 }

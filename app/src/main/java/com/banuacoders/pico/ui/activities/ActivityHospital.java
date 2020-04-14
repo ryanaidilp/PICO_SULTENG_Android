@@ -16,9 +16,9 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.banuacoders.pico.R;
 import com.banuacoders.pico.adapter.HospitalAdapter;
-import com.banuacoders.pico.data.object.Hospital;
-import com.banuacoders.pico.data.viewmodel.HospitalViewModel;
+import com.banuacoders.pico.data.model.Hospital;
 import com.banuacoders.pico.network.NetworkClient;
+import com.banuacoders.pico.ui.viewmodel.HospitalViewModel;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,6 +27,9 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -36,16 +39,21 @@ public class ActivityHospital extends AppCompatActivity implements LifecycleOwne
 
     private HospitalAdapter hospitalAdapter;
     private HospitalViewModel hospitalViewModel;
-    private ImageView btnSync;
-    private ProgressBar progressBar;
+
+    @BindView(R.id.btn_sync)
+    ImageView btnSync;
+    @BindView(R.id.progress_hospital)
+    ProgressBar progressBar;
+
+    @BindView(R.id.rv_hospital)
+    RecyclerView rvHospital;
+    Unbinder unbinder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hospital);
-        RecyclerView rvHospital = findViewById(R.id.rv_hospital);
-        btnSync = findViewById(R.id.btn_sync);
-        progressBar = findViewById(R.id.progress_hospital);
+        unbinder = ButterKnife.bind(this);
         hospitalAdapter = new HospitalAdapter(this);
         rvHospital.setLayoutManager(new LinearLayoutManager(this));
         rvHospital.setAdapter(hospitalAdapter);
@@ -76,7 +84,7 @@ public class ActivityHospital extends AppCompatActivity implements LifecycleOwne
         progressBar.setVisibility(View.VISIBLE);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(@NonNull Call<ResponseBody> call,@NonNull Response<ResponseBody> response) {
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
                 try {
                     String responseBody = response.body().string();
                     JSONObject objectResponse = new JSONObject(responseBody);

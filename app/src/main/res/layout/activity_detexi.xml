@@ -23,5 +23,12 @@
             app:layout_constraintDimensionRatio="1" />
     </RelativeLayout>
 
+    <ProgressBar
+        android:id="@+id/progress_detexi"
+        style="@android:style/Widget.Material.Light.ProgressBar.Small.Title"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true" />
+
 
 </RelativeLayout>

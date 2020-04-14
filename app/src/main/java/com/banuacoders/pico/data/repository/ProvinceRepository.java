@@ -7,7 +7,7 @@ import androidx.lifecycle.LiveData;
 
 import com.banuacoders.pico.data.dao.ProvinceDao;
 import com.banuacoders.pico.data.database.CovidDatabase;
-import com.banuacoders.pico.data.object.Province;
+import com.banuacoders.pico.data.model.Province;
 
 import java.util.List;
 

@@ -6,7 +6,7 @@ import android.view.View;
 import android.widget.TextView;
 
 import com.banuacoders.pico.R;
-import com.banuacoders.pico.data.object.District;
+import com.banuacoders.pico.data.model.District;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.model.Marker;
 

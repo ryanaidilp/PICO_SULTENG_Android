@@ -1,6 +1,6 @@
 <resources>
     <string name="app_name" translatable="false">PICO COVID-19 SulTeng</string>
-    <string name="header_title">COVID-19 Information Center v.2.0.1</string>
+    <string name="header_title">COVID-19 Information Center v.3.0.0</string>
     <string name="logo_desc">Logo</string>
     <string name="positive">Positive</string>
     <string name="cases">cases</string>
@@ -19,6 +19,7 @@
     <string name="placeholder_self_screening">Click here to do a self screening and getting more information about COVID-19.</string>
     <string name="placeholder_stats">Click here to see the statistical data dissemination about COVID-19 in Indonesia.</string>
     <string name="placeholder_maps">Click here to see a map of the spread of COVID-19 in Indonesia.</string>
+    <string name="placeholder_task_force">Click here to see COVID-19 task force team by district.</string>
     <string name="placeholder_qna">Click here to give feedback to the developers.</string>
 
     <string name="placeholder_data_source">*) Data source : DINKES and PUSDATINA COVID-19 of Central Sulawesi</string>
@@ -32,6 +33,7 @@
     <string name="self_screening_corona">SELF SCREENING COVID-19</string>
     <string name="statistics_corona">COVID-19 STATISTICS </string>
     <string name="maps_corona">COVID-19 SPREAD MAP</string>
+    <string name="posts_task_force">COVID-19 SPREAD MAP</string>
     <string name="qna">Give us Feedback</string>
 
     <string name="finished_odp_label">Completed Observation</string>
@@ -75,6 +77,9 @@
     <string name="completed_pdp">Completed PDP</string>
     <string name="in_pdp">In PDP</string>
     <string name="API_KEY" translatable="false">Put Your Google API Key Here</string>
+    <string name="province_covid_task_force">COVID-19 Task Force</string>
+    <string name="hotline" translatable="false">Hotline</string>
+    <string name="province_task_force_number" translatable="false">082399464837</string>
 
 
     <array name="array_icon_menu">
@@ -82,6 +87,7 @@
         <item>detexi</item>
         <item>statistics</item>
         <item>maps</item>
+        <item>posts</item>
         <item>qna</item>
     </array>
 
@@ -90,6 +96,7 @@
         <item>@string/self_screening_corona</item>
         <item>@string/statistics_corona</item>
         <item>@string/maps_corona</item>
+        <item>@string/posts_task_force</item>
         <item>@string/qna</item>
     </array>
 
@@ -98,6 +105,7 @@
         <item>@string/placeholder_self_screening</item>
         <item>@string/placeholder_stats</item>
         <item>@string/placeholder_maps</item>
+        <item>@string/placeholder_task_force</item>
         <item>@string/placeholder_qna</item>
     </array>
 </resources>

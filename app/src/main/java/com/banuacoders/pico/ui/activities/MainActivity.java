@@ -23,12 +23,12 @@ import androidx.recyclerview.widget.SnapHelper;
 import com.banuacoders.pico.R;
 import com.banuacoders.pico.adapter.CustomInfoWindowMaps;
 import com.banuacoders.pico.adapter.ListMenuAdapter;
-import com.banuacoders.pico.data.object.District;
-import com.banuacoders.pico.data.object.MenuItem;
-import com.banuacoders.pico.data.viewmodel.DistrictViewModel;
+import com.banuacoders.pico.data.model.District;
+import com.banuacoders.pico.data.model.MenuItem;
 import com.banuacoders.pico.network.NetworkClient;
 import com.banuacoders.pico.ui.tableutil.MyTableViewListener;
 import com.banuacoders.pico.ui.tableutil.adapter.MyTableViewAdapter;
+import com.banuacoders.pico.ui.viewmodel.DistrictViewModel;
 import com.evrencoskun.tableview.TableView;
 import com.github.rubensousa.gravitysnaphelper.GravitySnapHelper;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -66,6 +66,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.Unbinder;
 import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -78,21 +81,55 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     GoogleMap googleMap;
     Marker marker;
 
-    private RecyclerView rvMenu;
+    Unbinder unbinder;
+    @BindView(R.id.rv_menu)
+    RecyclerView rvMenu;
     private ArrayList<MenuItem> menus = new ArrayList<>();
-    private TextView tvDate, tvPDPPercentage, tvODPFinishedPercentage, tvTotalPDP, tvTotalODP, tvDeath, tvPositive, tvNegative,
-            tvInPDP, tvFinishPDP, tvInODP, tvFinishODP;
-    private ImageView btnSync;
-    private TextView tvPDPFinishedPercentage, tvODPPercentage;
-    private ScrollingPagerIndicator scrollingPagerIndicator;
-    private TableView mTableView;
-    private MyTableViewAdapter myTableViewAdapter;
-    private MaterialCardView cardEmergency, cardHealthDepartment;
+    @BindView(R.id.information_date_value)
+    TextView tvDate;
+    @BindView(R.id.pdp_processed_percentage)
+    TextView tvPDPPercentage;
+    @BindView(R.id.odp_finished_percentage)
+    TextView tvODPFinishedPercentage;
+    @BindView(R.id.pdp_total_case_value)
+    TextView tvTotalPDP;
+    @BindView(R.id.odp_total_case_value)
+    TextView tvTotalODP;
+    @BindView(R.id.dead_count)
+    TextView tvDeath;
+    @BindView(R.id.positive_count)
+    TextView tvPositive;
+    @BindView(R.id.negative_count)
+    TextView tvNegative;
+    @BindView(R.id.pdp_processed_value)
+    TextView tvInPDP;
+    @BindView(R.id.pdp_finished_value)
+    TextView tvFinishPDP;
+    @BindView(R.id.odp_processed_value)
+    TextView tvInODP;
+    @BindView(R.id.odp_finished_value)
+    TextView tvFinishODP;
+    @BindView(R.id.btn_sync)
+    ImageView btnSync;
+    @BindView(R.id.pdp_finished_percentage)
+    TextView tvPDPFinishedPercentage;
+    @BindView(R.id.odp_processed_percentage)
+    TextView tvODPPercentage;
+    @BindView(R.id.indicator)
+    ScrollingPagerIndicator scrollingPagerIndicator;
+    @BindView(R.id.data_table)
+    TableView mTableView;
+    MyTableViewAdapter myTableViewAdapter;
+    @BindView(R.id.card_number_119)
+    MaterialCardView cardEmergency;
+    @BindView(R.id.card_number_dinkes)
+    MaterialCardView cardHealthDepartment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        unbinder = ButterKnife.bind(this);
         districtViewModel = ViewModelProviders.of(this)
                 .get(DistrictViewModel.class);
         OneSignal.startInit(this)
@@ -118,30 +155,10 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     }
 
     private void getComponents() {
-        mTableView = findViewById(R.id.data_table);
-        tvDate = findViewById(R.id.information_date_value);
-        btnSync = findViewById(R.id.btn_sync);
-        rvMenu = findViewById(R.id.rv_menu);
         rvMenu.setHasFixedSize(true);
         SnapHelper snapHelper = new GravitySnapHelper(Gravity.CENTER);
         snapHelper.attachToRecyclerView(rvMenu);
         menus.addAll(getAllMenu());
-        tvTotalODP = findViewById(R.id.odp_total_case_value);
-        tvTotalPDP = findViewById(R.id.pdp_total_case_value);
-        tvNegative = findViewById(R.id.negative_count);
-        tvPositive = findViewById(R.id.positive_count);
-        tvDeath = findViewById(R.id.dead_count);
-        tvInPDP = findViewById(R.id.pdp_processed_value);
-        tvInODP = findViewById(R.id.odp_processed_value);
-        tvFinishODP = findViewById(R.id.odp_finished_value);
-        tvFinishPDP = findViewById(R.id.pdp_finished_value);
-        tvODPFinishedPercentage = findViewById(R.id.odp_finished_percentage);
-        tvPDPFinishedPercentage = findViewById(R.id.pdp_finished_percentage);
-        tvODPPercentage = findViewById(R.id.odp_processed_percentage);
-        tvPDPPercentage = findViewById(R.id.pdp_processed_percentage);
-        scrollingPagerIndicator = findViewById(R.id.indicator);
-        cardEmergency = findViewById(R.id.card_number_119);
-        cardHealthDepartment = findViewById(R.id.card_number_dinkes);
     }
 
     private ArrayList<MenuItem> getAllMenu() {
@@ -164,6 +181,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         ListMenuAdapter adapter = new ListMenuAdapter(menus);
         rvMenu.setAdapter(adapter);
         scrollingPagerIndicator.attachToRecyclerView(rvMenu);
+        scrollingPagerIndicator.setVisibleDotCount(menus.size() - 1);
         setDateTime();
         btnSync.setOnClickListener(view -> {
             rotateSync();

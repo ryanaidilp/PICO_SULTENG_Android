@@ -6,7 +6,7 @@ import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.banuacoders.pico.data.object.DataStatisticsCovid;
+import com.banuacoders.pico.data.model.DataStatisticsCovid;
 
 import java.util.List;
 

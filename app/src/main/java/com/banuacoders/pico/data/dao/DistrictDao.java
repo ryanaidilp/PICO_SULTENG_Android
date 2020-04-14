@@ -8,7 +8,7 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Update;
 
-import com.banuacoders.pico.data.object.District;
+import com.banuacoders.pico.data.model.District;
 
 import java.util.List;
 

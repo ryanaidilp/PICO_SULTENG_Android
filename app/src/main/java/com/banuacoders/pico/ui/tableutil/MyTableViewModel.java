@@ -5,7 +5,7 @@ import android.content.res.Resources;
 import android.view.Gravity;
 
 import com.banuacoders.pico.R;
-import com.banuacoders.pico.data.object.District;
+import com.banuacoders.pico.data.model.District;
 import com.banuacoders.pico.ui.tableutil.model.CellModel;
 import com.banuacoders.pico.ui.tableutil.model.ColumnHeaderModel;
 import com.banuacoders.pico.ui.tableutil.model.RowHeaderModel;

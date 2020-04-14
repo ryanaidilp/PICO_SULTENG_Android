@@ -13,10 +13,11 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.banuacoders.pico.R;
-import com.banuacoders.pico.data.object.MenuItem;
+import com.banuacoders.pico.data.model.MenuItem;
 import com.banuacoders.pico.ui.activities.ActivityHospital;
 import com.banuacoders.pico.ui.activities.DetexiActivity;
 import com.banuacoders.pico.ui.activities.MapActivity;
+import com.banuacoders.pico.ui.activities.PostsActivity;
 import com.banuacoders.pico.ui.activities.StatsActivity;
 import com.bumptech.glide.Glide;
 import com.google.android.material.card.MaterialCardView;
@@ -35,7 +36,7 @@ public class ListMenuAdapter extends RecyclerView.Adapter<ListMenuAdapter.MenuVi
     @NonNull
     @Override
     public MenuViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int viewType) {
-        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.menu_item, viewGroup, false);
+        View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.item_menu, viewGroup, false);
         return new MenuViewHolder(view);
     }
 
@@ -54,6 +55,8 @@ public class ListMenuAdapter extends RecyclerView.Adapter<ListMenuAdapter.MenuVi
                     intent = new Intent(view.getContext(), DetexiActivity.class);
                 } else if (titleCheck(position, "PETA") || titleCheck(position, "MAP")) {
                     intent = new Intent(view.getContext(), MapActivity.class);
+                } else if (titleCheck(position, "GUGUS") || titleCheck(position, "FORCE")) {
+                    intent = new Intent(view.getContext(), PostsActivity.class);
                 } else {
                     Uri webpage = Uri.parse("https://instagram.com/ryanaidilp_");
                     intent = new Intent(Intent.ACTION_VIEW, webpage);

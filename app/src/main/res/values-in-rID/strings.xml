@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="header_title">Pusat Informasi COVID-19 SulTeng v2.0.1</string>
+    <string name="header_title">Pusat Informasi COVID-19 SulTeng v3.0.0</string>
     <string name="logo_desc">Logo</string>
     <string name="positive">Positif</string>
     <string name="cases">orang</string>
@@ -12,6 +12,7 @@
     <string name="comparison_death_helper">*) Perbandingan Pasien Sembuh dan Meninggal</string>
     <string name="data_unavailable">Data tidak tersedia!</string>
     <string name="day">Hari ke-</string>
+    <string name="province_covid_task_force">Tim Gugus Tugas COVID-19 Provinsi</string>
     <string name="data_stats_helper">*) Trend pasien %1$s COVID19 per hari. Data dari BNPB Indonesia.</string>
     <string name="failed_to_get_data">Gagal mendapatkan data!</string>
 
@@ -19,6 +20,7 @@
     <string name="placeholder_self_screening">Tekan disini untuk melakukan pemeriksaan mandiri COVID-19 dan mencari tahu apa itu COVID-19.</string>
     <string name="placeholder_stats">Tekan disini untuk melihat data statistik penyebaran COVID-19 di Indonesia.</string>
     <string name="placeholder_maps">Tekan disini untuk melihat peta penyebaran COVID-19 di Indonesia.</string>
+    <string name="placeholder_task_force">Tekan disini untuk melihat tim Gugus Tugas COVID-19 per Kabupaten.</string>
     <string name="placeholder_qna">Tekan disini untuk memberikan kritik dan saran kepada pengembang aplikasi.</string>
 
     <string name="last_update">Update Terakhir :</string>
@@ -32,6 +34,7 @@
     <string name="self_screening_corona">PEMERIKSAAN MANDIRI COVID-19</string>
     <string name="statistics_corona">STATISTIK COVID-19</string>
     <string name="maps_corona">PETA PENYEBARAN COVID-19</string>
+    <string name="posts_task_force">GUGUS TUGAS COVID-19 SULTENG</string>
     <string name="qna">Kritik dan Saran</string>
 
     <string name="finished_odp_label">Selesai Pemantauan</string>
