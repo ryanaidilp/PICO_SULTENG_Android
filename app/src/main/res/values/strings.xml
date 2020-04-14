@@ -33,7 +33,7 @@
     <string name="self_screening_corona">SELF SCREENING COVID-19</string>
     <string name="statistics_corona">COVID-19 STATISTICS </string>
     <string name="maps_corona">COVID-19 SPREAD MAP</string>
-    <string name="posts_task_force">COVID-19 SPREAD MAP</string>
+    <string name="posts_task_force">COVID-19 TASK FORCE</string>
     <string name="qna">Give us Feedback</string>
 
     <string name="finished_odp_label">Completed Observation</string>
@@ -77,7 +77,7 @@
     <string name="completed_pdp">Completed PDP</string>
     <string name="in_pdp">In PDP</string>
     <string name="API_KEY" translatable="false">Put Your Google API Key Here</string>
-    <string name="province_covid_task_force">COVID-19 Task Force</string>
+    <string name="province_covid_task_force">COVID-19 Task Force for Central Sulawesi</string>
     <string name="hotline" translatable="false">Hotline</string>
     <string name="province_task_force_number" translatable="false">082399464837</string>
 

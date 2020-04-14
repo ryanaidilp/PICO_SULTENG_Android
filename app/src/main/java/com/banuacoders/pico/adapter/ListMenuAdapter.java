@@ -78,7 +78,7 @@ public class ListMenuAdapter extends RecyclerView.Adapter<ListMenuAdapter.MenuVi
 
     @Override
     public int getItemCount() {
-        return listMenu.size();
+        return listMenu.size() - 1;
     }
 
     class MenuViewHolder extends RecyclerView.ViewHolder {

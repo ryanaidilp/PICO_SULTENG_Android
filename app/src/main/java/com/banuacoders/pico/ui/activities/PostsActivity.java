@@ -3,7 +3,6 @@ package com.banuacoders.pico.ui.activities;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.view.animation.RotateAnimation;
 import android.widget.ImageView;
@@ -106,7 +105,6 @@ public class PostsActivity extends AppCompatActivity {
                             districtPost.setNo(jsonArray.getJSONObject(i).getInt("no"));
                             districtPost.setName(jsonArray.getJSONObject(i).getString("nama"));
                             districtPost.setPosts(jsonArray.getJSONObject(i).getString("posko"));
-                            Log.d("Nama-" + (i + 1), jsonArray.getJSONObject(i).getString("posko"));
                             postsViewModel.insert(districtPost);
                         }
                         progressBar.setVisibility(View.GONE);
