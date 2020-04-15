@@ -84,28 +84,28 @@
 
     <array name="array_icon_menu">
         <item>hospital</item>
+        <item>posts</item>
         <item>detexi</item>
         <item>statistics</item>
         <item>maps</item>
-        <item>posts</item>
         <item>qna</item>
     </array>
 
     <array name="array_title_menu">
         <item>@string/hospital_corona</item>
+        <item>@string/posts_task_force</item>
         <item>@string/self_screening_corona</item>
         <item>@string/statistics_corona</item>
         <item>@string/maps_corona</item>
-        <item>@string/posts_task_force</item>
         <item>@string/qna</item>
     </array>
 
     <array name="array_desc_menu">
         <item>@string/placeholder_desc</item>
+        <item>@string/placeholder_task_force</item>
         <item>@string/placeholder_self_screening</item>
         <item>@string/placeholder_stats</item>
         <item>@string/placeholder_maps</item>
-        <item>@string/placeholder_task_force</item>
         <item>@string/placeholder_qna</item>
     </array>
 </resources>

@@ -9,7 +9,7 @@ android {
         applicationId "com.banuacoders.covidcheck"
         minSdkVersion 21
         targetSdkVersion 29
-        versionCode 2
+        versionCode 3
         versionName "3.0.0"
         manifestPlaceholders = [
                 onesignal_app_id               : 'app_key',
