@@ -1,4 +1,4 @@
-# PICO SulTeng Android
+﻿# PICO SulTeng Android
 
 ![PICO SulTeng](http://i.ibb.co/jRtxp9Y/picobar.png)
 
@@ -22,8 +22,19 @@ Aplikasi ini dibangun menggunakan ***design pattern*** MVVM. Beberapa library ya
 
 ```gradle
     
-    //RecyclerView
+     //RecyclerView
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
+
+    //ButterKnife
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+    
+    //RxJava
+    implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.1'
+    
+    //SpinKit
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 
     //Glide
     implementation 'com.github.bumptech.glide:glide:4.11.0'
@@ -51,7 +62,7 @@ Aplikasi ini dibangun menggunakan ***design pattern*** MVVM. Beberapa library ya
     implementation "ru.tinkoff.scrollingpagerindicator:scrollingpagerindicator:1.0.6"
 
     //OneSignal     
-    implementation 'com.onesignal:OneSignal:3.4.3'
+    implementation 'com.onesignal:OneSignal:3.13.1'
 
     //Lifecycle
     implementation 'android.arch.lifecycle:extensions:1.1.1'
@@ -240,6 +251,9 @@ allprojects {
 
         @GET("provinsi")
         Call<ResponseBody> getAllProvince();
+        
+        @GET("posko")
+        Call<ResponseBody> getAllPosts();
     
     } 
     ```
