@@ -52,6 +52,8 @@ public class ColumnHeaderViewHolder extends AbstractViewHolder {
             Gravity.CENTER,
             //death
             Gravity.CENTER,
+            //recovered
+            Gravity.CENTER
     };
 
 }

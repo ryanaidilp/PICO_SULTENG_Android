@@ -19,7 +19,7 @@ import com.banuacoders.pico.data.model.Province;
 
 @Database(
         entities = {District.class, Province.class, Hospital.class, DataStatisticsCovid.class, DistrictPost.class},
-        version = 4, exportSchema = false)
+        version = 5, exportSchema = false)
 public abstract class CovidDatabase extends RoomDatabase {
 
     private static CovidDatabase instance;

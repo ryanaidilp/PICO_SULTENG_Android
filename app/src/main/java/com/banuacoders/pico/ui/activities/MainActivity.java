@@ -23,6 +23,7 @@ import androidx.recyclerview.widget.SnapHelper;
 import com.banuacoders.pico.R;
 import com.banuacoders.pico.adapter.CustomInfoWindowMaps;
 import com.banuacoders.pico.adapter.ListMenuAdapter;
+import com.banuacoders.pico.common.StaticFinal;
 import com.banuacoders.pico.data.model.District;
 import com.banuacoders.pico.data.model.MenuItem;
 import com.banuacoders.pico.network.NetworkClient;
@@ -101,6 +102,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     TextView tvPositive;
     @BindView(R.id.negative_count)
     TextView tvNegative;
+    @BindView(R.id.recovered_count)
+    TextView tvRecovered;
     @BindView(R.id.pdp_processed_value)
     TextView tvInPDP;
     @BindView(R.id.pdp_finished_value)
@@ -288,6 +291,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         int totalPositive = 0;
         int totalNegative = 0;
         int totalDeath = 0;
+        int totalRecovered = 0;
         int totalODP = 0;
         int totalPDP = 0;
         int inODP = 0;
@@ -298,17 +302,18 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             District district = null;
             try {
                 district = new District(
-                        arrayCity.getJSONObject(i).getInt("negatif"),
-                        arrayCity.getJSONObject(i).getInt("no"),
-                        arrayCity.getJSONObject(i).getInt("meninggal"),
-                        arrayCity.getJSONObject(i).getInt("positif"),
-                        arrayCity.getJSONObject(i).getInt("ODP"),
-                        arrayCity.getJSONObject(i).getString("kabupaten"),
-                        arrayCity.getJSONObject(i).getInt("PDP"),
-                        arrayCity.getJSONObject(i).getInt("selesai_pengawasan"),
-                        arrayCity.getJSONObject(i).getInt("selesai_pemantauan"),
-                        arrayCity.getJSONObject(i).getInt("dalam_pemantauan"),
-                        arrayCity.getJSONObject(i).getInt("dalam_pengawasan")
+                        arrayCity.getJSONObject(i).getInt(StaticFinal.districtNegative),
+                        arrayCity.getJSONObject(i).getInt(StaticFinal.districtNumber),
+                        arrayCity.getJSONObject(i).getInt(StaticFinal.districtDeath),
+                        arrayCity.getJSONObject(i).getInt(StaticFinal.districtPositive),
+                        arrayCity.getJSONObject(i).getInt(StaticFinal.districtODP),
+                        arrayCity.getJSONObject(i).getString(StaticFinal.districtName),
+                        arrayCity.getJSONObject(i).getInt(StaticFinal.districtPDP),
+                        arrayCity.getJSONObject(i).getInt(StaticFinal.districtFinishedPDP),
+                        arrayCity.getJSONObject(i).getInt(StaticFinal.districtFinishedODP),
+                        arrayCity.getJSONObject(i).getInt(StaticFinal.districtInODP),
+                        arrayCity.getJSONObject(i).getInt(StaticFinal.districtInPDP),
+                        arrayCity.getJSONObject(i).getInt(StaticFinal.districtRecovered)
                 );
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -317,6 +322,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             totalDeath += district.getDeath();
             totalPositive += district.getPositive();
             totalNegative += district.getNegative();
+            totalRecovered += district.getRecovered();
             totalODP += district.getODP();
             totalPDP += district.getPDP();
             inPDP += district.getInPDP();
@@ -324,24 +330,26 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             finishedPDP += district.getFinishedPDP();
             finishedODP += district.getFinishedODP();
         }
-        tvNegative.setText(String.valueOf(totalNegative));
-        tvPositive.setText(String.valueOf(totalPositive));
-        tvDeath.setText(String.valueOf(totalDeath));
-        tvTotalODP.setText(String.valueOf(totalODP));
-        tvTotalPDP.setText(String.valueOf(totalPDP));
-        tvFinishPDP.setText(String.valueOf(finishedPDP));
-        tvInPDP.setText(String.valueOf(inPDP));
-        tvFinishODP.setText(String.valueOf(finishedODP));
-        tvInODP.setText(String.valueOf(inODP));
-        tvPDPPercentage.setText(percentageFormat(inPDP, totalPDP));
-        tvODPPercentage.setText(percentageFormat(inODP, totalODP));
-        tvPDPFinishedPercentage.setText(percentageFormat(finishedPDP, totalPDP));
-        tvODPFinishedPercentage.setText(percentageFormat(finishedODP, totalODP));
+        tvRecovered.setText(new StringBuilder().append(totalRecovered));
+        tvNegative.setText(new StringBuilder(totalNegative));
+        tvPositive.setText(new StringBuilder(totalPositive));
+        tvDeath.setText(new StringBuilder(totalDeath));
+        tvTotalODP.setText(new StringBuilder(totalODP));
+        tvTotalPDP.setText(new StringBuilder(totalPDP));
+        tvFinishPDP.setText(new StringBuilder(finishedPDP));
+        tvInPDP.setText(new StringBuilder(inPDP));
+        tvFinishODP.setText(new StringBuilder(finishedODP));
+        tvInODP.setText(new StringBuilder(inODP));
+        tvPDPPercentage.setText(new StringBuilder().append(percentageFormat(inPDP, totalPDP)));
+        tvODPPercentage.setText(new StringBuilder().append(percentageFormat(inODP, totalODP)));
+        tvPDPFinishedPercentage.setText(new StringBuilder().append(percentageFormat(finishedPDP, totalPDP)));
+        tvODPFinishedPercentage.setText(new StringBuilder().append(percentageFormat(finishedODP, totalODP)));
     }
 
     private void setDataDashboard(List<District> districtList) {
         int totalPositive = 0;
         int totalNegative = 0;
+        int totalRecovered = 0;
         int totalDeath = 0;
         int totalODP = 0;
         int totalPDP = 0;
@@ -350,7 +358,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         int finishedODP = 0;
         int finishedPDP = 0;
         for (int i = 0; i < districtList.size(); i++) {
-
+            totalRecovered += districtList.get(i).getRecovered();
             totalDeath += districtList.get(i).getDeath();
             totalPositive += districtList.get(i).getPositive();
             totalNegative += districtList.get(i).getNegative();
@@ -363,6 +371,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         }
         tvNegative.setText(String.valueOf(totalNegative));
         tvPositive.setText(String.valueOf(totalPositive));
+        tvRecovered.setText(String.valueOf(totalRecovered));
         tvDeath.setText(String.valueOf(totalDeath));
         tvTotalODP.setText(String.valueOf(totalODP));
         tvTotalPDP.setText(String.valueOf(totalPDP));

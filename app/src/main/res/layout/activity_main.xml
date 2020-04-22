@@ -327,14 +327,14 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/positive_card"
-                    android:layout_width="100dp"
+                    android:layout_width="160dp"
                     android:layout_height="130dp"
-                    android:layout_margin="16dp"
+                    android:layout_marginTop="16dp"
                     app:cardBackgroundColor="#eeb9da"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="4dp"
                     app:contentPadding="14dp"
-                    app:layout_constraintBottom_toTopOf="@id/card_info_pdp"
+                    app:layout_constraintBottom_toTopOf="@id/negative_card"
                     app:layout_constraintEnd_toStartOf="@id/dead_card"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -351,7 +351,7 @@
                             app:cardCornerRadius="50dp"
                             app:layout_constraintBottom_toTopOf="@id/positive_count"
                             app:layout_constraintEnd_toStartOf="@id/positive_title"
-                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintStart_toStartOf="@id/positive_count"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
@@ -364,7 +364,7 @@
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="@id/positive_icon"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/positive_icon"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="@id/positive_icon" />
 
 
@@ -373,8 +373,8 @@
                             style="@style/TextAppearanceStyle.Value"
                             android:text="@string/zero_value"
                             app:layout_constraintBottom_toTopOf="@id/positive_person_label"
-                            app:layout_constraintEnd_toEndOf="@id/positive_title"
-                            app:layout_constraintStart_toStartOf="@id/positive_icon"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/positive_title" />
 
                         <TextView
@@ -394,14 +394,14 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/dead_card"
-                    android:layout_width="100dp"
+                    android:layout_width="160dp"
                     android:layout_height="130dp"
                     app:cardBackgroundColor="#f9efa4"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="4dp"
                     app:contentPadding="12dp"
                     app:layout_constraintBottom_toBottomOf="@id/positive_card"
-                    app:layout_constraintEnd_toStartOf="@id/negative_card"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/positive_card"
                     app:layout_constraintTop_toTopOf="@id/positive_card">
 
@@ -430,7 +430,7 @@
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="@id/dead_icon"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/dead_icon"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="@id/dead_icon" />
 
 
@@ -439,8 +439,8 @@
                             style="@style/TextAppearanceStyle.Value"
                             android:text="@string/zero_value"
                             app:layout_constraintBottom_toTopOf="@id/dead_person_label"
-                            app:layout_constraintEnd_toEndOf="@id/dead_title"
-                            app:layout_constraintStart_toStartOf="@id/dead_icon"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/dead_title" />
 
                         <TextView
@@ -460,17 +460,17 @@
 
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/negative_card"
-                    android:layout_width="100dp"
+                    android:layout_width="160dp"
                     android:layout_height="130dp"
                     android:layout_margin="16dp"
                     app:cardBackgroundColor="#9aeae4"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="4dp"
                     app:contentPadding="16dp"
-                    app:layout_constraintBottom_toBottomOf="@id/dead_card"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@id/dead_card"
-                    app:layout_constraintTop_toTopOf="@id/dead_card">
+                    app:layout_constraintBottom_toTopOf="@id/card_info_pdp"
+                    app:layout_constraintEnd_toEndOf="@id/positive_card"
+                    app:layout_constraintStart_toStartOf="@id/positive_card"
+                    app:layout_constraintTop_toBottomOf="@id/positive_card">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -497,7 +497,7 @@
                             android:textStyle="bold"
                             app:layout_constraintBottom_toBottomOf="@id/negative_icon"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@id/negative_icon"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="@id/negative_icon" />
 
 
@@ -506,8 +506,8 @@
                             style="@style/TextAppearanceStyle.Value"
                             android:text="@string/zero_value"
                             app:layout_constraintBottom_toTopOf="@id/negative_person_label"
-                            app:layout_constraintEnd_toEndOf="@id/negative_title"
-                            app:layout_constraintStart_toStartOf="@id/negative_icon"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toBottomOf="@id/negative_title" />
 
                         <TextView
@@ -526,18 +526,85 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/recovered_card"
+                    android:layout_width="160dp"
+                    android:layout_height="130dp"
+                    android:layout_margin="16dp"
+                    app:cardBackgroundColor="#81D4FA"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="4dp"
+                    app:contentPadding="16dp"
+                    app:layout_constraintBottom_toBottomOf="@id/negative_card"
+                    app:layout_constraintEnd_toEndOf="@id/dead_card"
+                    app:layout_constraintStart_toStartOf="@id/dead_card"
+                    app:layout_constraintTop_toTopOf="@id/negative_card">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <com.google.android.material.card.MaterialCardView
+                            android:id="@+id/recovered_icon"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            app:cardBackgroundColor="#03A9F4"
+                            app:cardCornerRadius="50dp"
+                            app:layout_constraintBottom_toTopOf="@id/recovered_count"
+                            app:layout_constraintEnd_toStartOf="@id/recovered_title"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/recovered_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="6dp"
+                            android:text="@string/cured"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            app:layout_constraintBottom_toBottomOf="@id/recovered_icon"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@id/recovered_icon" />
+
+
+                        <TextView
+                            android:id="@+id/recovered_count"
+                            style="@style/TextAppearanceStyle.Value"
+                            android:text="@string/zero_value"
+                            app:layout_constraintBottom_toTopOf="@id/recovered_person_label"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@id/recovered_title" />
+
+                        <TextView
+                            android:id="@+id/recovered_person_label"
+                            style="@style/TextAppearanceStyle.Label"
+                            android:layout_marginStart="6dp"
+                            android:text="@string/cases"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="@id/recovered_count"
+                            app:layout_constraintStart_toStartOf="@id/recovered_count"
+                            app:layout_constraintTop_toBottomOf="@id/recovered_count" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_info_pdp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="8dp"
                     app:cardUseCompatPadding="true"
                     app:layout_constraintBottom_toTopOf="@id/card_info_odp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/positive_card">
+                    app:layout_constraintTop_toBottomOf="@id/negative_card">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -663,8 +730,8 @@
                     android:id="@+id/card_info_odp"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="8dp"
                     app:cardUseCompatPadding="true"
@@ -838,7 +905,7 @@
                 <com.google.android.material.card.MaterialCardView
                     android:id="@+id/card_container_maps"
                     android:layout_width="match_parent"
-                    android:layout_height="440dp"
+                    android:layout_height="550dp"
                     android:layout_margin="16dp"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="4dp"

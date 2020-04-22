@@ -10,6 +10,7 @@ public class District {
     private int negative;
     private int no;
     private int death;
+    private int recovered;
     private int positive;
     private int ODP;
     private String name;
@@ -20,7 +21,7 @@ public class District {
     private int inPDP;
 
 
-    public District(int negative, int no, int death, int positive, int ODP, String name, int PDP, int finishedPDP, int finishedODP, int inODP, int inPDP) {
+    public District(int negative, int no, int death, int positive, int ODP, String name, int PDP, int finishedPDP, int finishedODP, int inODP, int inPDP, int recovered) {
         this.negative = negative;
         this.no = no;
         this.death = death;
@@ -32,6 +33,7 @@ public class District {
         this.finishedODP = finishedODP;
         this.inODP = inODP;
         this.inPDP = inPDP;
+        this.recovered = recovered;
     }
 
     public int getId() {
@@ -40,6 +42,14 @@ public class District {
 
     public void setId(int id) {
         this.id = id;
+    }
+
+    public int getRecovered() {
+        return recovered;
+    }
+
+    public void setRecovered(int recovered) {
+        this.recovered = recovered;
     }
 
     public int getFinishedPDP() {

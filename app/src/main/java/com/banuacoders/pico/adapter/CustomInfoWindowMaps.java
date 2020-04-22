@@ -29,18 +29,20 @@ public class CustomInfoWindowMaps implements GoogleMap.InfoWindowAdapter {
         TextView tvName = view.findViewById(R.id.district_name);
         TextView tvPositive = view.findViewById(R.id.value_postive);
         TextView tvNegative = view.findViewById(R.id.value_negative);
+        TextView tvRecovered = view.findViewById(R.id.value_recovered);
         TextView tvDeath = view.findViewById(R.id.value_death);
         TextView tvODP = view.findViewById(R.id.value_ODP);
         TextView tvPDP = view.findViewById(R.id.value_PDP);
 
         District district = (District) marker.getTag();
         String person = " " + context.getResources().getString(R.string.cases);
-        tvName.setText(district.getName());
-        tvPositive.setText(district.getPositive() + person);
-        tvNegative.setText(district.getNegative() + person);
-        tvDeath.setText(district.getDeath() + person);
-        tvODP.setText(district.getODP() + "");
-        tvPDP.setText(district.getPDP() + "");
+        tvName.setText(new StringBuilder(district.getName()));
+        tvPositive.setText(new StringBuilder().append(district.getPositive()).append(person));
+        tvNegative.setText(new StringBuilder().append(district.getNegative()).append(person));
+        tvDeath.setText(new StringBuilder().append(district.getDeath()).append(person));
+        tvODP.setText(new StringBuilder().append(district.getODP()));
+        tvPDP.setText(new StringBuilder().append(district.getPDP()));
+        tvRecovered.setText(new StringBuilder().append(district.getRecovered()).append(person));
         return view;
     }
 }

@@ -18,6 +18,7 @@ public class MyTableViewModel {
     private List<RowHeaderModel> mRowHeaderModelList;
     private List<List<CellModel>> cellModelList;
     private Resources res;
+
     public MyTableViewModel(Context context) {
         res = context.getResources();
     }
@@ -43,6 +44,7 @@ public class MyTableViewModel {
         list.add(new ColumnHeaderModel(res.getString(R.string.positive)));
         list.add(new ColumnHeaderModel(res.getString(R.string.negative)));
         list.add(new ColumnHeaderModel(res.getString(R.string.dead)));
+        list.add(new ColumnHeaderModel(res.getString(R.string.cured)));
 
         return list;
     }
@@ -62,6 +64,7 @@ public class MyTableViewModel {
             list.add(new CellModel("8-" + i, district.getPositive()));
             list.add(new CellModel("9-" + i, district.getNegative()));
             list.add(new CellModel("10-" + i, district.getDeath()));
+            list.add(new CellModel("11-" + i, district.getRecovered()));
             lists.add(list);
         }
         return lists;
