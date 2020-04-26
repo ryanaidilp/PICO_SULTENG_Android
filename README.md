@@ -17,7 +17,25 @@ Android Lolipop (5.0)
 ## **Repository**
 ![project_screen](http://i.ibb.co/j8jwrQJ/screely-1586000616230.png)
 Aplikasi ini dibangun menggunakan ***design pattern*** MVVM. Beberapa library yang diperlukan antara lain :
+-   [Recycler View](https://developer.android.com/jetpack/androidx/releases/recyclerview) : Digunakan untuk menampilkan data dalam bentuk ***list/scroll view***.
+-   [Butter Knife](https://github.com/JakeWharton/butterknife) : Digunakan untuk menerapkan ***view binding***.
+-   [RxJava](https://github.com/ReactiveX/RxJava) : Digunakan untuk melakukan proses ***asynchronous***.
+-   [Spin Kit](https://github.com/ybq/Android-SpinKit) : Digunakan untuk mengganti tampilan ***progress bar*** biasa menjadi lebih modern.
+-   [Glide](https://github.com/bumptech/glide) : Digunakan untuk **menampilkan gambar** dari internet ke  aplikasi.
+-   [Google Material](https://www.material.io/) : Digunakan untuk menerapkan ***Material Design***  dari Google.
+-   [AnyChart](https://github.com/AnyChart/AnyChart-Android) : Digunakan untuk **memvisualisasikan data** ke dalam berbagai bentuk grafik.
+-   [MPAndroidChart](https://github.com/PhilJay/MPAndroidChart) : Digunakan untuk **memvisualisasikan data** ke dalam berbagai bentuk grafik.
+-   [Gravity SnapHelper]() : Tambahan untuk ***Recycler View*** .
+-   [Scrolling Pager Indicator](https://github.com/TinkoffCreditSystems/ScrollingPagerIndicator) : Digunakan untuk memberikan ***scrolling indicator*** pada ***Recycler View***.
+-   [TableView](https://github.com/evrencoskun/TableView) : Digunakan untuk **menampilkan data** ke dalam **tabel**.
+-   [Retrofit](https://github.com/square/retrofit) : Digunakan untuk **melakukan koneksi** ke server.
+-   [OneSignal](https://github.com/OneSignal/OneSignal-Android-SDK) : Digunakan untuk menghubungkan aplikasi ke layanan ***push notification*** [OneSignal](https://onesignal.com/) 
+-   [Androidx Room](https://developer.android.com/topic/libraries/architecture/room) : Digunakan untuk menerapkan **penyimpanan data local**.
+-   [Android Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle) : Digunakan untuk  merespon perubahan ***lifecycle activity/fragment***.
+-   [Google Maps](https://github.com/googlemaps/android-maps-utils) : Digunakan untuk menampilkan ***Google Maps*** ke aplikasi.
 
+
+#### Implementasi library 
 - Tambahkan ini di file **build.gradle** di module (**app**) :
 
 ```gradle

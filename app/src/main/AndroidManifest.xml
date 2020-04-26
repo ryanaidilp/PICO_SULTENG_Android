@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.activities.PostsActivity"></activity>
+        <activity android:name=".ui.activities.PostsActivity"/>
 
         <meta-data
             android:name="com.google.android.geo.API_KEY"
@@ -22,7 +22,9 @@
         <activity android:name=".ui.activities.ActivityHospital" />
         <activity android:name=".ui.activities.DetexiActivity" />
         <activity android:name=".ui.activities.StatsActivity" />
-        <activity android:name=".ui.activities.MainActivity">
+        <activity
+            android:name=".ui.activities.MainActivity"
+            android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
