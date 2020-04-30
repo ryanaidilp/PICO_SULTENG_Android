@@ -6,12 +6,14 @@ Pusat Informasi COVID-19 Sulawesi Tengah (PICO SulTeng) merupakan aplikasi berba
 
 #### Instalasi
 
-Download APK [disini](https://banuacoders.com/app/pico) tekan Download lalu install APK di smartphone anda.
+Download PICO [disini](https://banuacoders.com/app/pico). 
+Tekan Download lalu install APK di smartphone anda.
 
 #### Minimum system requirements : 
  
 Android Lolipop (5.0)
 
+#### Features/Fitur :
 
 
 ## **Repository**
@@ -148,6 +150,7 @@ allprojects {
        <string name="positive">Positive</string>
        <string name="negative">Negative</string>
        <string name="dead">Death</string>
+       <string name="recovered">Recovered</string>
     ```
   - #### /res/values-in-rID/strings.xml
 
@@ -162,6 +165,7 @@ allprojects {
        <string name="positive">Positif</string>
        <string name="negative">Negatif</string>
        <string name="dead">Meninggal</string>
+       <string name="recovered">Sembuh</string>
     ```
 - Untuk mengubah perataan teks ataupun urutan kolom tabel, bisa dilakukan pada file **MyTableViewModel.java** dan **ColumnHeaderViewHolder.java** :
   - #### /java/com/banuacoders/pico/ui/tableutil/MyTableViewModel.java
@@ -183,6 +187,7 @@ allprojects {
            list.add(new ColumnHeaderModel(res.getString(R.string.positive)));
            list.add(new ColumnHeaderModel(res.getString(R.string.negative)));
            list.add(new ColumnHeaderModel(res.getString(R.string.dead)));
+           list.add(new ColumnHeaderModel(res.getString(R.string.recovered)));
 
            return list;
        }
@@ -202,6 +207,7 @@ allprojects {
                list.add(new CellModel("8-" + i, district.getPositive()));
                list.add(new CellModel("9-" + i, district.getNegative()));
                list.add(new CellModel("10-" + i, district.getDeath()));
+               list.add(new CellModel("11-" + i, district.getRecovered()));
                lists.add(list);
            }
            return lists;
@@ -235,6 +241,8 @@ allprojects {
            //negative
            Gravity.CENTER,
            //death
+           Gravity.CENTER,
+           //recovered
            Gravity.CENTER,
        };
        
