@@ -1,6 +1,6 @@
 ﻿# PICO SulTeng Android
 
-[![License: MIT](https://img.shields.io/github/license/RyanAidilPratama/PICO_SULTENG_API?color=blue)](https://opensource.org/licenses/MIT) ![version](https://img.shields.io/badge/version-v3.0.1-brightgreen) ![Last Commit](https://img.shields.io/github/last-commit/RyanAidilPratama/PICO_SULTENG_Android) ![Commits](https://img.shields.io/github/commit-activity/m/RyanAidilPratama/PICO_SULTENG_Android) ![Stars](https://img.shields.io/github/stars/RyanAidilPratama/PICO_SULTENG_Android) ![Forks](https://img.shields.io/github/forks/RyanAidilPratama/PICO_SULTENG_Android)
+[![License: MIT](https://img.shields.io/github/license/RyanAidilPratama/PICO_SULTENG_API?color=blue)](https://opensource.org/licenses/MIT) ![version](https://img.shields.io/github/v/release/RyanAidilPratama/PICO_SULTENG_Android) ![Last Commit](https://img.shields.io/github/last-commit/RyanAidilPratama/PICO_SULTENG_Android) ![Commits](https://img.shields.io/github/commit-activity/m/RyanAidilPratama/PICO_SULTENG_Android) ![Stars](https://img.shields.io/github/stars/RyanAidilPratama/PICO_SULTENG_Android) ![Forks](https://img.shields.io/github/forks/RyanAidilPratama/PICO_SULTENG_Android)
 
 ![PICO SulTeng](http://i.ibb.co/jRtxp9Y/picobar.png)
 
@@ -9,9 +9,9 @@ Pusat Informasi COVID-19 Sulawesi Tengah (PICO SulTeng) merupakan aplikasi berba
 ## Informasi
 
 - Landing page PICO : [PICO SulTeng App](https://banuacoders.com/app/pico)
-- Unduh APK via Google Drive :
-  - PICO SulTeng v3.0.1 : [download](https://s.id/PICOVID-19-SULTENG)
-  - PICO SulTeng (Unsigned) v3.0.1 : [download](https://s.id/PICO-SULTENG-UNSIGNED)
+- Unduh APK :
+  - PICO SulTeng v3.0.1 : [download](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/releases/download/v3.0.1/PICO.COVID-19.Sulawesi.Tengahv3.0.1.apk)
+  - PICO SulTeng (Unsigned) v3.0.1 (Google Drive) : [download](https://s.id/PICO-SULTENG-UNSIGNED)
 - Panduan PICO : [disini](https://www.youtube.com/playlist?list=PLrF0GvrAdCI_-nZSASNvtGxvdln_lRIUo)
 
 ## Versi Minimum OS
