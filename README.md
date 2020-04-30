@@ -1,4 +1,4 @@
-﻿# PICO SulTeng Android
+﻿﻿# PICO SulTeng Android
 
 ![PICO SulTeng](http://i.ibb.co/jRtxp9Y/picobar.png)
 
@@ -24,37 +24,50 @@ Aplikasi ini menggunakan data dari [PICO API](https://github.com/RyanAidilPratam
 
 - **Notifikasi :**
   - Dapatkan notifikasi seputar COVID-19
-  ![Notification](https://i.ibb.co/kmSHrsr/PICO10.png)
+  
+    ![Notification](https://i.ibb.co/kmSHrsr/PICO10.png)
+    
 - **Dashboard, berisi :**
   - Update terkini stuasi COVID-19 di Sulawesi Tengah (Positif, Sembuh, Meninggal, Negatif).
   - Informasi jumlah ODP dan PDP di Sulawesi Tengah.
   - Tabel penyebaran kasus COVID-19 per Kabupaten/Kota se Provinsi Sulawesi Tengah.
   - Peta penyebaran kasus COVID-19 per Kabupaten/Kota se Provinsi Sulawesi Tengah.
   - Nomor telpon penting seputar COVID-19 dengan fitur ***tap to call***.
-  ![Dashboard1](https://i.ibb.co/PcLzhrZ/PICO1.png) ![Dashboard2](https://i.ibb.co/Lnbzkrb/PICO2.png)
-  ![Dashboard3](https://i.ibb.co/W6QzbWj/PICO3.png) ![Dashboar4](https://i.ibb.co/gd2gcmW/PICO4.png)
+  
+    ![Dashboard1](https://i.ibb.co/PcLzhrZ/PICO1.png) ![Dashboard2](https://i.ibb.co/Lnbzkrb/PICO2.png)
+    ![Dashboard3](https://i.ibb.co/W6QzbWj/PICO3.png) ![Dashboar4](https://i.ibb.co/gd2gcmW/PICO4.png)
+
 - **Daftar rumah sakit rujukan COVID-19 di Sulawesi Tengah :**
   - Tekan pada nomor telpon untuk menelpon rumah sakit ***(Tap to call)***.
   - Tekan pada email untuk mengirim email ke rumah sakit ***(Tap to Email)***.
   - Tombol petunjuk arah rumah sakit.
-  ![Hospital1](https://i.ibb.co/PcLzhrZ/PICO1.png) ![Hospital2](https://i.ibb.co/vPqqtFt/PICO5.png)
+
+    ![Hospital1](https://i.ibb.co/PcLzhrZ/PICO1.png) ![Hospital2](https://i.ibb.co/vPqqtFt/PICO5.png)
+
 - **Daftar posko tim SATGAS COVID-19 per Kabupaten/Kota se Sulawesi Tengah :**
   - Tekan pada nomor telpon untuk menelpon ***(Tap to call)***.
-  ![Posts1](https://i.ibb.co/NSFJrKf/PICO6.png) ![Posts2](https://i.ibb.co/9GxkkgW/PICO7.png)
+
+    ![Posts1](https://i.ibb.co/NSFJrKf/PICO6.png) ![Posts2](https://i.ibb.co/9GxkkgW/PICO7.png)
+
 - **Pemeriksaan Mandiri :**
   - Pemeriksaan mandiri COVID-19 dengan asisten virtual dari [Detexi App](https://corona.detexi.id). Detexi merupakan startup lokal Sulawesi Tengah yang bergerak dibidang kesehatan dan saat ini bekerja sama dengan pemerintah Provinsi Sulawesi Tengah, IDI Sulawesi Tengah, dan PDUI Sulawesi Tengah.
-  ![Detexi1](https://i.ibb.co/JySTdRM/PICO8.png) ![Detexi2](https://i.ibb.co/HdrQgJv/PICO9.png)
+
+    ![Detexi1](https://i.ibb.co/JySTdRM/PICO8.png) ![Detexi2](https://i.ibb.co/HdrQgJv/PICO9.png)
+
 - **Statistik :**
   - Statistik kasus COVID-19 di Indonesia
-  ![Stats1](https://i.ibb.co/G3tDPWh/PICO11.png) ![Stats2](https://i.ibb.co/dtwHPMp/PICO12.png)
+
+    ![Stats1](https://i.ibb.co/G3tDPWh/PICO11.png) ![Stats2](https://i.ibb.co/dtwHPMp/PICO12.png)
 
 - **Peta penyebaran (Provinsi):**
   - Peta penyebaran kasus COVID-19 per Provinsi di Indonesia.
-  ![Map1](https://i.ibb.co/XDvCzN1/PICO13.png) ![Map2](https://i.ibb.co/0sfyzS3/PICO14.png)
+
+    ![Map1](https://i.ibb.co/XDvCzN1/PICO13.png) ![Map2](https://i.ibb.co/0sfyzS3/PICO14.png)
 
 - **Multi bahasa:**
   - PICO mendukung Bahasa Indonesia dan English.
-  ![Bahasa](https://i.ibb.co/PcLzhrZ/PICO1.png) ![English](https://i.ibb.co/k27DfHB/PICO15.png)
+
+    ![Bahasa](https://i.ibb.co/PcLzhrZ/PICO1.png) ![English](https://i.ibb.co/k27DfHB/PICO15.png)
 
 ## Repository
 
