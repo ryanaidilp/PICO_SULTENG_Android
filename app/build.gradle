@@ -12,7 +12,7 @@ android {
         versionCode 3
         versionName "3.0.1"
         manifestPlaceholders = [
-                onesignal_app_id               : 'app_key',
+                onesignal_app_id               : 'onesignal_app_key',
                 // Project number pulled from dashboard, local value is ignored.
                 onesignal_google_project_number: 'REMOTE'
         ]

@@ -1,4 +1,4 @@
-﻿﻿# PICO SulTeng Android
+﻿# PICO SulTeng Android
 
 ![PICO SulTeng](http://i.ibb.co/jRtxp9Y/picobar.png)
 
