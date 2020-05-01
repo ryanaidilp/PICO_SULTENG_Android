@@ -1,10 +1,32 @@
 ﻿# PICO SulTeng Android
 
-[![License: MIT](https://img.shields.io/github/license/RyanAidilPratama/PICO_SULTENG_API?color=blue)](https://opensource.org/licenses/MIT) [![version](https://img.shields.io/github/v/release/RyanAidilPratama/PICO_SULTENG_Android)](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/releases/tag/v3.0.1) [![Last Commit](https://img.shields.io/github/last-commit/RyanAidilPratama/PICO_SULTENG_Android)](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/commits/master) ![Commits](https://img.shields.io/github/commit-activity/m/RyanAidilPratama/PICO_SULTENG_Android) [![Stars](https://img.shields.io/github/stars/RyanAidilPratama/PICO_SULTENG_Android)](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/stargazers) [![Forks](https://img.shields.io/github/forks/RyanAidilPratama/PICO_SULTENG_Android)](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/network/members)
-
-![PICO SulTeng](http://i.ibb.co/jRtxp9Y/picobar.png)
+<p align="center">
+  <img src="https://banuacoders.com/app/pico/logo.png"  width="100" height="100" alt="PICO"/>
+  
+</p>
+<p align="center">
+  <a href="https://opensource.org/licenses/MIT">
+    <img src="https://img.shields.io/github/license/RyanAidilPratama/PICO_SULTENG_API?color=blue" alt="License : MIT"/>
+  </a>
+  <a href="https://github.com/RyanAidilPratama/PICO_SULTENG_Android/releases/tag/v3.0.1">
+    <img src="https://img.shields.io/github/v/release/RyanAidilPratama/PICO_SULTENG_Android" alt="Version : v3.0.1"/>
+  </a>
+  <a href="https://github.com/RyanAidilPratama/PICO_SULTENG_Android/commits/master">
+    <img src="https://img.shields.io/github/last-commit/RyanAidilPratama/PICO_SULTENG_Android" alt="last commits"/>
+  </a>
+  <a href="https://img.shields.io/github/commit-activity/m/RyanAidilPratama/PICO_SULTENG_Android">
+    <img src="https://img.shields.io/github/commit-activity/m/RyanAidilPratama/PICO_SULTENG_Android" alt="commit activity"/>
+  </a>
+  <a href="https://github.com/RyanAidilPratama/PICO_SULTENG_Android/stargazers">
+    <img src="https://img.shields.io/github/stars/RyanAidilPratama/PICO_SULTENG_Android" alt="stars"/>
+  </a>
+  <a href="https://github.com/RyanAidilPratama/PICO_SULTENG_Android/network/members">
+    <img src="https://img.shields.io/github/forks/RyanAidilPratama/PICO_SULTENG_Android" alt="forks"/>
+  </a>
+</p>
 
 Pusat Informasi COVID-19 Sulawesi Tengah (PICO SulTeng) merupakan aplikasi berbasis android yang dikembangkan untuk mempermudah masyarakat Sulawesi Tengah dalam memperoleh informasi seputar perkembangan COVID-19 di Sulawesi Tengah.
+![PICO SulTeng](http://i.ibb.co/jRtxp9Y/picobar.png)
 
 ## Informasi
 
