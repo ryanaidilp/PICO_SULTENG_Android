@@ -47,28 +47,28 @@ Ini merupakan versi **Bahasa Indonesia** dari file README.md, tekan badge untuk 
 
 ## Informasi Umum
 
-* Landing page PICO  
+* **Landing page PICO**
 
-  Untuk berkunjung ke ***landing page*** PICO SulTeng App, silahkan klik gambar dibawah.
+  Silahkan klik gambar dibawah untuk berkunjung ke ***landing page*** PICO SulTeng App.
   
   [![PICO SulTeng](https://i.ibb.co/jRtxp9Y/picobar.png)](https://banuacoders.com/app/pico)
-* Unduh APK
+* **Unduh APK**
 
   Berikut ini adalah beberapa tautan untuk mengunduh PICO
   * PICO SulTeng v3.0.1 : [download](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/releases/download/v3.0.1/PICO.COVID-19.Sulawesi.Tengahv3.0.1.apk)
   * PICO SulTeng (Unsigned) v3.0.1 (Google Drive) : [download](https://s.id/PICO-SULTENG-UNSIGNED)
-* Panduan penggunaan & instalasi PICO
+* **Panduan penggunaan & instalasi PICO**
 
   * Untuk melihat beberapa panduan penggunaan PICO, dapat anda lihat [disini](https://www.youtube.com/playlist?list=PLrF0GvrAdCI_-nZSASNvtGxvdln_lRIUo).
   * Petunjuk instalasi : [disini](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/releases/download/v3.0.1/Petunjuk_Instal.docx)
-* Sumber Data
+* **Sumber Data**
 
   Aplikasi ini menggunakan data dari [PICO API](https://github.com/RyanAidilPratama/PICO_SULTENG_API). Untuk melihat dokumentasi PICO API, silahkan klik [disini](https://github.com/RyanAidilPratama/PICO_SULTENG_API).
-* Versi Minimum OS
+* **Versi Minimum OS**
 
   * **Android Lolipop (5.0)**
 
-* Untuk import ke Android Studio :
+* **Untuk import ke Android Studio :**
   * Gunakan versi terbaru Android Studio - versi 3.6.3
   * RAM :  4 GB
 
@@ -134,18 +134,18 @@ Beberapa fitur yang sudah selesai dikembangkan :
 
   ![Bahasa](https://i.ibb.co/PcLzhrZ/PICO1.png) ![English](https://i.ibb.co/k27DfHB/PICO15.png)
 
-*To-do List* :
+***To-do List*** :
 
-* *Push notification*
+* ***Push notification***
   * [X] Notifikasi situasi terkini COVID-19 di Indonesia
   * [X] Notifikasi situasi terkini COVID-19 di Sulawesi Tengah
-  * [] Notifikasi jika *user* berada di zona merah
-  * [] Notifikasi jika *user* pernah berinteraksi dengan pasien COVID-19
-  * [] Notifikasi jika di dekat lokasi *user* ada kasus COVID-19
-* *In-App push messaging*
+  * [ ] Notifikasi jika *user* berada di zona merah
+  * [ ] Notifikasi jika *user* pernah berinteraksi dengan pasien COVID-19
+  * [ ] Notifikasi jika di dekat lokasi *user* ada kasus COVID-19
+* ***In-App push messaging***
   * [X] Infografis seputar COVID-19 (Pencegahan, pengobatan, dll)
 * [X] Pemeriksaan mandiri COVID-19
-* Data situasi terkini COVID-19 di Sulawesi Tengah
+* **Data situasi terkini COVID-19 di Sulawesi Tengah**
   * [X] Kabupaten/Kota
   * [X] Kasus **ODP**
   * [X] Kasus **Dalam Pemantauan**
@@ -158,10 +158,10 @@ Beberapa fitur yang sudah selesai dikembangkan :
   * [X] Kasus **Meninggal**
   * [X] Kasus **Sembuh**
   * [X] Terakhir diperbarui
-  * [] Data perkembangan harian COVID-19 di Sulawesi Tengah
+  * [ ] Data perkembangan harian COVID-19 di Sulawesi Tengah
 * [X] Tabel distribusi kasus COVID-19 di Sulawesi Tengah
 * [X] Peta penyebaran COVID-19 di Sulawesi Tengah
-* Data statistik situasi COVID-19 di Indonesia
+* **Data statistik situasi COVID-19 di Indonesia**
   * [X] Provinsi
   * [X] Kasus **Positif**
   * [X] Kasus **Sembuh**
@@ -171,23 +171,23 @@ Beberapa fitur yang sudah selesai dikembangkan :
   * [X] Kumulatif kasus **Meninggal**
   * [X] Perkembangan harian kasus COVID-19.
 * [X] Peta penyebaran COVID-19 di Indonesia
-* Data rumah sakit rujukan COVID-19 Sulawesi Tengah
+* **Data rumah sakit rujukan COVID-19 Sulawesi Tengah**
   * [X] Nama rumah sakit
   * [X] Alamat/Lokasi rumah sakit
   * [X] Nomor telpon rumah sakit
   * [X] Email rumah sakit
-* Data posko gugus tugas COVID-19 Sulawesi Tengah
+* **Data posko gugus tugas COVID-19 Sulawesi Tengah**
   * [X] Lokasi posko
   * [X] Nama penanggung jawab
   * [X] Nomor telpon
-* Data pengguna
-  * [] Registrasi
-  * [] Masuk
-  * [] Nama
-  * [] Usia
-  * [] Lokasi
-  * [] Status COVID-19 (ODP, OTG, PDP, dll)
-  * [] Nomor handphone/telpon
+* **Data pengguna**
+  * [ ] Registrasi
+  * [ ] Masuk
+  * [ ] Nama
+  * [ ] Usia
+  * [ ] Lokasi
+  * [ ] Status COVID-19 (ODP, OTG, PDP, dll)
+  * [ ] Nomor handphone/telpon
 
 ## Library & Dependensi
 

@@ -9,7 +9,7 @@
     <img src="https://img.shields.io/github/license/RyanAidilPratama/PICO_SULTENG_API?color=blue" alt="License : MIT"/>
   </a>
   <a href="https://github.com/RyanAidilPratama/PICO_SULTENG_Android/releases/tag/v3.0.1">
-    <img src="https://img.shields.io/github/v/release/RyanAidilPratama/PICO_SULTENG_Android" alt="versionon : v3.0.1"/>
+    <img src="https://img.shields.io/github/v/release/RyanAidilPratama/PICO_SULTENG_Android" alt="version : v3.0.1"/>
   </a>
   <a href="https://github.com/RyanAidilPratama/PICO_SULTENG_Android/commits/master">
     <img src="https://img.shields.io/github/last-commit/RyanAidilPratama/PICO_SULTENG_Android" alt="last commits"/>
@@ -34,7 +34,7 @@ PICO SulTeng (*Pusat Informasi COVID-19 Sulawesi Tengah*/COVID-19 Information Ce
 
 [![Language : Id](https://img.shields.io/badge/lang-id-blue)](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/blob/master/README.id.md)
 
-This is the **English** versionon of the README.md file, press the badge to read the ***Bahasa Indonesia*** versionon.
+This is the **English** version of the README.md file, press the badge to read the ***Bahasa Indonesia*** version.
 
 * [General Information](#general-information)
 * [Screenshot](#Screenshot)
@@ -47,29 +47,29 @@ This is the **English** versionon of the README.md file, press the badge to read
 
 ## General Information
 
-* Landing page PICO  
+* **Landing page PICO**  
 
-  To visit the ***landing page*** of PICO SulTeng App, please click the image below.
+  Click the image below to visit the **landing page** of PICO SulTeng App.
   
   [![PICO SulTeng](https://i.ibb.co/jRtxp9Y/picobar.png)](https://banuacoders.com/app/pico)
-* Download APK
+* **Download APK**
 
   Here are some links for downloading PICO
   * PICO SulTeng v3.0.1 : [download](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/releases/download/v3.0.1/PICO.COVID-19.Sulawesi.Tengahv3.0.1.apk)
   * PICO SulTeng (Unsigned) v3.0.1 (Google Drive) : [download](https://s.id/PICO-SULTENG-UNSIGNED)
-* PICO installation and usage guide
+* **PICO installation and usage guide**
 
   * To see some PICO usage guidelines, you can see it [here](https://www.youtube.com/playlist?list=PLrF0GvrAdCI_-nZSASNvtGxvdln_lRIUo).
   * Installation instruction : [here](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/releases/download/v3.0.1/Petunjuk_Instal.docx)
-* Data Source
+* **Data Source**
 
   This application uses data from **PICO API**. To view the **PICO API** documentation, please click [here](https://github.com/RyanAidilPratama/PICO_SULTENG_API).
-* Minimum OS versionon
+* **Minimum OS version**
 
   * **Android Lolipop (5.0)**
 
-* To import into Android Studio :
-  * Use the latest versionon of Android Studio - versionon 3.6.3
+* **To import into Android Studio :**
+  * Use the latest version of Android Studio - version 3.6.3
   * RAM :  4 GB
 
 ## Screenshot
@@ -134,18 +134,18 @@ Some features that have been developed:
 
   ![Bahasa](https://i.ibb.co/PcLzhrZ/PICO1.png) ![English](https://i.ibb.co/k27DfHB/PICO15.png)
 
-*To-do List* :
+**To-do List** :
 
-* Push notification
+* **Push notification**
   * [X] Notification of the current situation of COVID-19 in Indonesia
   * [X] Notification of the current situation of COVID-19 in Central Sulawesi
-  * [] Notification if user is in the **red zone**
-  * [] Notification if user has interacted with a COVID-19 patient
-  * [] Notification if there is a case of COVID-19 nearby
-* In-App push messaging
+  * [ ] Notification if user is in the **red zone**
+  * [ ] Notification if user has interacted with a COVID-19 patient
+  * [ ] Notification if there is a case of COVID-19 nearby
+* **In-App push messaging**
   * [X] Infographics around COVID-19 (Prevention, treatment, etc.)
 * [X] COVID-19 self-examination
-* Data on the current situation of COVID-19 in Central Sulawesi
+* **Data on the current situation of COVID-19 in Central Sulawesi**
   * [X] Regency/City
   * [X] **ODP** cases
   * [X] **Under Observation** cases
@@ -158,10 +158,10 @@ Some features that have been developed:
   * [X] **Death** cases
   * [X] **Recovered** cases
   * [X] Latest update
-  * [] Daily report of COVID-19 cases in Central Sulawesi
+  * [ ] Daily report of COVID-19 cases in Central Sulawesi
 * [X] Table of distribution of COVID-19 cases in Central Sulawesi
 * [X] Map of the spread of COVID-19 in Central Sulawesi
-* Statistical data on the COVID-19 situation in Indonesia
+* **Statistical data on the COVID-19 situation in Indonesia**
   * [X] Province
   * [X] **Positive** cases
   * [X] **Recovered** cases
@@ -171,23 +171,23 @@ Some features that have been developed:
   * [X] Cumulative cases **Death**
   * [X] Daily report of COVID-19 cases in Indonesia.
 * [X] Map of the spread of COVID-19 in Indonesia
-* Data of COVID-19 referral hospital in Central Sulawesi
+* **Data of COVID-19 referral hospital in Central Sulawesi**
   * [X] Hospital name
   * [X] Hospital address
   * [X] Hospital phone number
   * [X] Hospital email
-* COVID-19 Task Force post data
+* **COVID-19 Task Force post data**
   * [X] The location of the post
   * [X] The name of the person in charge
   * [X] Phone number
-* User data
-  * [] Registration
-  * [] Sign in
-  * [] Name
-  * [] Age
-  * [] Location
-  * [] Status COVID-19 (ODP, OTG, PDP, etc.)
-  * [] Phone number
+* **User data**
+  * [ ] Registration
+  * [ ] Sign in
+  * [ ] Name
+  * [ ] Age
+  * [ ] Location
+  * [ ] Status COVID-19 (ODP, OTG, PDP, etc.)
+  * [ ] Phone number
 
 ## Library & Dependency
 
