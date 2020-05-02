@@ -1,4 +1,4 @@
-﻿<p align="center">
+<p align="center">
   <img src="https://banuacoders.com/app/pico/logo.png"  width="100" height="100" alt="PICO"/>
 </p>
 
@@ -9,7 +9,7 @@
     <img src="https://img.shields.io/github/license/RyanAidilPratama/PICO_SULTENG_API?color=blue" alt="License : MIT"/>
   </a>
   <a href="https://github.com/RyanAidilPratama/PICO_SULTENG_Android/releases/tag/v3.0.1">
-    <img src="https://img.shields.io/github/v/release/RyanAidilPratama/PICO_SULTENG_Android" alt="versionon : v3.0.1"/>
+    <img src="https://img.shields.io/github/v/release/RyanAidilPratama/PICO_SULTENG_Android" alt="Version : v3.0.1"/>
   </a>
   <a href="https://github.com/RyanAidilPratama/PICO_SULTENG_Android/commits/master">
     <img src="https://img.shields.io/github/last-commit/RyanAidilPratama/PICO_SULTENG_Android" alt="last commits"/>
@@ -28,203 +28,203 @@
   </a>
 </p>
 
-PICO SulTeng (*Pusat Informasi COVID-19 Sulawesi Tengah*/COVID-19 Information Center of Central Sulawesi) is an android-based application developed to facilitate the people of Central Sulawesi in obtaining information about the current situation of COVID-19 in Central Sulawesi.
+Pusat Informasi COVID-19 Sulawesi Tengah (PICO SulTeng) merupakan aplikasi berbasis android yang dikembangkan untuk mempermudah masyarakat Sulawesi Tengah dalam memperoleh informasi seputar perkembangan COVID-19 di Sulawesi Tengah.
 
-## Table of contents
+## Daftar Isi
 
-[![Language : Id](https://img.shields.io/badge/lang-id-blue)](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/blob/master/README.id.md)
+[![Lang : English](https://img.shields.io/badge/lang-en-yellow)](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/blob/master/README.md)
 
-This is the **English** versionon of the README.md file, press the badge to read the ***Bahasa Indonesia*** versionon.
+Ini merupakan versi **Bahasa Indonesia** dari file README.md, tekan badge untuk membaca versi ***English***.
 
-* [General Information](#general-information)
-* [Screenshot](#Screenshot)
-* [Features](#features)
-* [Library & Dependency](#library-&-dependency)
-* [Configuration](#configuration)
+* [Informasi Umum](#informasi-umum)
+* [Tangkapan Layar](#tangkapan-layar)
+* [Fitur](#fitur)
+* [*Library* & Dependensi](#library-&-dependensi)
+* [Konfigurasi](#konfigurasi)
 * [Status](#status)
-* [License](#license)
-* [Contact](#contact)
+* [Lisensi](#lisensi)
+* [Kontak](#kontak)
 
-## General Information
+## Informasi Umum
 
 * Landing page PICO  
 
-  To visit the ***landing page*** of PICO SulTeng App, please click the image below.
+  Untuk berkunjung ke ***landing page*** PICO SulTeng App, silahkan klik gambar dibawah.
   
   [![PICO SulTeng](https://i.ibb.co/jRtxp9Y/picobar.png)](https://banuacoders.com/app/pico)
-* Download APK
+* Unduh APK
 
-  Here are some links for downloading PICO
+  Berikut ini adalah beberapa tautan untuk mengunduh PICO
   * PICO SulTeng v3.0.1 : [download](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/releases/download/v3.0.1/PICO.COVID-19.Sulawesi.Tengahv3.0.1.apk)
   * PICO SulTeng (Unsigned) v3.0.1 (Google Drive) : [download](https://s.id/PICO-SULTENG-UNSIGNED)
-* PICO installation and usage guide
+* Panduan penggunaan & instalasi PICO
 
-  * To see some PICO usage guidelines, you can see it [here](https://www.youtube.com/playlist?list=PLrF0GvrAdCI_-nZSASNvtGxvdln_lRIUo).
-  * Installation instruction : [here](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/releases/download/v3.0.1/Petunjuk_Instal.docx)
-* Data Source
+  * Untuk melihat beberapa panduan penggunaan PICO, dapat anda lihat [disini](https://www.youtube.com/playlist?list=PLrF0GvrAdCI_-nZSASNvtGxvdln_lRIUo).
+  * Petunjuk instalasi : [disini](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/releases/download/v3.0.1/Petunjuk_Instal.docx)
+* Sumber Data
 
-  This application uses data from **PICO API**. To view the **PICO API** documentation, please click [here](https://github.com/RyanAidilPratama/PICO_SULTENG_API).
-* Minimum OS versionon
+  Aplikasi ini menggunakan data dari [PICO API](https://github.com/RyanAidilPratama/PICO_SULTENG_API). Untuk melihat dokumentasi PICO API, silahkan klik [disini](https://github.com/RyanAidilPratama/PICO_SULTENG_API).
+* Versi Minimum OS
 
   * **Android Lolipop (5.0)**
 
-* To import into Android Studio :
-  * Use the latest versionon of Android Studio - versionon 3.6.3
+* Untuk import ke Android Studio :
+  * Gunakan versi terbaru Android Studio - versi 3.6.3
   * RAM :  4 GB
 
-## Screenshot
+## Tangkapan Layar
 
 ![Dashboard1](https://i.ibb.co/PcLzhrZ/PICO1.png) ![Dashboard2](https://i.ibb.co/Lnbzkrb/PICO2.png) ![Dashboard3](https://i.ibb.co/W6QzbWj/PICO3.png) ![Dashboar4](https://i.ibb.co/gd2gcmW/PICO4.png)
 
-## Features
+## Fitur
 
-Some features that have been developed:
+Beberapa fitur yang sudah selesai dikembangkan :
 
-* ### **Notification :**
+* ### **Notifikasi :**
 
-  * Get notifications about COVID-19 situation
+  * Dapatkan notifikasi seputar COVID-19
   
   ![Notification](https://i.ibb.co/kmSHrsr/PICO10.png)
 
-* ### **Dashboard :**
+* ### **Dashboard, berisi :**
 
-  * The latest update on the COVID-19 situation in Central Sulawesi (Positive, Recovered, Death, Negative).
-  * Information on the number of ODP and PDP in Central Sulawesi.
-  * Table of distribution of COVID-19 cases by Regency/City in Central Sulawesi Province.
-  * Map of the spread of COVID-19 cases per Regency / City in Central Sulawesi Province.
-  * Important telephone/phone numbers about COVID-19 with ***tap to call*** feature.
-  
+  * Update terkini stuasi COVID-19 di Sulawesi Tengah (Positif, Sembuh, Meninggal, Negatif).
+  * Informasi jumlah ODP dan PDP di Sulawesi Tengah.
+  * Tabel penyebaran kasus COVID-19 per Kabupaten/Kota se Provinsi Sulawesi Tengah.
+  * Peta penyebaran kasus COVID-19 per Kabupaten/Kota se Provinsi Sulawesi Tengah.
+  * Nomor telpon penting seputar COVID-19 dengan fitur ***tap to call***.
+
   ![Dashboard1](https://i.ibb.co/PcLzhrZ/PICO1.png) ![Dashboard2](https://i.ibb.co/Lnbzkrb/PICO2.png) ![Dashboard3](https://i.ibb.co/W6QzbWj/PICO3.png) ![Dashboar4](https://i.ibb.co/gd2gcmW/PICO4.png)
 
-* ### **List of COVID-19 referral hospitals in Central Sulawesi:**
+* ### **Daftar rumah sakit rujukan COVID-19 di Sulawesi Tengah :**
 
-  * Tap on the telephone number to call the hospital ***(Tap to call)***.
-  * Tap on an email to send an email to the hospital ***(Tap to Email)***.
-  * Hospital directions button.
+  * Tekan pada nomor telpon untuk menelpon rumah sakit ***(Tap to call)***.
+  * Tekan pada email untuk mengirim email ke rumah sakit ***(Tap to Email)***.
+  * Tombol petunjuk arah rumah sakit.
   
   ![Hospital1](https://i.ibb.co/PcLzhrZ/PICO1.png) ![Hospital2](https://i.ibb.co/vPqqtFt/PICO5.png)
 
-* ### **List of COVID-19 Task Force posts by Regency/City in Central Sulawesi:**
+* ### **Daftar posko tim SATGAS COVID-19 per Kabupaten/Kota se Sulawesi Tengah :**
 
-  * Tap on the telephone number to call ***(Tap to call)***.
+  * Tekan pada nomor telpon untuk menelpon ***(Tap to call)***.
 
   ![Posts1](https://i.ibb.co/NSFJrKf/PICO6.png) ![Posts2](https://i.ibb.co/9GxkkgW/PICO7.png)
 
-* ### **Self Check :**
+* ### **Pemeriksaan Mandiri :**
 
-  * Do a COVID-19 self-examination with a virtual assistant from [Detexi App](https://corona.detexi.id). Detexi is a local startup in Central Sulawesi which is engaged in health and is currently working with the government of Central Sulawesi, IDI of Central Sulawesi, and PDUI of Central Sulawesi.
+  * Pemeriksaan mandiri COVID-19 dengan asisten virtual dari [Detexi App](https://corona.detexi.id). Detexi merupakan startup lokal Sulawesi Tengah yang bergerak dibidang kesehatan dan saat ini bekerja sama dengan pemerintah Provinsi Sulawesi Tengah, IDI Sulawesi Tengah, dan PDUI Sulawesi Tengah.
 
   ![Detexi1](https://i.ibb.co/JySTdRM/PICO8.png) ![Detexi2](https://i.ibb.co/HdrQgJv/PICO9.png)
 
-* ### **Statistics :**
+* ### **Statistik :**
 
-  * Statistics of COVID-19 cases in Indonesia
+  * Statistik kasus COVID-19 di Indonesia
 
   ![Stats1](https://i.ibb.co/G3tDPWh/PICO11.png) ![Stats2](https://i.ibb.co/dtwHPMp/PICO12.png)
 
-* ### **Map of the spread of COVID-19 (Province) :**
+* ### **Peta penyebaran (Provinsi):**
 
-  * Map of the spread of COVID-19 cases by Province in Indonesia.
+  * Peta penyebaran kasus COVID-19 per Provinsi di Indonesia.
 
   ![Map1](https://i.ibb.co/XDvCzN1/PICO13.png) ![Map2](https://i.ibb.co/0sfyzS3/PICO14.png)
 
-* ### **Multi Language :**
+* ### **Multi bahasa:**
 
-  * PICO supports Indonesian and English.
+  * PICO mendukung Bahasa Indonesia dan English.
 
   ![Bahasa](https://i.ibb.co/PcLzhrZ/PICO1.png) ![English](https://i.ibb.co/k27DfHB/PICO15.png)
 
 *To-do List* :
 
-* Push notification
-  * [X] Notification of the current situation of COVID-19 in Indonesia
-  * [X] Notification of the current situation of COVID-19 in Central Sulawesi
-  * [] Notification if user is in the **red zone**
-  * [] Notification if user has interacted with a COVID-19 patient
-  * [] Notification if there is a case of COVID-19 nearby
-* In-App push messaging
-  * [X] Infographics around COVID-19 (Prevention, treatment, etc.)
-* [X] COVID-19 self-examination
-* Data on the current situation of COVID-19 in Central Sulawesi
-  * [X] Regency/City
-  * [X] **ODP** cases
-  * [X] **Under Observation** cases
-  * [X] **Completed Observation** cases
-  * [X] **PDP** cases
-  * [X] **Under Supervision** cases
-  * [X] **Completed Supervision** cases
-  * [X] **Positive** cases
-  * [X] **Negative** cases
-  * [X] **Death** cases
-  * [X] **Recovered** cases
-  * [X] Latest update
-  * [] Daily report of COVID-19 cases in Central Sulawesi
-* [X] Table of distribution of COVID-19 cases in Central Sulawesi
-* [X] Map of the spread of COVID-19 in Central Sulawesi
-* Statistical data on the COVID-19 situation in Indonesia
-  * [X] Province
-  * [X] **Positive** cases
-  * [X] **Recovered** cases
-  * [X] **Death** cases
-  * [X] Cumulative cases **Positive**
-  * [X] Cumulative cases **Recovered**
-  * [X] Cumulative cases **Death**
-  * [X] Daily report of COVID-19 cases in Indonesia.
-* [X] Map of the spread of COVID-19 in Indonesia
-* Data of COVID-19 referral hospital in Central Sulawesi
-  * [X] Hospital name
-  * [X] Hospital address
-  * [X] Hospital phone number
-  * [X] Hospital email
-* COVID-19 Task Force post data
-  * [X] The location of the post
-  * [X] The name of the person in charge
-  * [X] Phone number
-* User data
-  * [] Registration
-  * [] Sign in
-  * [] Name
-  * [] Age
-  * [] Location
-  * [] Status COVID-19 (ODP, OTG, PDP, etc.)
-  * [] Phone number
+* *Push notification*
+  * [X] Notifikasi situasi terkini COVID-19 di Indonesia
+  * [X] Notifikasi situasi terkini COVID-19 di Sulawesi Tengah
+  * [] Notifikasi jika *user* berada di zona merah
+  * [] Notifikasi jika *user* pernah berinteraksi dengan pasien COVID-19
+  * [] Notifikasi jika di dekat lokasi *user* ada kasus COVID-19
+* *In-App push messaging*
+  * [X] Infografis seputar COVID-19 (Pencegahan, pengobatan, dll)
+* [X] Pemeriksaan mandiri COVID-19
+* Data situasi terkini COVID-19 di Sulawesi Tengah
+  * [X] Kabupaten/Kota
+  * [X] Kasus **ODP**
+  * [X] Kasus **Dalam Pemantauan**
+  * [X] Kasus **Selesai Pemantauan**
+  * [X] Kasus **PDP**
+  * [X] Kasus **Dalam Pengawasan**
+  * [X] Kasus **Selesai Pengawasan**
+  * [X] Kasus **Positif**
+  * [X] Kasus **Negatif**
+  * [X] Kasus **Meninggal**
+  * [X] Kasus **Sembuh**
+  * [X] Terakhir diperbarui
+  * [] Data perkembangan harian COVID-19 di Sulawesi Tengah
+* [X] Tabel distribusi kasus COVID-19 di Sulawesi Tengah
+* [X] Peta penyebaran COVID-19 di Sulawesi Tengah
+* Data statistik situasi COVID-19 di Indonesia
+  * [X] Provinsi
+  * [X] Kasus **Positif**
+  * [X] Kasus **Sembuh**
+  * [X] Kasus **Meninggal**
+  * [X] Kumulatif kasus **Positif**
+  * [X] Kumulatif kasus **Sembuh**
+  * [X] Kumulatif kasus **Meninggal**
+  * [X] Perkembangan harian kasus COVID-19.
+* [X] Peta penyebaran COVID-19 di Indonesia
+* Data rumah sakit rujukan COVID-19 Sulawesi Tengah
+  * [X] Nama rumah sakit
+  * [X] Alamat/Lokasi rumah sakit
+  * [X] Nomor telpon rumah sakit
+  * [X] Email rumah sakit
+* Data posko gugus tugas COVID-19 Sulawesi Tengah
+  * [X] Lokasi posko
+  * [X] Nama penanggung jawab
+  * [X] Nomor telpon
+* Data pengguna
+  * [] Registrasi
+  * [] Masuk
+  * [] Nama
+  * [] Usia
+  * [] Lokasi
+  * [] Status COVID-19 (ODP, OTG, PDP, dll)
+  * [] Nomor handphone/telpon
 
-## Library & Dependency
+## Library & Dependensi
 
 ![project_screen](http://i.ibb.co/j8jwrQJ/screely-1586000616230.png)
 
-> This application was built using **MVVM** design pattern. Some of the libraries needed include:
+> Aplikasi ini dibangun menggunakan ***design pattern*** MVVM. Beberapa library yang diperlukan antara lain :
 
-* [Recycler View](https://developer.android.com/jetpack/androidx/releases/recyclerview) - version 1.1.0
-* [Butter Knife](https://github.com/JakeWharton/butterknife) - version 10.1.0
-* [RxJava](https://github.com/ReactiveX/RxJava) - version 2.1.1
-* [Spin Kit](https://github.com/ybq/Android-SpinKit) - version 1.4.0
-* [Glide](https://github.com/bumptech/glide) - version 4.11.0
-* [Google Material](https://www.material.io/) - version 1.1.0
-* [AnyChart](https://github.com/AnyChart/AnyChart-Android) - version 1.1.2
-* [MPAndroidChart](https://github.com/PhilJay/MPAndroidChart) - version 3.1.0
-* [Gravity SnapHelper](https://github.com/rubensousa/GravitySnapHelper) -version 2.2.0
-* [Scrolling Pager Indicator](https://github.com/TinkoffCreditSystems/ScrollingPagerIndicator) - version 1.0.6
-* [TableView](https://github.com/evrencoskun/TableView) - version 0.8.9
-* [Retrofit](https://github.com/square/retrofit) - version 2.7.1
-* [OneSignal Androdi SDK](https://github.com/OneSignal/OneSignal-Android-SDK) - version 3.13.1
-* [Androidx Room](https://developer.android.com/topic/libraries/architecture/room) - version 2.2.5
-* [Android Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle) - version 1.1.1
-* [Google Maps](https://github.com/googlemaps/android-maps-utils) - version 17.0.0
+* [Recycler View](https://developer.android.com/jetpack/androidx/releases/recyclerview) - versi 1.1.0
+* [Butter Knife](https://github.com/JakeWharton/butterknife) - versi 10.1.0
+* [RxJava](https://github.com/ReactiveX/RxJava) - versi 2.1.1
+* [Spin Kit](https://github.com/ybq/Android-SpinKit) - versi 1.4.0
+* [Glide](https://github.com/bumptech/glide) - versi 4.11.0
+* [Google Material](https://www.material.io/) - versi 1.1.0
+* [AnyChart](https://github.com/AnyChart/AnyChart-Android) - versi 1.1.2
+* [MPAndroidChart](https://github.com/PhilJay/MPAndroidChart) - versi 3.1.0
+* [Gravity SnapHelper](https://github.com/rubensousa/GravitySnapHelper) -versi 2.2.0
+* [Scrolling Pager Indicator](https://github.com/TinkoffCreditSystems/ScrollingPagerIndicator) - versi 1.0.6
+* [TableView](https://github.com/evrencoskun/TableView) - versi 0.8.9
+* [Retrofit](https://github.com/square/retrofit) - versi 2.7.1
+* [OneSignal Androdi SDK](https://github.com/OneSignal/OneSignal-Android-SDK) - versi 3.13.1
+* [Androidx Room](https://developer.android.com/topic/libraries/architecture/room) - versi 2.2.5
+* [Android Lifecycle](https://developer.android.com/topic/libraries/architecture/lifecycle) - versi 1.1.1
+* [Google Maps](https://github.com/googlemaps/android-maps-utils) - versi 17.0.0
 
-## Configuration
+## Konfigurasi
 
-* Clone this repository to your PC/laptop
-* Import a cloned repository into [Android Studio](https://developer.android.com/studio)
-* After that, rebuild the project that was imported into Android Studio
-* Add [Google API Key](https://console.cloud.google.com) from the Google Cloud Console to the file [***main/res/values/strings.xml***](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/blob/master/app/src/main/res/values/strings.xml) :
+* *Clone repository* ini ke komputer/laptop anda
+* *Import repository* yang sudah di *clone* ke [Android Studio](https://developer.android.com/studio)
+* Setelah itu, *rebuild project* yang telah di-*import* ke Android Studio
+* Tambahkan [Google API Key](https://console.cloud.google.com) dari Google Cloud Console ke file [***main/res/values/strings.xml***](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/blob/master/app/src/main/res/values/strings.xml) :
 
   ```xml
      <string name="API_KEY" translatable="false">Put Your Google API Key Here</string>
   ```
 
-* If you want to change the GeoJson layer on the COVID-19 spread map at ***MainActivity.java***, please replace the file [***map.json***](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/blob/master/app/src/main/assets/map.json) with your GeoJson file
-* To change the column labels in the table, you can change the file ***/res/values/strings.xml*** for the **English** version and ***/res/values-in-rID/strings.xml*** for the **Indonesian** version :
+* Jika ingin mengubah layer GeoJson pada peta penyebaran di ***MainActivity.java***, silahkan ganti file [***map.json***](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/blob/master/app/src/main/assets/map.json) dengan file GeoJson anda
+* Untuk mengubah label **kolom** pada tabel bisa diubah pada file ***/res/values/strings.xml*** untuk versi ***English*** dan ***/res/values-in-rID/strings.xml*** untuk versi **Bahasa Indonesia** :
 
   * [***main/res/values/strings.xml***](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/blob/master/app/src/main/res/values/strings.xml)
 
@@ -258,7 +258,7 @@ Some features that have been developed:
        <string name="recovered">Sembuh</string>
     ```
 
-* To change text alignment or table column order, you can do it on ***MyTableViewModel.java*** and ***ColumnHeaderModel.java*** :
+* Untuk mengubah perataan teks ataupun urutan kolom tabel, bisa dilakukan pada file ***MyTableViewModel.java*** dan ***ColumnHeaderModel.java*** :
 
   * [***MyTableViewModel.java***](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/blob/master/app/src/main/java/com/banuacoders/pico/ui/tableutil/MyTableViewModel.java)
 
@@ -345,7 +345,7 @@ Some features that have been developed:
     }
     ```
 
-* Base URL API can be changed in the ***NetworkClient.java*** file and **endpoint** in the ***Api.java*** file. PICO uses [Retrofit](https://github.com/square/retrofit) to make HTTP requests :
+* Untuk mengubah ***base url API*** dapat diubah pada file ***NetworkClient.java*** dan ***End Point*** yang pada file ***Api.java***. Untuk HTTP Request, PICO menggunakan [Retrofit](https://github.com/square/retrofit) :
 
   * [***NetworkClient.java***](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/blob/master/app/src/main/java/com/banuacoders/pico/network/NetworkClient.java)
 
@@ -386,14 +386,14 @@ Some features that have been developed:
 
 ## Status
 
-This project has been released with the latest version 3.0.1 and will continue to be developed.
+Proyek ini sudah rilis dengan versi terbaru adalah 3.0.1 dan masih akan terus dikembangkan.
 
-## License
+## Lisensi
 
-[MIT](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/blob/master/LICENSE) License.
+Lisensi [MIT](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/blob/master/LICENSE).
 
 Copyright (c) 2020 [Fajrian Aidil Pratama](https://www.linkedin.com/in/ryanaidilp/)
 
-## Contact
+## Kontak
 
 Created by [@ryanaidilp_](https://twitter.com/ryanaidilp_) - feel free to contact me!
