@@ -139,9 +139,9 @@ Some features that have been developed:
 * **Push notification**
   * [X] Notification of the current situation of COVID-19 in Indonesia
   * [X] Notification of the current situation of COVID-19 in Central Sulawesi
-  * [ ] Notification if user is in the **red zone**
-  * [ ] Notification if user has interacted with a COVID-19 patient
-  * [ ] Notification if there is a case of COVID-19 nearby
+  * [ ] Notify user if he/she is/had been in the **red zone**
+  * [ ] Notify user he/she has interacted with a COVID-19 patient
+  * [ ] Notify user if there is a case of COVID-19 nearby
 * **In-App push messaging**
   * [X] Infographics around COVID-19 (Prevention, treatment, etc.)
 * [X] COVID-19 self-examination
@@ -166,9 +166,9 @@ Some features that have been developed:
   * [X] **Positive** cases
   * [X] **Recovered** cases
   * [X] **Death** cases
-  * [X] Cumulative cases **Positive**
-  * [X] Cumulative cases **Recovered**
-  * [X] Cumulative cases **Death**
+  * [X] Cumulative number of COVID-19 **Positive** cases
+  * [X] Cumulative number of **Recovered** from COVID-19 cases
+  * [X] Cumulative number of **Death** caused by COVID-19
   * [X] Daily report of COVID-19 cases in Indonesia.
 * [X] Map of the spread of COVID-19 in Indonesia
 * **Data of COVID-19 referral hospital in Central Sulawesi**
@@ -215,8 +215,8 @@ Some features that have been developed:
 ## Configuration
 
 * Clone this repository to your PC/laptop
-* Import a cloned repository into [Android Studio](https://developer.android.com/studio)
-* After that, rebuild the project that was imported into Android Studio
+* Import it into [Android Studio](https://developer.android.com/studio)
+* After it was imported into Android Studio, rebuild the project
 * Add [Google API Key](https://console.cloud.google.com) from the Google Cloud Console to the file [***main/res/values/strings.xml***](https://github.com/RyanAidilPratama/PICO_SULTENG_Android/blob/master/app/src/main/res/values/strings.xml) :
 
   ```xml
