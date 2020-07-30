@@ -12,7 +12,7 @@ android {
         versionCode 3
         versionName "3.0.1"
         manifestPlaceholders = [
-                onesignal_app_id               : 'app_key',
+                onesignal_app_id               : '042291b7-993c-4725-9114-4dc069700d2b',
                 // Project number pulled from dashboard, local value is ignored.
                 onesignal_google_project_number: 'REMOTE'
         ]
@@ -52,6 +52,9 @@ dependencies {
     //ButterKnife
     implementation 'com.jakewharton:butterknife:10.1.0'
     annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+
+    //LoopingViewPager
+    implementation 'com.asksira.android:loopingviewpager:1.1.4'
 
     //RxJava
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'

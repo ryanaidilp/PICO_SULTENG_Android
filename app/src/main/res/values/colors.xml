@@ -3,9 +3,9 @@
     <color name="colorPrimary">#3593DD</color>
     <color name="colorPrimaryDark">#3593DD</color>
     <color name="colorAccent">#7e35dd</color>
-    <color name="colorDeath">#eeb9da</color>
-    <color name="colorCured">#9aeae4</color>
-    <color name="colorPositive">#f9efa4</color>
+    <color name="colorDeath">#D81B60</color>
+    <color name="colorCured">#43A047</color>
+    <color name="colorPositive">#FFB300</color>
 
     <color name="selected_background_color">#15a4fa</color>
     <color name="unselected_background_color">#1c324a</color>

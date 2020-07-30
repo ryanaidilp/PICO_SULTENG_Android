@@ -330,11 +330,11 @@
                     android:layout_width="160dp"
                     android:layout_height="130dp"
                     android:layout_marginTop="16dp"
-                    app:cardBackgroundColor="#eeb9da"
+                    app:cardBackgroundColor="#EC407A"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="4dp"
                     app:contentPadding="14dp"
-                    app:layout_constraintBottom_toTopOf="@id/negative_card"
+                    app:layout_constraintBottom_toTopOf="@id/active_card"
                     app:layout_constraintEnd_toStartOf="@id/dead_card"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
@@ -347,7 +347,7 @@
                             android:id="@+id/positive_icon"
                             android:layout_width="14dp"
                             android:layout_height="14dp"
-                            app:cardBackgroundColor="#b40072"
+                            app:cardBackgroundColor="#F48FB1"
                             app:cardCornerRadius="50dp"
                             app:layout_constraintBottom_toTopOf="@id/positive_count"
                             app:layout_constraintEnd_toStartOf="@id/positive_title"
@@ -396,7 +396,7 @@
                     android:id="@+id/dead_card"
                     android:layout_width="160dp"
                     android:layout_height="130dp"
-                    app:cardBackgroundColor="#f9efa4"
+                    app:cardBackgroundColor="#FFCA28"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="4dp"
                     app:contentPadding="12dp"
@@ -413,7 +413,7 @@
                             android:id="@+id/dead_icon"
                             android:layout_width="14dp"
                             android:layout_height="14dp"
-                            app:cardBackgroundColor="#f0ce51"
+                            app:cardBackgroundColor="#f9efa4"
                             app:cardCornerRadius="50dp"
                             app:layout_constraintBottom_toTopOf="@id/dead_count"
                             app:layout_constraintEnd_toStartOf="@id/dead_title"
@@ -459,11 +459,11 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/negative_card"
+                    android:id="@+id/active_card"
                     android:layout_width="160dp"
                     android:layout_height="130dp"
                     android:layout_margin="16dp"
-                    app:cardBackgroundColor="#9aeae4"
+                    app:cardBackgroundColor="#42A5F5"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="4dp"
                     app:contentPadding="16dp"
@@ -477,48 +477,48 @@
                         android:layout_height="match_parent">
 
                         <com.google.android.material.card.MaterialCardView
-                            android:id="@+id/negative_icon"
+                            android:id="@+id/active_icon"
                             android:layout_width="14dp"
                             android:layout_height="14dp"
-                            app:cardBackgroundColor="#00af99"
+                            app:cardBackgroundColor="#81D4FA"
                             app:cardCornerRadius="50dp"
-                            app:layout_constraintBottom_toTopOf="@id/negative_count"
-                            app:layout_constraintEnd_toStartOf="@id/negative_title"
+                            app:layout_constraintBottom_toTopOf="@id/active_count"
+                            app:layout_constraintEnd_toStartOf="@id/active_title"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
-                            android:id="@+id/negative_title"
+                            android:id="@+id/active_title"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="6dp"
-                            android:text="@string/negative"
+                            android:text="@string/active"
                             android:textSize="12sp"
                             android:textStyle="bold"
-                            app:layout_constraintBottom_toBottomOf="@id/negative_icon"
+                            app:layout_constraintBottom_toBottomOf="@id/active_icon"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="@id/negative_icon" />
+                            app:layout_constraintTop_toTopOf="@id/active_icon" />
 
 
                         <TextView
-                            android:id="@+id/negative_count"
+                            android:id="@+id/active_count"
                             style="@style/TextAppearanceStyle.Value"
                             android:text="@string/zero_value"
-                            app:layout_constraintBottom_toTopOf="@id/negative_person_label"
+                            app:layout_constraintBottom_toTopOf="@id/active_person_label"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@id/negative_title" />
+                            app:layout_constraintTop_toBottomOf="@id/active_title" />
 
                         <TextView
-                            android:id="@+id/negative_person_label"
+                            android:id="@+id/active_person_label"
                             style="@style/TextAppearanceStyle.Label"
                             android:layout_marginStart="6dp"
                             android:text="@string/cases"
                             app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="@id/negative_count"
-                            app:layout_constraintStart_toStartOf="@id/negative_count"
-                            app:layout_constraintTop_toBottomOf="@id/negative_count" />
+                            app:layout_constraintEnd_toEndOf="@id/active_count"
+                            app:layout_constraintStart_toStartOf="@id/active_count"
+                            app:layout_constraintTop_toBottomOf="@id/active_count" />
 
 
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -530,14 +530,14 @@
                     android:layout_width="160dp"
                     android:layout_height="130dp"
                     android:layout_margin="16dp"
-                    app:cardBackgroundColor="#81D4FA"
+                    app:cardBackgroundColor="#66BB6A"
                     app:cardCornerRadius="10dp"
                     app:cardElevation="4dp"
                     app:contentPadding="16dp"
-                    app:layout_constraintBottom_toBottomOf="@id/negative_card"
+                    app:layout_constraintBottom_toBottomOf="@id/active_card"
                     app:layout_constraintEnd_toEndOf="@id/dead_card"
                     app:layout_constraintStart_toStartOf="@id/dead_card"
-                    app:layout_constraintTop_toTopOf="@id/negative_card">
+                    app:layout_constraintTop_toTopOf="@id/active_card">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"
@@ -547,7 +547,7 @@
                             android:id="@+id/recovered_icon"
                             android:layout_width="14dp"
                             android:layout_height="14dp"
-                            app:cardBackgroundColor="#03A9F4"
+                            app:cardBackgroundColor="#80CBC4"
                             app:cardCornerRadius="50dp"
                             app:layout_constraintBottom_toTopOf="@id/recovered_count"
                             app:layout_constraintEnd_toStartOf="@id/recovered_title"
@@ -604,7 +604,7 @@
                     app:layout_constraintBottom_toTopOf="@id/card_info_odp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/negative_card">
+                    app:layout_constraintTop_toBottomOf="@id/active_card">
 
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:layout_width="match_parent"

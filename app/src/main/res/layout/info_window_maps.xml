@@ -26,7 +26,7 @@
         android:text="@string/positive"
         android:textColor="#EF5350"
         android:textStyle="normal"
-        app:layout_constraintBottom_toTopOf="@id/label_negative"
+        app:layout_constraintBottom_toTopOf="@id/label_active"
         app:layout_constraintEnd_toStartOf="@id/barrier"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/district_name" />
@@ -43,12 +43,12 @@
         app:layout_constraintTop_toTopOf="@id/label_positive" />
 
     <TextView
-        android:id="@+id/label_negative"
+        android:id="@+id/label_active"
         style="@style/TextAppearanceStyle"
         android:layout_width="wrap_content"
         android:layout_margin="4dp"
-        android:text="@string/negative"
-        android:textColor="#00897B"
+        android:text="@string/active"
+        android:textColor="#1E88E5"
         android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@id/label_death"
         app:layout_constraintEnd_toStartOf="@id/barrier"
@@ -56,15 +56,15 @@
         app:layout_constraintTop_toBottomOf="@id/label_positive" />
 
     <TextView
-        android:id="@+id/value_negative"
+        android:id="@+id/value_active"
         style="@style/TextAppearanceStyle"
         android:layout_width="wrap_content"
         android:text="123 orang"
-        android:textColor="#00897B"
-        app:layout_constraintBottom_toBottomOf="@id/label_negative"
+        android:textColor="#1E88E5"
+        app:layout_constraintBottom_toBottomOf="@id/label_active"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/barrier"
-        app:layout_constraintTop_toTopOf="@id/label_negative" />
+        app:layout_constraintTop_toTopOf="@id/label_active" />
 
     <TextView
         android:id="@+id/label_death"
@@ -78,7 +78,7 @@
         app:layout_constraintBottom_toTopOf="@id/label_recovered"
         app:layout_constraintEnd_toStartOf="@id/barrier"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/label_negative" />
+        app:layout_constraintTop_toBottomOf="@id/label_active" />
 
     <TextView
         android:id="@+id/value_death"
@@ -98,7 +98,7 @@
         android:layout_margin="4dp"
         android:gravity="start"
         android:text="@string/cured"
-        android:textColor="@color/colorPrimary"
+        android:textColor="#43A047"
         android:textStyle="normal"
         app:layout_constraintBottom_toTopOf="@id/label_ODP"
         app:layout_constraintEnd_toStartOf="@id/barrier"
@@ -110,7 +110,7 @@
         style="@style/TextAppearanceStyle"
         android:layout_width="wrap_content"
         android:text="20 orang"
-        android:textColor="@color/colorPrimary"
+        android:textColor="#43A047"
         app:layout_constraintBottom_toBottomOf="@id/label_recovered"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/barrier"
@@ -161,7 +161,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="left"
-        app:constraint_referenced_ids="value_recovered,value_death,value_negative,value_postive"
+        app:constraint_referenced_ids="value_recovered,value_death,value_active,value_postive"
         tools:layout_editor_absoluteX="130dp" />
 
 

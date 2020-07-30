@@ -6,7 +6,7 @@
     <string name="cases">cases</string>
     <string name="dead">Death</string>
     <string name="current_info">Current Information about COVID-19 in Central Sulawesi</string>
-    <string name="negative">Negative</string>
+    <string name="active">Active</string>
     <string name="cured">Cured</string>
     <string name="under_treatment">Under Treatment</string>
     <string name="comparison_death_helper">*) Comparison of Death and Cured patient.</string>
@@ -76,7 +76,7 @@
     <string name="in_odp">In ODP</string>
     <string name="completed_pdp">Completed PDP</string>
     <string name="in_pdp">In PDP</string>
-    <string name="API_KEY" translatable="false">Put Your Google API Key Here</string>
+    <string name="API_KEY" translatable="false">AIzaSyB-LyYRp1RZ9ZwyVlowj0au0qhvufjgHxY</string>
     <string name="province_covid_task_force">COVID-19 Task Force for Central Sulawesi</string>
     <string name="hotline" translatable="false">Hotline</string>
     <string name="province_task_force_number" translatable="false">082399464837</string>

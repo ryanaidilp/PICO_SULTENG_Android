@@ -17,8 +17,8 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.banuacoders.pico.R;
 import com.banuacoders.pico.data.model.DataStatisticsCovid;
-import com.banuacoders.pico.ui.viewmodel.DataStatisticViewModel;
 import com.banuacoders.pico.network.NetworkClient;
+import com.banuacoders.pico.ui.viewmodel.DataStatisticViewModel;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.charts.PieChart;
 import com.github.mikephil.charting.components.XAxis;
@@ -38,6 +38,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -55,7 +56,6 @@ import retrofit2.Response;
 public class StatsActivity extends AppCompatActivity {
 
     private DataStatisticViewModel dataStatisticViewModel;
-    private Map<String, Object> queryMap = new HashMap<>();
     private LineChart lineChartDeath, lineChartPositive, lineChartCured;
     private PieChart pieChartCorona;
     private ProgressBar progressBar;
@@ -103,22 +103,18 @@ public class StatsActivity extends AppCompatActivity {
     }
 
     private void fetchDataStatistics() {
-        queryMap.put("where", "1=1");
-        queryMap.put("outFields", "*");
-        queryMap.put("outSR", 4326);
-        queryMap.put("f", "json");
         Call<ResponseBody> call = NetworkClient
                 .getInstance()
-                .getApiStats()
-                .getCovidStats(queryMap);
+                .getApiCoder()
+                .getCovidStats();
         progressBar.setVisibility(View.VISIBLE);
         call.enqueue(new Callback<ResponseBody>() {
             @Override
-            public void onResponse(@NonNull Call<ResponseBody> call,@NonNull Response<ResponseBody> response) {
+            public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
                 try {
                     String responseBody = response.body().string();
                     JSONObject objectResponse = new JSONObject(responseBody);
-                    JSONArray features = objectResponse.getJSONArray("features");
+                    JSONArray features = objectResponse.getJSONArray("data");
                     setData(features);
                     progressBar.setVisibility(View.GONE);
                 } catch (IOException | JSONException e) {
@@ -128,7 +124,7 @@ public class StatsActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFailure(@NonNull Call<ResponseBody> call,@NonNull Throwable t) {
+            public void onFailure(@NonNull Call<ResponseBody> call, @NonNull Throwable t) {
                 progressBar.setVisibility(View.GONE);
                 Toast.makeText(StatsActivity.this, "", Toast.LENGTH_LONG).show();
             }
@@ -156,26 +152,6 @@ public class StatsActivity extends AppCompatActivity {
         lineChart.invalidate();
     }
 
-    private boolean checkNullFields(String field) {
-        boolean res = false;
-        if (!field.equalsIgnoreCase("null")) {
-            res = true;
-        }
-        return res;
-    }
-
-    private boolean checkDate(long curr) {
-        Date date = new Date(curr);
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy", Locale.ENGLISH);
-        String dataDate = sdf.format(date);
-        Date currDate = new Date();
-        Calendar c = Calendar.getInstance();
-        c.setTime(currDate);
-        currDate = c.getTime();
-        String currentDate = sdf.format(currDate);
-        return currentDate.equalsIgnoreCase(dataDate);
-    }
-
     void rotateSync() {
         int mCurrRotation = 0;
         float fromRotation = mCurrRotation;
@@ -193,57 +169,49 @@ public class StatsActivity extends AppCompatActivity {
     private void setData(JSONArray features) {
         for (int i = 0; i < features.length(); i++) {
             try {
-                double deathPercentage = checkNullFields(features.getJSONObject(i).getJSONObject("attributes").getString("Persentase_Pasien_Meninggal"))
-                        ? features.getJSONObject(i).getJSONObject("attributes").getDouble("Persentase_Pasien_Meninggal")
-                        : 0;
-                int totalDeath = checkNullFields(features.getJSONObject(i).getJSONObject("attributes").getString("Jumlah_Pasien_Meninggal"))
-                        ? features.getJSONObject(i).getJSONObject("attributes").getInt("Jumlah_Pasien_Meninggal")
-                        : 0;
-                int totalPatientInTreatment = checkNullFields(features.getJSONObject(i).getJSONObject("attributes").getString("Jumlah_pasien_dalam_perawatan"))
-                        ? features.getJSONObject(i).getJSONObject("attributes").getInt("Jumlah_pasien_dalam_perawatan")
-                        : 0;
-                int totalNewCase = checkNullFields(features.getJSONObject(i).getJSONObject("attributes").getString("Jumlah_Kasus_Baru_per_Hari"))
-                        ? features.getJSONObject(i).getJSONObject("attributes").getInt("Jumlah_Kasus_Baru_per_Hari")
-                        : 0;
-                double underTreatmentPercentage = checkNullFields(features.getJSONObject(i).getJSONObject("attributes").getString("Persentase_Pasien_dalam_Perawatan"))
-                        ? features.getJSONObject(i).getJSONObject("attributes").getDouble("Persentase_Pasien_dalam_Perawatan")
-                        : 0;
-                double curedPercentage = checkNullFields(features.getJSONObject(i).getJSONObject("attributes").getString("Persentase_Pasien_Sembuh"))
-                        ? features.getJSONObject(i).getJSONObject("attributes").getDouble("Persentase_Pasien_Sembuh")
-                        : 0;
-                int cumulativeCase = checkNullFields(features.getJSONObject(i).getJSONObject("attributes").getString("Jumlah_Kasus_Kumulatif"))
-                        ? features.getJSONObject(i).getJSONObject("attributes").getInt("Jumlah_Kasus_Kumulatif")
-                        : 0;
-                int totalCured = checkNullFields(features.getJSONObject(i).getJSONObject("attributes").getString("Jumlah_Pasien_Sembuh"))
-                        ? features.getJSONObject(i).getJSONObject("attributes").getInt("Jumlah_Pasien_Sembuh")
-                        : 0;
+                JSONObject data = features.getJSONObject(i);
+                JSONObject cumulative = data.getJSONObject("kumulatif");
+                JSONObject recap = data.getJSONObject("rekap");
+                JSONObject newCases = data.getJSONObject("kasus_baru");
+                double deathPercentage = recap
+                        .getJSONObject("persentase")
+                        .getDouble("meninggal");
+                double underTreatmentPercentage = recap
+                        .getJSONObject("persentase")
+                        .getDouble("dalam_perawatan");
+                double curedPercentage = recap
+                        .getJSONObject("persentase")
+                        .getDouble("sembuh");
+
+                int totalDeath = cumulative
+                        .getInt("meninggal");
+                int totalPatientInTreatment = cumulative
+                        .getInt("dalam_perawatan");
+                int cumulativeCase = cumulative
+                        .getInt("positif");
+                int totalCured = cumulative
+                        .getInt("sembuh");
+
+                int totalNewCase = newCases
+                        .getInt("positif");
+                String[] latestUpdate = data.getString("tanggal").split(" ");
+                Date date = new SimpleDateFormat("yyyy-MM-dd").parse(latestUpdate[0]);
+
                 DataStatisticsCovid dataStatisticsCovid = new DataStatisticsCovid(
-                        features.getJSONObject(i).getJSONObject("attributes").getInt("FID"),
+                        data.getInt("hari_ke"),
                         deathPercentage,
                         totalDeath,
                         totalPatientInTreatment,
-                        features.getJSONObject(i).getJSONObject("attributes").getInt("Hari_ke"),
+                        data.getInt("hari_ke"),
                         totalNewCase,
                         underTreatmentPercentage,
                         curedPercentage,
                         cumulativeCase,
-                        features.getJSONObject(i).getJSONObject("attributes").getLong("Tanggal"),
+                        date.getTime(),
                         totalCured
                 );
-
-                int death = checkNullFields(features.getJSONObject(i + 1).getJSONObject("attributes").getString("Jumlah_Pasien_Meninggal"))
-                        ? features.getJSONObject(i + 1).getJSONObject("attributes").getInt("Jumlah_Pasien_Meninggal")
-                        : 0;
-                if (checkDate(features.getJSONObject(i).getJSONObject("attributes").getLong("Tanggal"))
-                        && death == 0) {
-                    if (totalDeath != 0) {
-                        dataStatisticViewModel.insert(dataStatisticsCovid);
-                    }
-                    break;
-                } else {
-                    dataStatisticViewModel.insert(dataStatisticsCovid);
-                }
-            } catch (JSONException e) {
+                dataStatisticViewModel.insert(dataStatisticsCovid);
+            } catch (JSONException | ParseException e) {
                 e.printStackTrace();
             }
         }

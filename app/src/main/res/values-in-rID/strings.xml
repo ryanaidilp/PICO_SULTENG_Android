@@ -6,7 +6,7 @@
     <string name="cases">orang</string>
     <string name="dead">Meninggal</string>
     <string name="current_info">Informasi Terkini COVID-19 di Sulawesi Tengah</string>
-    <string name="negative">Negatif</string>
+    <string name="active">Aktif</string>
     <string name="cured">Sembuh</string>
     <string name="under_treatment">Dirawat</string>
     <string name="comparison_death_helper">*) Perbandingan Pasien Sembuh dan Meninggal</string>

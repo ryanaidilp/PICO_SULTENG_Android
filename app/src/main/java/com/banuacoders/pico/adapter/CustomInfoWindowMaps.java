@@ -28,7 +28,7 @@ public class CustomInfoWindowMaps implements GoogleMap.InfoWindowAdapter {
                 .inflate(R.layout.info_window_maps, null);
         TextView tvName = view.findViewById(R.id.district_name);
         TextView tvPositive = view.findViewById(R.id.value_postive);
-        TextView tvNegative = view.findViewById(R.id.value_negative);
+        TextView tvActive = view.findViewById(R.id.value_active);
         TextView tvRecovered = view.findViewById(R.id.value_recovered);
         TextView tvDeath = view.findViewById(R.id.value_death);
         TextView tvODP = view.findViewById(R.id.value_ODP);
@@ -38,7 +38,7 @@ public class CustomInfoWindowMaps implements GoogleMap.InfoWindowAdapter {
         String person = " " + context.getResources().getString(R.string.cases);
         tvName.setText(new StringBuilder(district.getName()));
         tvPositive.setText(new StringBuilder().append(district.getPositive()).append(person));
-        tvNegative.setText(new StringBuilder().append(district.getNegative()).append(person));
+        tvActive.setText(new StringBuilder().append(district.getActive()).append(person));
         tvDeath.setText(new StringBuilder().append(district.getDeath()).append(person));
         tvODP.setText(new StringBuilder().append(district.getODP()));
         tvPDP.setText(new StringBuilder().append(district.getPDP()));

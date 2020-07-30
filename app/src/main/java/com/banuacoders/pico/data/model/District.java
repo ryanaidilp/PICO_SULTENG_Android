@@ -8,6 +8,7 @@ public class District {
     @PrimaryKey(autoGenerate = true)
     private int id;
     private int negative;
+    private int active;
     private int no;
     private int death;
     private int recovered;
@@ -21,7 +22,7 @@ public class District {
     private int inPDP;
 
 
-    public District(int negative, int no, int death, int positive, int ODP, String name, int PDP, int finishedPDP, int finishedODP, int inODP, int inPDP, int recovered) {
+    public District(int negative, int no, int death, int positive, int ODP, String name, int PDP, int finishedPDP, int finishedODP, int inODP, int inPDP, int recovered, int active) {
         this.negative = negative;
         this.no = no;
         this.death = death;
@@ -34,6 +35,7 @@ public class District {
         this.inODP = inODP;
         this.inPDP = inPDP;
         this.recovered = recovered;
+        this.active = active;
     }
 
     public int getId() {
@@ -86,6 +88,10 @@ public class District {
 
     public int getNegative() {
         return this.negative;
+    }
+
+    public int getActive() {
+        return this.active;
     }
 
     public void setNegative(int negative) {

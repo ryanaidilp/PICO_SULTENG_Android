@@ -100,8 +100,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     TextView tvDeath;
     @BindView(R.id.positive_count)
     TextView tvPositive;
-    @BindView(R.id.negative_count)
-    TextView tvNegative;
+    @BindView(R.id.active_count)
+    TextView tvActive;
     @BindView(R.id.recovered_count)
     TextView tvRecovered;
     @BindView(R.id.pdp_processed_value)
@@ -289,7 +289,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private void setDataDashboard(JSONArray arrayCity) {
         int totalPositive = 0;
-        int totalNegative = 0;
+        int totalActive = 0;
         int totalDeath = 0;
         int totalRecovered = 0;
         int totalODP = 0;
@@ -301,11 +301,15 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         for (int i = 0; i < arrayCity.length(); i++) {
             District district = null;
             try {
+                int positive = arrayCity.getJSONObject(i).getInt(StaticFinal.districtPositive);
+                int deceased = arrayCity.getJSONObject(i).getInt(StaticFinal.districtDeath);
+                int recovered = arrayCity.getJSONObject(i).getInt(StaticFinal.districtRecovered);
+                int active = positive - (deceased + recovered);
                 district = new District(
                         arrayCity.getJSONObject(i).getInt(StaticFinal.districtNegative),
                         arrayCity.getJSONObject(i).getInt(StaticFinal.districtNumber),
-                        arrayCity.getJSONObject(i).getInt(StaticFinal.districtDeath),
-                        arrayCity.getJSONObject(i).getInt(StaticFinal.districtPositive),
+                        deceased,
+                        positive,
                         arrayCity.getJSONObject(i).getInt(StaticFinal.districtODP),
                         arrayCity.getJSONObject(i).getString(StaticFinal.districtName),
                         arrayCity.getJSONObject(i).getInt(StaticFinal.districtPDP),
@@ -313,7 +317,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                         arrayCity.getJSONObject(i).getInt(StaticFinal.districtFinishedODP),
                         arrayCity.getJSONObject(i).getInt(StaticFinal.districtInODP),
                         arrayCity.getJSONObject(i).getInt(StaticFinal.districtInPDP),
-                        arrayCity.getJSONObject(i).getInt(StaticFinal.districtRecovered)
+                        recovered,
+                        active
                 );
             } catch (JSONException e) {
                 e.printStackTrace();
@@ -321,7 +326,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             districtViewModel.insert(district);
             totalDeath += district.getDeath();
             totalPositive += district.getPositive();
-            totalNegative += district.getNegative();
+            totalActive += district.getActive();
             totalRecovered += district.getRecovered();
             totalODP += district.getODP();
             totalPDP += district.getPDP();
@@ -331,7 +336,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             finishedODP += district.getFinishedODP();
         }
         tvRecovered.setText(new StringBuilder().append(totalRecovered));
-        tvNegative.setText(new StringBuilder(totalNegative));
+        tvActive.setText(new StringBuilder(totalActive));
         tvPositive.setText(new StringBuilder(totalPositive));
         tvDeath.setText(new StringBuilder(totalDeath));
         tvTotalODP.setText(new StringBuilder(totalODP));
@@ -348,7 +353,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     private void setDataDashboard(List<District> districtList) {
         int totalPositive = 0;
-        int totalNegative = 0;
+        int totalActive = 0;
         int totalRecovered = 0;
         int totalDeath = 0;
         int totalODP = 0;
@@ -361,7 +366,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             totalRecovered += districtList.get(i).getRecovered();
             totalDeath += districtList.get(i).getDeath();
             totalPositive += districtList.get(i).getPositive();
-            totalNegative += districtList.get(i).getNegative();
+            totalActive += districtList.get(i).getActive();
             totalODP += districtList.get(i).getODP();
             totalPDP += districtList.get(i).getPDP();
             inPDP += districtList.get(i).getInPDP();
@@ -369,7 +374,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             finishedPDP += districtList.get(i).getFinishedPDP();
             finishedODP += districtList.get(i).getFinishedODP();
         }
-        tvNegative.setText(String.valueOf(totalNegative));
+        tvActive.setText(String.valueOf(totalActive));
         tvPositive.setText(String.valueOf(totalPositive));
         tvRecovered.setText(String.valueOf(totalRecovered));
         tvDeath.setText(String.valueOf(totalDeath));

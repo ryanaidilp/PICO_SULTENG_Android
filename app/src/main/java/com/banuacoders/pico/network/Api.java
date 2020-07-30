@@ -9,10 +9,8 @@ import retrofit2.http.QueryMap;
 
 public interface Api {
 
-    @GET("query")
-    Call<ResponseBody> getCovidStats(
-            @QueryMap Map<String, Object> queryMap
-    );
+    @GET("nasional")
+    Call<ResponseBody> getCovidStats();
 
     @GET("kabupaten")
     Call<ResponseBody> getAllCity();
